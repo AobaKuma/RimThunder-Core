@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 木輪 -->
+
+  <ComponentWheelWooden.label>木制車輪</ComponentWheelWooden.label>
+  <ComponentWheelWooden.description>人類歷史上最重要的發明，原始工程的基石.</ComponentWheelWooden.description>
+
+
+  <!-- 路輪 -->
+
+  <ComponentWheelRoad.label>金屬車輪</ComponentWheelRoad.label>
+  <ComponentWheelRoad.description>能夠承受較重車身的金屬輪，也被用於充氣輪胎的框架</ComponentWheelRoad.description>
+
+
+  <!-- 輪胎 -->
+
+  <ComponentWheelTire.label>充氣輪胎</ComponentWheelTire.label>
+  <ComponentWheelTire.description>一種較為進步的工業輪胎，由金屬製輪鼓加上人造橡膠所組成,能更好的適應地面路況.</ComponentWheelTire.description>
+
+
+</LanguageData>

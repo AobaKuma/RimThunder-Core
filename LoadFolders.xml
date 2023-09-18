@@ -5,5 +5,6 @@
     <li>/</li>
 	  <li>1.4</li>
 	  <li IfModActive="CETeam.CombatExtended">1.4/CombatExtended</li>
+	  <li IfModNotActive="Aoba.Motorization.Engine">1.4/StandaloneModule</li>
   </v1.4>
 </loadFolders>
