@@ -97,7 +97,7 @@
   <ThingDef Name="EngineBase" ParentName="HeavyItemBase" Abstract="True">
     <tradeability>Sellable</tradeability>
     <statBases>
-      <SellPriceFactor>1.5</SellPriceFactor>
+      <SellPriceFactor>1</SellPriceFactor>
     </statBases>
     <thingSetMakerTags>
       <li>RewardStandardCore</li>
