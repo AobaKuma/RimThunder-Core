@@ -34,12 +34,18 @@
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
+			<li MayRequire="oskarpotocki.vanillafactionsexpanded.core" Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+				<randomGraphics>
+					<li>Buildings/AssemblyBench/building</li>
+					<li>Buildings/AssemblyBench/building_A</li>
+				</randomGraphics>
+			</li>
     </comps>
     <recipes>
       <li>Make_ComponentIndustrial</li>
     </recipes>
     <graphicData>
-      <texPath>Things/Building/Production/FabricationBench</texPath>
+      <texPath>Buildings/AssemblyBench/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(7,4)</drawSize>
