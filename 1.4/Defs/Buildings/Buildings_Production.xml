@@ -13,7 +13,7 @@
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>0.5</Flammability>
     </statBases>
-    <minifiedDef />
+    <!-- <minifiedDef /> -->
     <thingCategories Inherit="false" />
     <size>(5,2)</size>
     <costList>
