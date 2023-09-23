@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <WorkGiverDef>
+    <defName>RTC_Operate</defName>
+    <label>Operate Machine</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>RT_AssemblyBench</li>
+    </fixedBillGiverDefs>
+    <verb>Operate</verb>
+    <gerund>Operating at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
   <ThingDef ParentName="BenchBase">
     <defName>RT_AssemblyBench</defName>
     <label>assembly platfrom</label>
