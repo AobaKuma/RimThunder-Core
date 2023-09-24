@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <WorkGiverDef>
+    <defName>RTC_Operate</defName>
+    <label>Operate Machine</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>RT_AssemblyBench</li>
+    </fixedBillGiverDefs>
+    <verb>Operate</verb>
+    <gerund>Operating at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
   <ThingDef ParentName="BenchBase">
     <defName>RT_AssemblyBench</defName>
     <label>assembly platfrom</label>
@@ -13,7 +30,7 @@
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>0.5</Flammability>
     </statBases>
-    <minifiedDef />
+    <!-- <minifiedDef /> -->
     <thingCategories Inherit="false" />
     <size>(5,2)</size>
     <costList>
@@ -34,12 +51,18 @@
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
+			<li MayRequire="oskarpotocki.vanillafactionsexpanded.core" Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+				<randomGraphics>
+					<li>Buildings/AssemblyBench/building</li>
+					<li>Buildings/AssemblyBench/building_A</li>
+				</randomGraphics>
+			</li>
     </comps>
     <recipes>
       <li>Make_ComponentIndustrial</li>
     </recipes>
     <graphicData>
-      <texPath>Things/Building/Production/FabricationBench</texPath>
+      <texPath>Buildings/AssemblyBench/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(7,4)</drawSize>
