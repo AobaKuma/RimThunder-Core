@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlaceWorker_Crane.cs" />
     <Compile Include="VehicleTurret_TurretRotationTick.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
