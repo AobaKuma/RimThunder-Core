@@ -13,7 +13,6 @@ using System.Collections.Generic;
 [HarmonyPatch("TurretRotationTick")]
 public static class VehicleTurret_TurretRotationTick
 {
-
     public static void Postfix(VehicleTurret __instance)
     {
         // there should be only one pivotGun in a Vehicle

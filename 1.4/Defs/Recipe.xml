@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <!-- 油路組件 -->
+  <ThingDef ParentName="HeavyItemBase">
+    <defName>ComponentFuelTank</defName>
+    <label>fueling compoment</label>
+    <description>metal parts such as fuel tank, carburetor, fuel pump and filter that is necessary for a fuel powered vehicle.</description>
+    <graphicData>
+      <texPath>Parts/FuelTank</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <smeltable>true</smeltable>
+    <smeltProducts>
+      <Steel>40</Steel>
+    </smeltProducts>
+    <butcherProducts>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </butcherProducts>
+    <descriptionHyperlinks>
+      <RecipeDef>ExtractMetalFromCasting</RecipeDef>
+    </descriptionHyperlinks>
+    <randomizeRotationOnSpawn>false</randomizeRotationOnSpawn>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>50</MarketValue>
+      <Mass>50</Mass>
+    </statBases>
+    <tradeability>Buyable</tradeability>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>Make_ComponentFuelTank</defName>
+    <label>make fueling compoment</label>
+    <description>make fueling compoment.</description>
+    <jobString>Assembling metal.</jobString>
+    <workAmount>750</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <uiIconThing>ComponentFuelTank</uiIconThing>
+    <recipeUsers>
+      <li>RT_AssemblyBench</li>  <!-- 熔煉台 -->  
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <ComponentFuelTank>1</ComponentFuelTank>
+    </products>
+  </RecipeDef>
+
+  <!-- 傳動組件 -->
+  <ThingDef ParentName="HeavyItemBase">
+    <defName>ComponentTransmission</defName>
+    <label>transmisson compoment</label>
+    <description>Metal parts such as driveshafts, gearboxes, differentials and planetary gears that are necessary to transmit torque.</description>
+    <graphicData>
+      <texPath>Parts/TransmissionComp</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <smeltable>true</smeltable>
+    <smeltProducts>
+      <Steel>40</Steel>
+    </smeltProducts>
+    <butcherProducts>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </butcherProducts>
+    <descriptionHyperlinks>
+      <RecipeDef>ExtractMetalFromCasting</RecipeDef>
+    </descriptionHyperlinks>
+    <randomizeRotationOnSpawn>false</randomizeRotationOnSpawn>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>50</MarketValue>
+      <Mass>50</Mass>
+    </statBases>
+    <tradeability>Buyable</tradeability>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>Make_ComponentTransmission</defName>
+    <label>make transmisson compoment</label>
+    <description>make transmisson compoment.</description>
+    <jobString>Assembling metal.</jobString>
+    <workAmount>750</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <uiIconThing>ComponentTransmission</uiIconThing>
+    <recipeUsers>
+      <li>RT_AssemblyBench</li>  <!-- 熔煉台 -->  
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <ComponentTransmission>1</ComponentTransmission>
+    </products>
+  </RecipeDef>
+
+</Defs>	

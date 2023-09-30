@@ -287,7 +287,7 @@
   </fixedIngredientFilter>
 </RecipeDef>
 
-<!-- 澆鑄重型鑄件 1模具，100鋼鐵-->
+<!-- 澆鑄重型鑄件，100鋼鐵-->
 <!-- 在熔煉台上將熔融鋼鐵的倒入鑄模當中，澆鑄的模具需要放置一些時間冷卻。注意在此過程中會產生大量的熱-->
 <RecipeDef>
   <defName>CastFromMold</defName>
@@ -300,7 +300,7 @@
   <soundWorking>Recipe_Smelt</soundWorking>
   <uiIconThing>ComponentHeavyCasting</uiIconThing>
   <recipeUsers>
-    <li>RT_AssemblyBench</li>  <!-- 熔煉台 -->  
+    <li>RT_AssemblyBench</li>  <!-- 組裝台 -->
   </recipeUsers>
   <ingredients>
     <li>
