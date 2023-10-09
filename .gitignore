@@ -12,3 +12,4 @@ UnityEngine.dll
 *.cfg
 *.vsidx
 *.user
+*.lock
