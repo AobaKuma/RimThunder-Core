@@ -13,3 +13,4 @@ UnityEngine.dll
 *.vsidx
 *.user
 *.lock
+*.CopyComplete
