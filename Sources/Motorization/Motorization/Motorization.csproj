@@ -31,10 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\_Sources\Reference\0Harmony.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\Reference\Assembly-CSharp.dll</HintPath>
@@ -66,6 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harmony\HarmonyMain.cs" />
+    <Compile Include="Harmony\Harmony_BillUtility.cs" />
+    <Compile Include="Building_RTCCrane.cs" />
+    <Compile Include="Bill_RTCVehicle.cs" />
     <Compile Include="VehicleTurret_TurretRotationTick.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,14 @@
+*.suo
+*.cache
+*/Thumbs.db
+
+*.dll
+Source/BillDoorsFramework/*/obj/*
+Source/BillDoorsFramework/*/bin/*
+
+Assembly-CSharp.dll 
+UnityEngine.dll 
+*.pdb
+*.cfg
+*.vsidx
+*.user
