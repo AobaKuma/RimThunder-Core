@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 油路組件 -->
+
+  <ComponentFuelTank.label>油路組件</ComponentFuelTank.label>
+  <ComponentFuelTank.description>濾清器，化油器與油泵等用於為引擎提供燃油輸入的金屬零件.</ComponentFuelTank.description>
+
+
+  <!-- 傳動組件 -->
+
+  <ComponentTransmission.label>傳動組件</ComponentTransmission.label>
+  <ComponentTransmission.description>傳動軸變速器與行星齒輪等將引擎扭矩輸出至動力部的金屬零件.</ComponentTransmission.description>
+
+
+</LanguageData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 油路組件 -->
+
+  <Make_ComponentFuelTank.label>組裝油路組件</Make_ComponentFuelTank.label>
+  <Make_ComponentFuelTank.description>組裝油路組件.</Make_ComponentFuelTank.description>
+  <Make_ComponentFuelTank.jobString>組裝零件.</Make_ComponentFuelTank.jobString>
+
+
+  <!-- 傳動組件 -->
+
+  <Make_ComponentTransmission.label>組裝傳動組件</Make_ComponentTransmission.label>
+  <Make_ComponentTransmission.description>組裝傳動組件.</Make_ComponentTransmission.description>
+  <Make_ComponentTransmission.jobString>組裝零件.</Make_ComponentTransmission.jobString>
+
+
+</LanguageData>
