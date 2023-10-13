@@ -26,7 +26,7 @@ namespace Motorization
 
         public override bool ShouldDoNow()
         {
-            if (suspended || (WorkBench.CurrentBill != null && WorkBench.CurrentBill != this) || WorkBench.CellOccupied())
+            if (suspended || (WorkBench.CurrentBill != null && WorkBench.CurrentBill != this) || WorkBench.CellOccupied)
             {
                 return false;
             }

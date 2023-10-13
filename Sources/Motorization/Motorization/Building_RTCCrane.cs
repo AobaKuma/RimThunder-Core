@@ -8,6 +8,7 @@ using RimWorld;
 using UnityEngine;
 using Vehicles;
 using Verse;
+using Verse.Sound;
 using static SmashTools.ConditionalPatch;
 
 namespace Motorization
@@ -22,6 +23,27 @@ namespace Motorization
 
         public float cranePauseTicks = 0;
 
+        public VehiclePawn blockedVehicle;
+
+        bool cellOccupied;
+
+        public bool CellOccupied
+        {
+            get
+            {
+                if (this.IsHashIntervalTick(300))
+                {
+                    RefreshOccupyCache();
+                }
+                return cellOccupied;
+            }
+        }
+
+        public void RefreshOccupyCache()
+        {
+            cellOccupied = IsCellOccupied();
+        }
+
         ModExtension_CraneTopData craneTopData => def.GetModExtension<ModExtension_CraneTopData>();
 
         System.Random rand;
@@ -30,6 +52,7 @@ namespace Motorization
         {
             base.SpawnSetup(map, respawningAfterLoad);
             rand = new System.Random();
+            RefreshOccupyCache();
         }
 
         public override void ExposeData()
@@ -47,8 +70,9 @@ namespace Motorization
             craneTopData?.graphicData.Graphic.Draw(DrawPos + craneTopData.GetDrawOffset(Rotation, craneCurrentPct) + Altitudes.AltIncVect, Rotation, this);
         }
 
-        public bool CellOccupied()
+        public bool IsCellOccupied()
         {
+            Log.Message("occupycheck");
             List<IntVec3> cells = GenAdj.CellsOccupiedBy(Position, Rotation, new IntVec2(def.size.x - 2, def.size.z - 2)).ToList();
             foreach (IntVec3 cell in cells)
             {
@@ -56,12 +80,36 @@ namespace Motorization
                 {
                     return true;
                 }
-                if (cell.GetFirstThing<VehiclePawn>(Map) != null)
+                var vehicle = cell.GetFirstThing<VehiclePawn>(Map);
+                if (vehicle != null)
                 {
+                    blockedVehicle = vehicle;
                     return true;
                 }
             }
             return false;
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo gizmo in base.GetGizmos())
+            {
+                yield return gizmo;
+            }
+            if (blockedVehicle != null)
+            {
+                Command_Action select = new Command_Action();
+                select.defaultLabel = "RTC_CraneSelectVehicle".Translate();
+                select.defaultDesc = "RTC_CraneSelectVehicleDesc".Translate();
+                select.icon = blockedVehicle.VehicleGraphic.TexAt(Rotation);
+                select.action = delegate
+                {
+                    Find.Selector.ClearSelection();
+                    Find.Selector.Select(blockedVehicle);
+                };
+                select.hotKey = KeyBindingDefOf.Misc5;
+                yield return select;
+            }
         }
 
         public override void UsedThisTick()
@@ -101,6 +149,7 @@ namespace Motorization
 
         public override void Notify_BillDeleted(Bill bill)
         {
+            RefreshOccupyCache();
             if (CurrentBill == bill)
             {
                 CurrentBill = null;
@@ -116,6 +165,7 @@ namespace Motorization
             {
                 CurrentBill = null;
             }
+            RefreshOccupyCache();
         }
     }
 
