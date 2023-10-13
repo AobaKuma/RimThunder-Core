@@ -130,11 +130,6 @@
 					<li>ToolCabinet</li>
 				</linkableFacilities>
 			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>250</basePowerConsumption>
-				<shortCircuitInRain>true</shortCircuitInRain>
-			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Breakdownable"/>
 		</comps>
@@ -176,6 +171,23 @@
 		<researchPrerequisites>
 			<li>Machining</li>
 		</researchPrerequisites>
+		<modExtensions>
+			<li Class="Motorization.ModExtension_CraneTopData">
+				<graphicData>
+					<texPath>Buildings/Crane/CraneTop/CraneTop</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>(6,2)</drawSize>
+				</graphicData>
+				<EndpointEast>
+					<endPointA>(-4,0,1)</endPointA>
+					<endPointB>(4,0,1)</endPointB>
+				</EndpointEast>
+				<EndpointNorth>
+					<endPointA>(0,0,5)</endPointA>
+					<endPointB>(0,0,-3)</endPointB>
+				</EndpointNorth>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 
@@ -213,7 +225,7 @@
 	</RecipeDef>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>Column</defName>
+		<defName>RTC_CraneColumn</defName>
 		<label>column</label>
 		<description>A column capable of holding a roof. Does not block sight or movement and looks quite nice.</description>
 		<designationCategory>Structure</designationCategory>

@@ -16,11 +16,11 @@ namespace Motorization
     {
         public Bill_RTCVehicle CurrentBill;
 
-        public float craneTargetPct;
+        public float craneTargetPct = 0;
 
-        public float craneCurrentPct;
+        public float craneCurrentPct = 1;
 
-        public float cranePauseTicks;
+        public float cranePauseTicks = 0;
 
         ModExtension_CraneTopData craneTopData => def.GetModExtension<ModExtension_CraneTopData>();
 
@@ -44,7 +44,7 @@ namespace Motorization
         {
             base.Draw();
             CurrentBill?.ResultGraphic?.Draw(DrawPos + new Vector3(0, -0.01f, -0.2f), Rotation, this);
-            craneTopData?.graphicData.Draw(DrawPos + craneTopData.GetDrawOffset(Rotation, craneCurrentPct), Rotation, this);
+            craneTopData?.graphicData.Graphic.Draw(DrawPos + craneTopData.GetDrawOffset(Rotation, craneCurrentPct) + Altitudes.AltIncVect, Rotation, this);
         }
 
         public bool CellOccupied()
@@ -83,7 +83,7 @@ namespace Motorization
             }
             if (cranePauseTicks <= 0)
             {
-                float speed = craneTopData.PctPerSec / 60;
+                float speed = craneTopData.PctPerSec / 6000;
                 if (Math.Abs(craneTargetPct - craneCurrentPct) <= speed)
                 {
                     craneCurrentPct = craneTargetPct;
@@ -112,7 +112,6 @@ namespace Motorization
             Thing thing = ThingMaker.MakeThing(bill.recipe.GetModExtension<ModExt_RTCVehicleRecipe>().thing);
             thing.SetFaction(Faction);
             GenSpawn.Spawn(thing, Position, Map, Rotation);
-            Log.Message(thing.Rotation.ToString());
             if (CurrentBill == bill)
             {
                 CurrentBill = null;
@@ -122,7 +121,7 @@ namespace Motorization
 
     internal class ModExtension_CraneTopData : DefModExtension
     {
-        public Graphic graphicData;
+        public GraphicData graphicData;
 
         public CraneEndpoints EndpointSouth;
 
@@ -132,9 +131,9 @@ namespace Motorization
 
         public CraneEndpoints EndpointWest;
 
-        public float PctPerSec = 5f;
+        public float PctPerSec = 15f;
 
-        public IntRange pauseTickRange = new IntRange(60, 600);
+        public IntRange pauseTickRange = new IntRange(60, 300);
 
         public Vector3 GetDrawOffset(Rot4 rotation, float pct)
         {
@@ -160,20 +159,15 @@ namespace Motorization
             switch (rotation.AsInt)
             {
                 case 0:
-                    return DrawOffsetPct(EndpointNorth.endPointA, EndpointNorth.endPointB, pct);
+                    return Vector3.Lerp(EndpointNorth.endPointA, EndpointNorth.endPointB, pct);
                 case 1:
-                    return DrawOffsetPct(EndpointEast.endPointA, EndpointEast.endPointB, pct);
+                    return Vector3.Lerp(EndpointEast.endPointA, EndpointEast.endPointB, pct);
                 case 2:
-                    return DrawOffsetPct(EndpointSouth.endPointA, EndpointSouth.endPointB, pct);
+                    return Vector3.Lerp(EndpointSouth.endPointA, EndpointSouth.endPointB, pct);
                 case 3:
-                    return DrawOffsetPct(EndpointWest.endPointA, EndpointWest.endPointB, pct);
+                    return Vector3.Lerp(EndpointWest.endPointA, EndpointWest.endPointB, pct);
             }
             return Vector3.zero;
-        }
-
-        Vector3 DrawOffsetPct(Vector3 A, Vector3 B, float pct)
-        {
-            return A + (A - B) * pct;
         }
     }
 
