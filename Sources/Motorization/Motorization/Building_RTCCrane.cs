@@ -55,10 +55,9 @@ namespace Motorization
         public void Notify_BillComplete(Bill bill)
         {
             Thing thing = ThingMaker.MakeThing(bill.recipe.GetModExtension<ModExt_RTCVehicleRecipe>().thing);
-            thing.Rotation = Rotation;
-            Log.Message(thing.Rotation.ToString());
             thing.SetFaction(Faction);
-            GenSpawn.Spawn(thing, Position, Map);
+            GenSpawn.Spawn(thing, Position, Map, Rotation);
+            Log.Message(thing.Rotation.ToString());
             if (CurrentBill == bill)
             {
                 CurrentBill = null;
