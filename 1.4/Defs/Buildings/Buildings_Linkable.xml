@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>RTC_ToolShelf</defName>
+		<label>tool shelf</label>
+		<description>Increases work speed when placed near a Carne or Assembly platfrom. One workbench can use up to two tool shelves.</description>
+		<graphicData>
+		  <texPath>Buildings/ToolShelf/toolShelf</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(2,1)</drawSize>
+		  <color>(90,90,90)</color>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.35</staticSunShadowHeight>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>42</pathCost>
+		<statBases>
+		  <MaxHitPoints>100</MaxHitPoints>
+		  <WorkToBuild>1800</WorkToBuild>
+		  <Mass>20</Mass>
+		  <Flammability>0.5</Flammability>
+		</statBases>
+		<size>(2,1)</size>
+		<costList>
+		  <Steel>100</Steel>
+		  <ComponentIndustrial>2</ComponentIndustrial>		  
+		</costList>
+		<building>
+		  <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+		  <li>Machining</li>
+		</researchPrerequisites>
+		<designationCategory>Misc</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<thingCategories>
+		  <li>BuildingsMisc</li>
+		</thingCategories>
+		<comps>
+		  <li Class="CompProperties_Facility">
+			<statOffsets>
+			  <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
+			</statOffsets>
+			<maxSimultaneous>2</maxSimultaneous>
+		  </li>
+		</comps>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	  </ThingDef>
+</Defs>

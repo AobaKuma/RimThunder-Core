@@ -43,6 +43,7 @@
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
 					<li>ToolCabinet</li>
+					<li>RTC_ToolShelf</li>
 				</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Power">
@@ -128,6 +129,7 @@
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
 					<li>ToolCabinet</li>
+					<li>RTC_ToolShelf</li>
 				</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Flickable"/>
@@ -176,15 +178,15 @@
 				<graphicData>
 					<texPath>Buildings/Crane/CraneTop/CraneTop</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>(6,2)</drawSize>
+					<drawSize>(8,4)</drawSize>
 				</graphicData>
 				<EndpointEast>
-					<endPointA>(-4,0,1)</endPointA>
-					<endPointB>(4,0,1)</endPointB>
+					<endPointA>(-3,0,0.25)</endPointA>
+					<endPointB>(3,0,0.25)</endPointB>
 				</EndpointEast>
 				<EndpointNorth>
-					<endPointA>(0,0,5)</endPointA>
-					<endPointB>(0,0,-3)</endPointB>
+					<endPointA>(0,0,4.75)</endPointA>
+					<endPointB>(0,0,-2.75)</endPointB>
 				</EndpointNorth>
 			</li>
 		</modExtensions>
@@ -223,57 +225,4 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
-
-	<ThingDef ParentName="BuildingBase">
-		<defName>RTC_CraneColumn</defName>
-		<label>column</label>
-		<description>A column capable of holding a roof. Does not block sight or movement and looks quite nice.</description>
-		<designationCategory>Structure</designationCategory>
-		<uiOrder>2040</uiOrder>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>PassThroughOnly</passability>
-		<fillPercent>0.25</fillPercent>
-		<pathCost>0</pathCost>
-		<statBases>
-			<MaxHitPoints>160</MaxHitPoints>
-			<WorkToBuild>750</WorkToBuild>
-			<Mass>10</Mass>
-			<Flammability>1.0</Flammability>
-			<Beauty>5</Beauty>
-			<StyleDominance MayRequire="Ludeon.RimWorld.Ideology">10</StyleDominance>
-		</statBases>
-		<stuffCategories>
-			<li>Metallic</li>
-			<li>Woody</li>
-			<li>Stony</li>
-		</stuffCategories>
-		<costStuffCount>20</costStuffCount>
-		<holdsRoof>true</holdsRoof>
-		<canOverlapZones>false</canOverlapZones>
-		<rotatable>false</rotatable>
-		<fertility>0</fertility>
-		<specialDisplayRadius>6.9</specialDisplayRadius>
-		<!-- must be kept in sync with roof hold-up radius -->
-		<building>
-			<isInert>true</isInert>
-			<ai_chillDestination>false</ai_chillDestination>
-			<paintable>true</paintable>
-		</building>
-		<graphicData>
-			<drawSize>(1,1.25)</drawSize>
-			<drawOffset>(0,0,0.2)</drawOffset>
-			<texPath>Things/Building/Furniture/Column</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shadowData>
-				<volume>(0.3, 0.5, 0.3)</volume>
-				<offset>(0,0,-0.23)</offset>
-			</shadowData>
-			<damageData>
-				<rect>(0.2,0.2,0.6,0.6)</rect>
-			</damageData>
-		</graphicData>
-		<comps>
-			<li Class="CompProperties_Styleable" />
-		</comps>
-	</ThingDef>
 </Defs>

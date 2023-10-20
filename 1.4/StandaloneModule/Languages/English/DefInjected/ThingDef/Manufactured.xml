@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- 鑄造模具 -->
-
-  <ComponentCastingmold.label>casting mold</ComponentCastingmold.label>
-  <ComponentCastingmold.description>a mold case for casting metal parts. the mold shape is engraving at art table and place in a wooden box filled with sand.</ComponentCastingmold.description>
-
-
   <!-- 重型鑄件 -->
 
   <ComponentHeavyCasting.label>heavy compoment</ComponentHeavyCasting.label>
