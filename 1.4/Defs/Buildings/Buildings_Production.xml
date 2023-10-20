@@ -8,7 +8,7 @@
 		<priorityInType>100</priorityInType>
 		<fixedBillGiverDefs>
 			<li>RT_AssemblyBench</li>
-			<li>RT_CraneTest</li>
+			<li>RT_AssemblyCrane</li>
 		</fixedBillGiverDefs>
 		<verb>Operate</verb>
 		<gerund>Operating at</gerund>
@@ -101,9 +101,9 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BenchBase">
-		<defName>RT_CraneTest</defName>
-		<label>crane test</label>
-		<description>A workbench with heavy equipment and tools for components assembly.</description>
+		<defName>RT_AssemblyCrane</defName>
+		<label>assembly bridge crane</label>
+		<description>A type of crane found in industrial environments, often used in the assembly and maintenance of heavy equipment and vehicles.</description>
 		<thingClass>Motorization.Building_RTCCrane</thingClass>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
@@ -192,37 +192,15 @@
 		</modExtensions>
 	</ThingDef>
 
-
-	<RecipeDef>
-		<defName>TestRTCcraneRecipe</defName>
-		<label>test</label>
-		<description>Make a component.</description>
-		<jobString>Making component.</jobString>
+	<RecipeDef Name="RT_BaseVehicleRecipe" Abstract="True">
+		<description>assemble a vehicle.</description>
+		<jobString>vehicle assembling.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
+		<effectWorking>Repair</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
-		<workAmount>600</workAmount>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Steel</li>
-					</thingDefs>
-				</filter>
-				<count>12</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Steel</li>
-			</thingDefs>
-		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>RT_AssemblyCrane</li>
+		</recipeUsers>
 		<workSkill>Crafting</workSkill>
-		<displayPriority>0</displayPriority>
-		<modExtensions>
-			<li Class="Motorization.ModExt_RTCVehicleRecipe">
-				<thing>RT_M3A1_Stuart_Blueprint</thing>
-			</li>
-		</modExtensions>
 	</RecipeDef>
 </Defs>
