@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Turret Sub-->
+				<li Class="PatchOperationReplace">
+					<xpath>
+						Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/projectile</xpath>
+					<value>
+						<projectile>Bullet_40x46mmGrenade_Smoke</projectile>
+					</value>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>
+						Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/chargePerAmmoCount</xpath>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>
+						Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/genericAmmo</xpath>
+					<value>
+						<genericAmmo>false</genericAmmo>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>
+						Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/ammunition/thingDefs</xpath>
+					<value>
+						<thingDefs>
+							<li>Ammo_40x46mmGrenade_Smoke</li>
+							<li>Ammo_40x46mmGrenade_HE</li>
+							<li>Ammo_40x46mmGrenade_HE_TFuzed</li>
+							<li>Ammo_40x46mmGrenade_HEDP</li>
+							<li>Ammo_40x46mmGrenade_EMP</li>
+						</thingDefs>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]</xpath>
+					<value>
+						<li Class="Vehicles.CETurretDataDefModExtension">
+							<ammoSet>AmmoSet_40x46mmGrenade</ammoSet>
+							<shotHeight>2</shotHeight>
+							<speed>20</speed>
+							<sway>1</sway>
+							<spread>0.5</spread>
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
