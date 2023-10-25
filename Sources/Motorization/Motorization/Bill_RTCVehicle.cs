@@ -15,6 +15,10 @@ namespace Motorization
 
         public ModExt_RTCVehicleRecipe Extension => recipe.GetModExtension<ModExt_RTCVehicleRecipe>();
 
+        public Bill_RTCVehicle()
+        {
+        }
+
         public Bill_RTCVehicle(RecipeDef recipe, Precept_ThingStyle precept = null) : base(recipe, precept)
         {
         }

@@ -137,6 +137,7 @@
 		</comps>
 		<recipes>
 			<li>TestRTCcraneRecipe</li>
+			<li>TestRTCcraneRecipeB</li>
 		</recipes>
 		<graphicData>
 			<texPath>Buildings/Crane/Crane</texPath>
@@ -221,7 +222,40 @@
 		<displayPriority>0</displayPriority>
 		<modExtensions>
 			<li Class="Motorization.ModExt_RTCVehicleRecipe">
-				<thing>RT_M3A1_Stuart_Blueprint</thing>
+				<thing>RT_Circular_Saw_Blueprint</thing>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>TestRTCcraneRecipeB</defName>
+		<label>test2</label>
+		<description>Make a component.</description>
+		<jobString>Making component.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>600</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>12</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Crafting</workSkill>
+		<displayPriority>0</displayPriority>
+		<modExtensions>
+			<li Class="Motorization.ModExt_RTCVehicleRecipe">
+				<thing>RT_Striker_CAV_Blueprint</thing>
 			</li>
 		</modExtensions>
 	</RecipeDef>
