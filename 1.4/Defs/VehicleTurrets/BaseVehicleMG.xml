@@ -23,7 +23,7 @@
 		<label>light machine gun</label>
 		<minRange>2</minRange>
 		<maxRange>32.9</maxRange>
-		<rotationSpeed>1.95</rotationSpeed>	
+		<rotationSpeed>1.95</rotationSpeed>
 		<warmUpTimer>1.5</warmUpTimer>
 		<shotSound>GunShotA</shotSound>
 		<projectile>RT_Bullet_LMG</projectile>
@@ -38,11 +38,11 @@
 		</ammunition>
 		<fireModes>
 			<li>
-				<shotsPerBurst>1</shotsPerBurst>
+				<shotsPerBurst>6</shotsPerBurst>
 				<ticksBetweenShots>6</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
-				<label>Single</label>
-				<texPath>UI/Gizmos/FireRate_Single</texPath>
+				<label>Auto</label>
+				<texPath>UI/Gizmos/FireRate_Auto</texPath>
 			</li>
 			<li>
 				<shotsPerBurst>3</shotsPerBurst>
@@ -52,11 +52,11 @@
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>
 			<li>
-				<shotsPerBurst>6</shotsPerBurst>
+				<shotsPerBurst>1</shotsPerBurst>
 				<ticksBetweenShots>6</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
-				<label>Auto</label>
-				<texPath>UI/Gizmos/FireRate_Auto</texPath>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
 		</fireModes>
 	</Vehicles.VehicleTurretDef>
@@ -65,16 +65,16 @@
 		<defName>RT_Bullet_LMG</defName>
 		<label>LMG bullet</label>
 		<graphicData>
-		  <texPath>Things/Projectile/Bullet_Small</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-		  <damageDef>Bullet</damageDef>
-		  <damageAmountBase>11</damageAmountBase>
-		  <stoppingPower>1</stoppingPower>
-		  <speed>50</speed>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>11</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>50</speed>
 		</projectile>
-	  </ThingDef>
+	</ThingDef>
 
 
 	<!-- 車載輕機槍 7.62 / 7.92 / 8.58 / 8.6 -->
@@ -82,7 +82,7 @@
 		<label>mounted machine gun</label>
 		<minRange>2</minRange>
 		<maxRange>48.9</maxRange>
-		<rotationSpeed>1.5</rotationSpeed>	
+		<rotationSpeed>1.5</rotationSpeed>
 		<warmUpTimer>1.75</warmUpTimer>
 		<shotSound>GunShotA</shotSound>
 		<projectile>RT_Bullet_MMG</projectile>
@@ -97,11 +97,11 @@
 		</ammunition>
 		<fireModes>
 			<li>
-				<shotsPerBurst>1</shotsPerBurst>
+				<shotsPerBurst>6</shotsPerBurst>
 				<ticksBetweenShots>8</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
-				<label>Single</label>
-				<texPath>UI/Gizmos/FireRate_Single</texPath>
+				<label>Auto</label>
+				<texPath>UI/Gizmos/FireRate_Auto</texPath>
 			</li>
 			<li>
 				<shotsPerBurst>3</shotsPerBurst>
@@ -111,11 +111,11 @@
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>
 			<li>
-				<shotsPerBurst>6</shotsPerBurst>
+				<shotsPerBurst>1</shotsPerBurst>
 				<ticksBetweenShots>8</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
-				<label>Auto</label>
-				<texPath>UI/Gizmos/FireRate_Auto</texPath>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
 		</fireModes>
 	</Vehicles.VehicleTurretDef>
@@ -129,20 +129,20 @@
 			<drawSize>1</drawSize>
 		</graphicData>
 		<projectile>
-		  <damageDef>Bullet</damageDef>
-		  <damageAmountBase>18</damageAmountBase>
-		  <stoppingPower>1</stoppingPower>
-		  <speed>60</speed>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>18</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>60</speed>
 		</projectile>
-	  </ThingDef>
+	</ThingDef>
 
-	  
+
 	<!-- 車載輕機槍 12.7 / 14.5 -->
 	<Vehicles.VehicleTurretDef Name="RT_BaseVehicleMG_Heavy" ParentName="RT_BaseVehicleMG" Abstract="True">
 		<label>heavy machine gun</label>
 		<minRange>2</minRange>
 		<maxRange>56.9</maxRange>
-		<rotationSpeed>1</rotationSpeed>	
+		<rotationSpeed>1</rotationSpeed>
 		<warmUpTimer>2.00</warmUpTimer>
 		<shotSound>GunShotA</shotSound>
 		<projectile>RT_Bullet_HMG</projectile>
@@ -157,11 +157,11 @@
 		</ammunition>
 		<fireModes>
 			<li>
-				<shotsPerBurst>1</shotsPerBurst>
+				<shotsPerBurst>6</shotsPerBurst>
 				<ticksBetweenShots>10</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
-				<label>Single</label>
-				<texPath>UI/Gizmos/FireRate_Single</texPath>
+				<label>Auto</label>
+				<texPath>UI/Gizmos/FireRate_Auto</texPath>
 			</li>
 			<li>
 				<shotsPerBurst>3</shotsPerBurst>
@@ -171,11 +171,11 @@
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>
 			<li>
-				<shotsPerBurst>6</shotsPerBurst>
+				<shotsPerBurst>1</shotsPerBurst>
 				<ticksBetweenShots>10</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
-				<label>Auto</label>
-				<texPath>UI/Gizmos/FireRate_Auto</texPath>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
 		</fireModes>
 	</Vehicles.VehicleTurretDef>
@@ -189,10 +189,10 @@
 			<drawSize>1.4</drawSize>
 		</graphicData>
 		<projectile>
-		  <damageDef>Bullet</damageDef>
-		  <damageAmountBase>45</damageAmountBase>
-		  <stoppingPower>3</stoppingPower>
-		  <speed>80</speed>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>45</damageAmountBase>
+			<stoppingPower>3</stoppingPower>
+			<speed>80</speed>
 		</projectile>
-	  </ThingDef>
+	</ThingDef>
 </Defs>
