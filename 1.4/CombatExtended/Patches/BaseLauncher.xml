@@ -40,7 +40,7 @@
 		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]</xpath>
 		<value>
 			<li Class="Vehicles.CETurretDataDefModExtension">
-				<ammoSet>AmmoSet_40x46mmGrenade</ammoSet>
+				<ammoSet>RTC_AmmoSet_SmokeGrenade</ammoSet>
 				<shotHeight>2</shotHeight>
 				<speed>20</speed>
 				<sway>1</sway>

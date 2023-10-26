@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<CombatExtended.AmmoSetDef>
+		<defName>RTC_AmmoSet_SmokeGrenade</defName>
+		<label>40x46mm Grenades</label>
+		<ammoTypes>
+			<Ammo_40x46mmGrenade_Smoke>Bullet_40x46mmGrenade_Smoke</Ammo_40x46mmGrenade_Smoke>
+		</ammoTypes>
+		<similarTo>AmmoSet_LauncherGrenade</similarTo>
+	</CombatExtended.AmmoSetDef>
+</Defs>
