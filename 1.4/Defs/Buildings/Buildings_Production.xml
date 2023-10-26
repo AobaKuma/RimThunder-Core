@@ -190,8 +190,6 @@
 	</ThingDef>
 
 	<RecipeDef Name="RT_BaseVehicleRecipe" Abstract="True">
-		<defName>TestRTCcraneRecipeA</defName>
-		<label>testA</label>
 		<description>assemble a vehicle.</description>
 		<jobString>vehicle assembling.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
