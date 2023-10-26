@@ -135,10 +135,6 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Breakdownable"/>
 		</comps>
-		<recipes>
-			<li>TestRTCcraneRecipe</li>
-			<li>TestRTCcraneRecipeB</li>
-		</recipes>
 		<graphicData>
 			<texPath>Buildings/Crane/Crane</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -194,6 +190,8 @@
 	</ThingDef>
 
 	<RecipeDef Name="RT_BaseVehicleRecipe" Abstract="True">
+		<defName>TestRTCcraneRecipeA</defName>
+		<label>testA</label>
 		<description>assemble a vehicle.</description>
 		<jobString>vehicle assembling.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -203,44 +201,12 @@
 			<li>RT_AssemblyCrane</li>
 		</recipeUsers>
 		<workSkill>Crafting</workSkill>
-		<displayPriority>0</displayPriority>
+		<!--
 		<modExtensions>
 			<li Class="Motorization.ModExt_RTCVehicleRecipe">
 				<thing>RT_Circular_Saw_Blueprint</thing>
 			</li>
 		</modExtensions>
-	</RecipeDef>
-
-	<RecipeDef>
-		<defName>TestRTCcraneRecipeB</defName>
-		<label>test2</label>
-		<description>Make a component.</description>
-		<jobString>Making component.</jobString>
-		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Recipe_Machining</soundWorking>
-		<workAmount>600</workAmount>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Steel</li>
-					</thingDefs>
-				</filter>
-				<count>12</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Steel</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<workSkill>Crafting</workSkill>
-		<displayPriority>0</displayPriority>
-		<modExtensions>
-			<li Class="Motorization.ModExt_RTCVehicleRecipe">
-				<thing>RT_Striker_CAV_Blueprint</thing>
-			</li>
-		</modExtensions>
+		-->
 	</RecipeDef>
 </Defs>
