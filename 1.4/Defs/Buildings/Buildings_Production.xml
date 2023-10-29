@@ -44,6 +44,7 @@
 				<linkableFacilities>
 					<li>ToolCabinet</li>
 					<li>RTC_ToolShelf</li>
+					<li>RTC_BlastCabinet</li>
 				</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Power">
@@ -130,6 +131,7 @@
 				<linkableFacilities>
 					<li>ToolCabinet</li>
 					<li>RTC_ToolShelf</li>
+					<li>RTC_EngineHanger</li>
 				</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Flickable"/>

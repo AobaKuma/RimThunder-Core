@@ -3,7 +3,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>RTC_ToolShelf</defName>
 		<label>tool shelf</label>
-		<description>Increases work speed when placed near a Carne or Assembly platfrom. One workbench can use up to two tool shelves.</description>
+		<description>Increases work speed when placed near a bridge crane or Assembly platfrom. One workbench can use up to two tool shelves.</description>
 		<graphicData>
 		  <texPath>Buildings/ToolShelf/toolShelf</texPath>
 		  <graphicClass>Graphic_Multi</graphicClass>
@@ -28,6 +28,121 @@
 		  <WorkToBuild>1800</WorkToBuild>
 		  <Mass>20</Mass>
 		  <Flammability>0.5</Flammability>
+		</statBases>
+		<size>(2,1)</size>
+		<costList>
+		  <Steel>100</Steel>
+		  <ComponentIndustrial>2</ComponentIndustrial>		  
+		</costList>
+		<building>
+		  <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+		  <li>Machining</li>
+		</researchPrerequisites>
+		<designationCategory>Misc</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<thingCategories>
+		  <li>BuildingsMisc</li>
+		</thingCategories>
+		<comps>
+		  <li Class="CompProperties_Facility">
+			<statOffsets>
+			  <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
+			</statOffsets>
+			<maxSimultaneous>2</maxSimultaneous>
+		  </li>
+		</comps>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	  </ThingDef>
+
+	  <ThingDef ParentName="BuildingBase">
+		<defName>RTC_BlastCabinet</defName>
+		<label>blast cabinet</label>
+		<description>A blast cabinet is essentially a closed loop system that allows the operator to blast the part and recycle the abrasive. Increases work speed when placed near an Assembly platfrom. One workbench can use one blast cabinet.</description>
+		<graphicData>
+		  <texPath>Buildings/BlastCabinet/building</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(2,1)</drawSize>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.35</staticSunShadowHeight>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>42</pathCost>
+		<statBases>
+		  <MaxHitPoints>100</MaxHitPoints>
+		  <WorkToBuild>1800</WorkToBuild>
+		  <Mass>20</Mass>
+		  <Flammability>0.5</Flammability>
+		</statBases>
+		<size>(2,1)</size>
+		<costList>
+		  <Steel>100</Steel>
+		  <ComponentIndustrial>2</ComponentIndustrial>		  
+		</costList>
+		<building>
+		  <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+		  <li>Machining</li>
+		</researchPrerequisites>
+		<designationCategory>Misc</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<thingCategories>
+		  <li>BuildingsMisc</li>
+		</thingCategories>
+		<comps>
+		  <li Class="CompProperties_Facility">
+			<statOffsets>
+			  <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
+			</statOffsets>
+			<maxSimultaneous>1</maxSimultaneous>
+		  </li>
+		</comps>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	  </ThingDef>
+
+	  <ThingDef ParentName="BuildingBase">
+		<defName>RTC_EngineHanger</defName>
+		<label>engine hanger</label>
+		<description>Increases work speed when placed near a bridge crane. One workbench can use up to two engine hanger.</description>
+		<graphicData>
+		  <texPath>Buildings/EngineHanger/building</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>0.75</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>50</pathCost>
+		<statBases>
+		  <MaxHitPoints>140</MaxHitPoints>
+		  <WorkToBuild>3000</WorkToBuild>
+		  <Mass>20</Mass>
+		  <Flammability>0</Flammability>
 		</statBases>
 		<size>(2,1)</size>
 		<costList>
