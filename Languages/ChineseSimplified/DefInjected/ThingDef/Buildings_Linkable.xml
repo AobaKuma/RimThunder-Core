@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RTC_ToolShelf.label>tool shelf</RTC_ToolShelf.label>
+  <RTC_ToolShelf.description>Increases work speed when placed near a bridge crane or Assembly platfrom. One workbench can use up to two tool shelves.</RTC_ToolShelf.description>
+
+  <RTC_BlastCabinet.label>blast cabinet</RTC_BlastCabinet.label>
+  <RTC_BlastCabinet.description>A blast cabinet is essentially a closed loop system that allows the operator to blast the part and recycle the abrasive. Increases work speed when placed near an Assembly platfrom. One workbench can use one blast cabinet.</RTC_BlastCabinet.description>
+
+  <RTC_EngineHanger.label>engine hanger</RTC_EngineHanger.label>
+  <RTC_EngineHanger.description>Increases work speed when placed near a bridge crane. One workbench can use up to two engine hanger.</RTC_EngineHanger.description>
+
+
+</LanguageData>

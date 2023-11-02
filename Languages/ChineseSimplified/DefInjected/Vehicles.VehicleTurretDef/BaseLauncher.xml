@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RT_GrenadeLauncher.label>Smoke grenade launcher</RT_GrenadeLauncher.label>
+  <RT_GrenadeLauncher.fireModes.0.label>Single</RT_GrenadeLauncher.fireModes.0.label>
+  <RT_GrenadeLauncher.fireModes.1.label>Burst</RT_GrenadeLauncher.fireModes.1.label>
+
+
+</LanguageData>

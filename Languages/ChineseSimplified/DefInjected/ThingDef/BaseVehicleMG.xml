@@ -6,14 +6,17 @@
   <RT_Bullet_LMG.label>轻机枪弹</RT_Bullet_LMG.label>
 
 
-  <!-- 车载轻机枪 7.62 / 7.92 / 8.58 / 8.6 -->
+  <!-- 車載輕機槍 7.62 / 7.92 / 8.58 / 8.6 -->
 
   <RT_Bullet_MMG.label>机枪弹</RT_Bullet_MMG.label>
 
 
-  <!-- 车载轻机枪 12.7 / 14.5 -->
+  <!-- 車載輕機槍 12.7 / 14.5 -->
 
   <RT_Bullet_HMG.label>重机枪弹</RT_Bullet_HMG.label>
 
+
+  <!-- 车载轻机枪 7.62 / 7.92 / 8.58 / 8.6 -->
+  <!-- 车载轻机枪 12.7 / 14.5 -->
 
 </LanguageData>

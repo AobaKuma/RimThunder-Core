@@ -4,4 +4,8 @@
   <RT_AssemblyBench.label>组装平台</RT_AssemblyBench.label>
   <RT_AssemblyBench.description>一个能制造重型零件的重型工作台.</RT_AssemblyBench.description>
 
+  <RT_AssemblyCrane.label>assembly bridge crane</RT_AssemblyCrane.label>
+  <RT_AssemblyCrane.description>A type of crane found in industrial environments, often used in the assembly and maintenance of heavy equipment and vehicles.</RT_AssemblyCrane.description>
+
+
 </LanguageData>
