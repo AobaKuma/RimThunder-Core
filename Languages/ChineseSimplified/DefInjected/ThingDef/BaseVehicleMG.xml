@@ -1,22 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- 班用機槍 5.56 / 5.8 -->
+  <!-- 班用机枪 5.56 / 5.8 -->
 
   <RT_Bullet_LMG.label>轻机枪弹</RT_Bullet_LMG.label>
 
 
-  <!-- 車載輕機槍 7.62 / 7.92 / 8.58 / 8.6 -->
+  <!-- 车载轻机枪 7.62 / 7.92 / 8.58 / 8.6 -->
 
   <RT_Bullet_MMG.label>机枪弹</RT_Bullet_MMG.label>
 
 
-  <!-- 車載輕機槍 12.7 / 14.5 -->
+  <!-- 车载轻机枪 12.7 / 14.5 -->
 
   <RT_Bullet_HMG.label>重机枪弹</RT_Bullet_HMG.label>
 
-
-  <!-- 车载轻机枪 7.62 / 7.92 / 8.58 / 8.6 -->
-  <!-- 车载轻机枪 12.7 / 14.5 -->
 
 </LanguageData>
