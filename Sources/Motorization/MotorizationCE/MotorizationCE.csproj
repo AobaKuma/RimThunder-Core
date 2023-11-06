@@ -85,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompProjectileSelfDestruct.cs" />
     <Compile Include="ProjectileCE_ArcSpread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,37 +2,23 @@
 <Patch>
 	<!-- Turret Sub-->
 	<Operation Class="PatchOperationReplace">
-		<xpath>
-			Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/projectile
-		</xpath>
+		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/projectile</xpath>
 		<value>
 			<projectile>Bullet_40x46mmGrenade_Smoke</projectile>
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>
-			Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/chargePerAmmoCount
-		</xpath>
-	</Operation>
-
 	<Operation Class="PatchOperationReplace">
-		<xpath>
-			Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/genericAmmo
-		</xpath>
+		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/chargePerAmmoCount</xpath>
 		<value>
-			<genericAmmo>false</genericAmmo>
+			<chargePerAmmoCount>5</chargePerAmmoCount>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>
-			Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/ammunition/thingDefs
-		</xpath>
+		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/genericAmmo</xpath>
 		<value>
-			<thingDefs>
-				<li>Ammo_40x46mmGrenade_Smoke</li>
-			</thingDefs>
+			<genericAmmo>false</genericAmmo>
 		</value>
 	</Operation>
 

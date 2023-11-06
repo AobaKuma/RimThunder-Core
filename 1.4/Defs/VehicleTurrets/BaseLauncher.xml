@@ -9,8 +9,8 @@
 		<reloadTimer>10</reloadTimer>
 		<autoRefuelProportion>1</autoRefuelProportion>
 		<warmUpTimer>0</warmUpTimer>
-		<magazineCapacity>8</magazineCapacity>
-		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<magazineCapacity>2</magazineCapacity>
+		<chargePerAmmoCount>15</chargePerAmmoCount>
 		<genericAmmo>true</genericAmmo>
 		<hitFlags>IntendedTarget</hitFlags>
 		<maxRange>15</maxRange>
