@@ -5,7 +5,7 @@
 		<label>Smoke grenade launcher</label>
 		<turretType>Static</turretType>
 		<shotSound>Shot_IncendiaryLauncher</shotSound>
-		<projectile>Bullet_SmokeLauncher</projectile>
+		<projectile>Bullet_RTCSmoke</projectile>
 		<reloadTimer>10</reloadTimer>
 		<autoRefuelProportion>1</autoRefuelProportion>
 		<warmUpTimer>0</warmUpTimer>
@@ -40,4 +40,26 @@
 			</thingDefs>
 		</ammunition>
 	</Vehicles.VehicleTurretDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_RTCSmoke</defName>
+		<label>smoke launcher shell</label>
+		<graphicData>
+			<texPath>Things/Projectile/LauncherShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(140,135,156)</color>
+		</graphicData>
+		<thingClass>Motorization.Projectile_ArcSpread</thingClass>
+		<projectile>
+			<speed>40</speed>
+			<damageDef>Smoke</damageDef>
+		</projectile>
+		<modExtensions>
+			<li Class="Motorization.RotationalArcSpreadExtension">
+				<projectile>Bullet_SmokeLauncher</projectile>
+				<range>10~15</range>
+			</li>
+		</modExtensions>
+	</ThingDef>
 </Defs>
