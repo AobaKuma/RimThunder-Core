@@ -4,13 +4,13 @@
 		<defName>RTC_AmmoSet_SmokeGrenade</defName>
 		<label>40x46mm Grenades</label>
 		<ammoTypes>
-			<Ammo_40x46mmGrenade_Smoke>Bullet_RTCSmoke</Ammo_40x46mmGrenade_Smoke>
+			<Ammo_40x46mmGrenade_Smoke>BulletCE_RTCSmoke</Ammo_40x46mmGrenade_Smoke>
 		</ammoTypes>
 		<similarTo>AmmoSet_LauncherGrenade</similarTo>
 	</CombatExtended.AmmoSetDef>
 
 	<ThingDef ParentName="Base40x46mmGrenadeBullet">
-		<defName>Bullet_RTCSmoke</defName>
+		<defName>BulletCE_RTCSmoke</defName>
 		<label>40x46mm grenade (Smoke)</label>
 		<thingClass>BillDoorsFramework.ProjectileCE_ArcSpread</thingClass>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
@@ -18,15 +18,15 @@
 			<damageAmountBase>0</damageAmountBase>
 		</projectile>
 		<modExtensions>
-			<li Class="MotorizationCE.RotationalArcSpreadExtension">
+			<li Class="Motorization.RotationalArcSpreadExtension">
 				<arc>35</arc>
-				<projectile>Bullet_3HSTVFSmokeSub</projectile>
+				<projectile>BulletCE_RTCSmokeSub</projectile>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
 	<ThingDef ParentName="Base40x46mmGrenadeBullet">
-		<defName>Bullet_RTCSmokeSub</defName>
+		<defName>BulletCE_RTCSmokeSub</defName>
 		<label>40x46mm grenade (Smoke)</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<explosionRadius>2</explosionRadius>
