@@ -31,8 +31,6 @@
 			<WorkToBuild>5000</WorkToBuild>
 			<Flammability>0.5</Flammability>
 		</statBases>
-		<!-- <minifiedDef /> -->
-		<thingCategories Inherit="false" />
 		<size>(5,2)</size>
 		<costList>
 			<Steel>200</Steel>
@@ -118,13 +116,13 @@
 			<WorkToBuild>5000</WorkToBuild>
 			<Flammability>0.5</Flammability>
 		</statBases>
-		<!-- <minifiedDef /> -->
+		<minifiedDef Inherit="false"/>
 		<thingCategories IsNull="true" Inherit="false"/>
 		<size>(7,9)</size>
 		<costList>
-			<Steel>200</Steel>
-			<ComponentIndustrial>10</ComponentIndustrial>
-			<ComponentSpacer>1</ComponentSpacer>
+			<Steel>300</Steel>
+			<ComponentIndustrial>12</ComponentIndustrial>
+			<ComponentTransmission>5</ComponentTransmission>
 		</costList>
 		<comps>
 			<li Class="CompProperties_AffectedByFacilities">
@@ -137,6 +135,8 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Breakdownable"/>
 		</comps>
+		<uiIconPath>Buildings/Crane/Crane</uiIconPath>
+		<uiIconScale>1.2</uiIconScale>
 		<graphicData>
 			<texPath>Buildings/Crane/Crane</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -166,6 +166,7 @@
 		<surfaceType>Item</surfaceType>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 		<placeWorkers>
+			<li>Motorization.PlaceWorker_Crane</li>
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
@@ -187,6 +188,9 @@
 					<endPointA>(0,0,4.75)</endPointA>
 					<endPointB>(0,0,-2.75)</endPointB>
 				</EndpointNorth>
+			</li>
+			<li Class="Motorization.ModExtension_CranePlaceWorker">
+				<!-- <pillarDef>Wall</pillarDef> -->
 			</li>
 		</modExtensions>
 	</ThingDef>

@@ -3,7 +3,7 @@
 	<name>RimThunder - Core</name>
 	<author>RimThunderTeams</author>
 	<packageId>RimThunder.Core</packageId>
-	<description>todo.</description>
+	<description>the framework and resource library for vehicle mods.</description>
 	<supportedVersions>
 		<li>1.4</li>
 	</supportedVersions>
