@@ -190,7 +190,7 @@
 				</EndpointNorth>
 			</li>
 			<li Class="Motorization.ModExtension_CranePlaceWorker">
-				<!-- <pillarDef>Wall</pillarDef> -->
+				<pillarDef>Wall</pillarDef>
 			</li>
 		</modExtensions>
 	</ThingDef>

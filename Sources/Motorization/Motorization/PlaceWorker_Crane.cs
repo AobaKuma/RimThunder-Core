@@ -22,8 +22,8 @@ namespace Motorization
         public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null, Thing thing = null)
         {
             ModExtension_CranePlaceWorker ext = checkingDef.GetModExtension<ModExtension_CranePlaceWorker>();
-            if (ext == null) { return true; }
-
+            if (ext == null) { Log.ErrorOnce(checkingDef.defName + " has PlaceWorker_Crane without ModExtension_CranePlaceWorker", 1919810); return true; }
+            if (ext.pillarDef == null) { Log.ErrorOnce(checkingDef.defName + " has ModExtension_CranePlaceWorker without pillarDef", 114514); return true; }
             List<IntVec3> cells = GetAdjacentCorners(GenAdj.OccupiedRect(loc, rot, checkingDef.Size)).ToList();
 
             bool placeable = true;
