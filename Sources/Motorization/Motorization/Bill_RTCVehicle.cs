@@ -9,7 +9,7 @@ using Verse;
 
 namespace Motorization
 {
-    public class Bill_RTCVehicle : Bill_Production
+    public class Bill_RTCVehicle : Bill_ProductionWithUft
     {
         public Building_RTCCrane WorkBench => billStack.billGiver as Building_RTCCrane;
 

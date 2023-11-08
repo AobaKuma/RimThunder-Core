@@ -195,12 +195,30 @@
 		</modExtensions>
 	</ThingDef>
 
+	<ThingDef ParentName="UnfinishedBase">
+		<thingClass>Motorization.UnfinishedRTCVehicle</thingClass>
+		<defName>RTC_UnfinishedVehicle</defName>
+		<label>unfinished vehicle</label>
+		<description>An unfinished vehicle's part and tools.</description>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedComponent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Beauty>-8</Beauty>
+			<Mass>100</Mass>
+		</statBases>
+	</ThingDef>
+
 	<RecipeDef Name="RT_BaseVehicleRecipe" Abstract="True">
 		<description>assemble a vehicle.</description>
 		<jobString>vehicle assembling.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Repair</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
+		<unfinishedThingDef>RTC_UnfinishedVehicle</unfinishedThingDef>
 		<recipeUsers>
 			<li>RT_AssemblyCrane</li>
 		</recipeUsers>
