@@ -68,6 +68,7 @@
     <Compile Include="Harmony\Harmony_BillUtility.cs" />
     <Compile Include="Building_RTCCrane.cs" />
     <Compile Include="Bill_RTCVehicle.cs" />
+    <Compile Include="UnfinishedRTCVehicle.cs" />
     <Compile Include="Projectile_ArcSpread.cs" />
     <Compile Include="PlaceWorker_Crane.cs" />
     <Compile Include="VehicleTurret_TurretRotationTick.cs" />
