@@ -223,12 +223,5 @@
 			<li>RT_AssemblyCrane</li>
 		</recipeUsers>
 		<workSkill>Crafting</workSkill>
-		<!--
-		<modExtensions>
-			<li Class="Motorization.ModExt_RTCVehicleRecipe">
-				<thing>RT_Circular_Saw_Blueprint</thing>
-			</li>
-		</modExtensions>
-		-->
 	</RecipeDef>
 </Defs>
