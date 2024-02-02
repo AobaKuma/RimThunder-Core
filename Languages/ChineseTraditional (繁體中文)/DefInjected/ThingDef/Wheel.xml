@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: road wheel -->
+  <ComponentWheelRoad.label>金屬車輪</ComponentWheelRoad.label>
+  <!-- EN: A metallic wheel that is capable to withstand heavier chassis, it's also the frame of tyre. -->
+  <ComponentWheelRoad.description>能夠承受較重車身的金屬輪，也被用於充氣輪胎的框架</ComponentWheelRoad.description>
+  
+  <!-- EN: tyre -->
+  <ComponentWheelTire.label>充氣輪胎</ComponentWheelTire.label>
+  <!-- EN: An advanced wheel consisting of an air-filled outer wheel and a metal rim. -->
+  <ComponentWheelTire.description>一種較為進步的工業輪胎，由金屬製輪鼓加上人造橡膠所組成,能更好的適應地面路況.</ComponentWheelTire.description>
+  
+</LanguageData>

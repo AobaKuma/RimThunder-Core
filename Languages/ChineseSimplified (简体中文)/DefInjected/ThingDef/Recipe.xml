@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: fueling compoment -->
+  <ComponentFuelTank.label>油路组件</ComponentFuelTank.label>
+  <!-- EN: metal parts such as fuel tank, carburetor, fuel pump and filter that is necessary for a fuel powered vehicle. -->
+  <ComponentFuelTank.description>滤清器，化油器与油泵等用于为发动机提供燃油输入的金属零件.</ComponentFuelTank.description>
+  
+  <!-- EN: transmisson compoment -->
+  <ComponentTransmission.label>传动组件</ComponentTransmission.label>
+  <!-- EN: Metal parts such as driveshafts, gearboxes, differentials and planetary gears that are necessary to transmit torque. -->
+  <ComponentTransmission.description>传动轴变速器与行星齿轮等将发动机扭矩输出至动力部的金属零件.</ComponentTransmission.description>
+  
+</LanguageData>

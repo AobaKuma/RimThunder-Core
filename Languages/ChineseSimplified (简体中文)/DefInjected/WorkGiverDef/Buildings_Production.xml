@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Operate Machine -->
+  <RTC_Operate.label>操作机器</RTC_Operate.label>
+  <!-- EN: Operating at -->
+  <RTC_Operate.gerund>操作于</RTC_Operate.gerund>
+  <!-- EN: Operate -->
+  <RTC_Operate.verb>操作</RTC_Operate.verb>
+  
+</LanguageData>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: assembly platfrom -->
+  <RT_AssemblyBench.label>重型組裝平台</RT_AssemblyBench.label>
+  <!-- EN: A workbench with heavy equipment and tools for components assembly. -->
+  <RT_AssemblyBench.description>一個能製造重型零件的重型工作檯.</RT_AssemblyBench.description>
+  
+  <!-- EN: assembly bridge crane -->
+  <RT_AssemblyCrane.label>重型組裝天車</RT_AssemblyCrane.label>
+  <!-- EN: A type of crane found in industrial environments, often used in the assembly and maintenance of heavy equipment and vehicles. -->
+  <RT_AssemblyCrane.description>一種用於建造與維護載具的室內起重天車.</RT_AssemblyCrane.description>
+  
+  <!-- EN: unfinished vehicle -->
+  <RTC_UnfinishedVehicle.label>載具(未完成)</RTC_UnfinishedVehicle.label>
+  <!-- EN: An unfinished vehicle's part and tools. -->
+  <RTC_UnfinishedVehicle.description>未完成的載具零件與組裝工具</RTC_UnfinishedVehicle.description>
+  
+</LanguageData>

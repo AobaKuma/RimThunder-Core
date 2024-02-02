@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: heavy casting -->
+  <ComponentHeavyCasting.label>重型铸件</ComponentHeavyCasting.label>
+  <!-- EN: large metal parts such as cylinders, cranks, manifolds and turbine blades that cannot be simply processed by smithing. -->
+  <ComponentHeavyCasting.description>无法简单地通过锻造加工制造出来的的大型金属铸造件,例如气缸、曲柄、歧管和涡轮叶片等等,但也包含了用于组装载具使用的大型金属结构件.</ComponentHeavyCasting.description>
+  
+  <!-- EN: heavy engine -->
+  <EngineHeavy.label>重型发动机</EngineHeavy.label>
+  <!-- EN: an six cylender distel engine with powerful torque, it is commonly used by heavy vehicles and ships. -->
+  <EngineHeavy.description>一款六缸柴油发动机,适合那些庞大的装甲载具与特种车辆,每一具这样的发动机都造价不菲.</EngineHeavy.description>
+  
+  <!-- EN: turbojet -->
+  <EngineJet.label>喷气发动机</EngineJet.label>
+  <!-- EN: an airbreathing jet engine which is typically used in aircraft, consists of a gas turbine with a propelling nozzle. -->
+  <EngineJet.description>用于早期喷气式飞机的吸气式喷气发动机.</EngineJet.description>
+  
+  <!-- EN: light engine -->
+  <EngineLight.label>轻型发动机</EngineLight.label>
+  <!-- EN: two-stroke cycle engine,it is simple and produce a large torque, but the fuel consumption is relatively higher. -->
+  <EngineLight.description>一具小型二冲程大扭矩发动机, 常见于对重量与体积有要求的轻型载具上,虽然燃料效率不高但对制造零件相对没有太大要求.</EngineLight.description>
+  
+  <!-- EN: engine -->
+  <EngineMedium.label>中型发动机</EngineMedium.label>
+  <!-- EN: a Four-stroke engine with optimum fuel conversion, it is the heart of an industrial world. -->
+  <EngineMedium.description>一具四冲程内燃发动机, 这种发动机有着均衡的马力与功耗比,可以说是推动着工业世界流动的心脏.</EngineMedium.description>
+  
+  <!-- EN: turbine engine -->
+  <EngineTurbine.label>燃气涡轮发动机</EngineTurbine.label>
+  <!-- EN: An engine powered by gas expansion driving turbine blades, but fuel consumption is quite high. widely used in pre-spacer jets and military vehicles. -->
+  <EngineTurbine.description>以气体膨胀驱动涡轮叶片为动力的发动机,但油耗相当可观.但即便如此也依然广泛应用于后工业时代的喷气战机和先进军用载具.</EngineTurbine.description>
+  
+  <!-- EN: unfinished engine -->
+  <UnfinishedEngine.label>发动机工件</UnfinishedEngine.label>
+  <!-- EN: An unfinished / in-disassemble engine of some kind. -->
+  <UnfinishedEngine.description>一具尚未组装完毕或正在拆解中的发动机.</UnfinishedEngine.description>
+  
+</LanguageData>

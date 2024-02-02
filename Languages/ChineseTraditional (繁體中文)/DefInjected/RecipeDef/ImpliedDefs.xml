@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 製作金屬車輪 -->
+  <Make_ComponentWheelRoad.label>製造金屬路輪</Make_ComponentWheelRoad.label>
+  <!-- EN: 製作金屬車輪 -->
+  <Make_ComponentWheelRoad.description>製造金屬路輪.</Make_ComponentWheelRoad.description>
+  <!-- EN: 正在製作金屬車輪。 -->
+  <Make_ComponentWheelRoad.jobString>正在造輪子.</Make_ComponentWheelRoad.jobString>
+  
+  <!-- EN: 製作充氣輪胎 -->
+  <Make_ComponentWheelTire.label>製造充氣輪胎</Make_ComponentWheelTire.label>
+  <!-- EN: 製作充氣輪胎 -->
+  <Make_ComponentWheelTire.description>製造充氣輪胎.</Make_ComponentWheelTire.description>
+  <!-- EN: 正在製作充氣輪胎。 -->
+  <Make_ComponentWheelTire.jobString>正在造輪子.</Make_ComponentWheelTire.jobString>
+  
+</LanguageData>

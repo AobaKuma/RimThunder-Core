@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: turbocharged -->
+  <EngineAdvanced.label>渦輪增壓</EngineAdvanced.label>
+  <!-- EN: a type of reaction engine, discharging a fast-moving jet of heated gas that generates thrust by jet propulsion. -->
+  <EngineAdvanced.description>透過葉片轉子壓縮空氣能夠使燃燒更佳的有效且強烈,而其應用包含一種反應式發動機,能排出快速移動的加熱氣體射流,並通過渦輪扇葉產生可觀的扭矩.</EngineAdvanced.description>
+  
+  <!-- EN: engine making -->
+  <EngineBasis.label>引擎組裝</EngineBasis.label>
+  <!-- EN: a mature and reliable internal combustion engine, consume fuel and produce stable torque. -->
+  <EngineBasis.description>透過對技術擴散所獲取的經驗配合軌道商人給予的設計圖,解鎖生產結構簡單的輕型二衝程引擎與動力強勁的蒸汽引擎.</EngineBasis.description>
+  <!-- EN: Sometimes you may get some unused engines, you can sell them to traders or disassemble them on the machining table. -->
+  <EngineBasis.discoveredLetterText>有時你也可能會從任務獎勵中獲取引擎，你能夠將其販售或著在機械加工台上拆解來獲取有用的資源。</EngineBasis.discoveredLetterText>
+  <!-- EN: About: disassemble engine -->
+  <EngineBasis.discoveredLetterTitle>關於:引擎回收</EngineBasis.discoveredLetterTitle>
+  
+  <!-- EN: Otto Cycle -->
+  <EnginePlus.label>奧托循環</EnginePlus.label>
+  <!-- EN: an engineering experience that was proposed in ancient times, it's applications are known as the four-stroke engine, the most common internal combustion engine design for motorized land transport, being used in automobiles, trucks, diesel trains and light aircraft. -->
+  <EnginePlus.description>這是古代人類奧托提出的一種內燃機工程學經驗,其應用被稱為四衝程發動機,是工業世界中最常見的內燃機設計,被廣泛用於用於汽車、卡車、柴油火車和長程螺旋槳飛機等等.</EnginePlus.description>
+  
+</LanguageData>
