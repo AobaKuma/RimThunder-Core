@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <EngineBasis.label>引擎组装</EngineBasis.label>
+  <EngineBasis.description>透过对技术扩散所获取的经验配合轨道商人给予的设计图,解锁生产结构简单的轻型二冲程引擎与动力强劲的蒸汽引擎.</EngineBasis.description>
+
+  <EnginePlus.label>奥托循环</EnginePlus.label>
+  <EnginePlus.description>这是古代人类奥托提出的一种内燃机工程学经验,其应用被称为四冲程发动机,是工业世界中最常见的内燃机设计,被广泛用于用于汽车、卡车、柴油火车和长程螺旋桨飞机等等.</EnginePlus.description>
+
+  <EngineAdvanced.label>涡轮增压</EngineAdvanced.label>
+  <EngineAdvanced.description>透过叶片转子压缩空气能够使燃烧更佳的有效且强烈,而其应用包含一种反应式发动机,能排出快速移动的加热气体射流,并通过涡轮扇叶产生可观的扭矩.</EngineAdvanced.description>
+
+
+</LanguageData>

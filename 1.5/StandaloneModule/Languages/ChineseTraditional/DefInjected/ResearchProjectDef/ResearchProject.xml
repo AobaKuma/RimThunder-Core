@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <EngineBasis.label>引擎組裝</EngineBasis.label>
+  <EngineBasis.description>透過對技術擴散所獲取的經驗配合軌道商人給予的設計圖,解鎖生產結構簡單的輕型二衝程引擎與動力強勁的蒸汽引擎.</EngineBasis.description>
+
+  <EnginePlus.label>奧托循環</EnginePlus.label>
+  <EnginePlus.description>這是古代人類奧托提出的一種內燃機工程學經驗,其應用被稱為四衝程發動機,是工業世界中最常見的內燃機設計,被廣泛用於用於汽車、卡車、柴油火車和長程螺旋槳飛機等等.</EnginePlus.description>
+
+  <EngineAdvanced.label>渦輪增壓</EngineAdvanced.label>
+  <EngineAdvanced.description>透過葉片轉子壓縮空氣能夠使燃燒更佳的有效且強烈,而其應用包含一種反應式發動機,能排出快速移動的加熱氣體射流,並通過渦輪扇葉產生可觀的扭矩.</EngineAdvanced.description>
+
+
+</LanguageData>

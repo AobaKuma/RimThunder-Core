@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Turret Sub-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/projectile</xpath>
+		<value>
+			<projectile>Bullet_40x46mmGrenade_Smoke</projectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/chargePerAmmoCount</xpath>
+		<value>
+			<chargePerAmmoCount>5</chargePerAmmoCount>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/genericAmmo</xpath>
+		<value>
+			<genericAmmo>false</genericAmmo>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]</xpath>
+		<value>
+			<li Class="Vehicles.CETurretDataDefModExtension">
+				<ammoSet>RTC_AmmoSet_SmokeGrenade</ammoSet>
+				<shotHeight>2</shotHeight>
+				<speed>20</speed>
+				<sway>1</sway>
+				<spread>0.5</spread>
+			</li>
+		</value>
+	</Operation>
+</Patch>

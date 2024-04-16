@@ -6,6 +6,7 @@
 	<description>the framework and resource library for vehicle mods.</description>
 	<supportedVersions>
 		<li>1.4</li>
+		<li>1.5</li>
 	</supportedVersions>
 	<modDependencies>
 		<li>

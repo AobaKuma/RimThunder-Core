@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\1.4\Assemblies</OutputPath>
+    <OutputPath>..\..\..\1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,11 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Reference\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SmashTools">
@@ -59,7 +61,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Vehicles">
-      <HintPath>..\..\Reference\Vehicles.dll</HintPath>
+      <HintPath>Reference\Vehicles.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -68,7 +70,6 @@
     <Compile Include="Harmony\Harmony_BillUtility.cs" />
     <Compile Include="Building_RTCCrane.cs" />
     <Compile Include="Bill_RTCVehicle.cs" />
-    <Compile Include="PlaceWorker_Crane - Copy.cs" />
     <Compile Include="UnfinishedRTCVehicle.cs" />
     <Compile Include="Projectile_ArcSpread.cs" />
     <Compile Include="PlaceWorker_Crane.cs" />

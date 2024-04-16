@@ -62,12 +62,13 @@ namespace Motorization
             Scribe_Values.Look(ref craneCurrentPct, "craneCurrentPct");
             Scribe_Values.Look(ref craneTargetPct, "craneTargetPct");
         }
-
-        public override void Draw()
+        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
-            CurrentBill?.ResultGraphic?.Draw(DrawPos + new Vector3(0, -0.01f, -0.2f), Rotation, this);
-            craneTopData?.graphicData.Graphic.Draw(DrawPos + craneTopData.GetDrawOffset(Rotation, craneCurrentPct) + Altitudes.AltIncVect, Rotation, this);
+            base.DynamicDrawPhaseAt(phase, drawLoc, flip); CurrentBill?.ResultGraphic?.Draw(DrawPos + new Vector3(0, -0.01f, -0.2f), Rotation, this);
+            if (phase == DrawPhase.Draw)
+            {
+                craneTopData?.graphicData.Graphic.Draw(DrawPos + craneTopData.GetDrawOffset(Rotation, craneCurrentPct) + Altitudes.AltIncVect, Rotation, this);
+            }      
         }
 
         public bool IsCellOccupied()

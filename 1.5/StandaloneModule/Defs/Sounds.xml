@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef>
+    <defName>EI_Sound_ReloadShell</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Reloading_Shell</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>EI_Sound_ReloadAmmoClip</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Reloading_MG</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  
+  <SoundDef>
+    <defName>EI_EngineStart</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>2</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>engine_start</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>10~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>EI_EngineStop</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>2</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>engine_stop</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>10~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>EI_EngineIdle_Car</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>engine_00</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>EI_EngineIdle_Tank</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Engine_LightTank</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<CombatExtended.AmmoSetDef>
+		<defName>RTC_AmmoSet_SmokeGrenade</defName>
+		<label>40x46mm Grenades</label>
+		<ammoTypes>
+			<Ammo_40x46mmGrenade_Smoke>BulletCE_RTCSmoke</Ammo_40x46mmGrenade_Smoke>
+		</ammoTypes>
+		<similarTo>AmmoSet_LauncherGrenade</similarTo>
+	</CombatExtended.AmmoSetDef>
+
+	<ThingDef ParentName="Base40x46mmGrenadeBullet">
+		<defName>BulletCE_RTCSmoke</defName>
+		<label>40x46mm grenade (Smoke)</label>
+		<thingClass>MotorizationCE.ProjectileCE_ArcSpread</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Smoke</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+		</projectile>
+		<modExtensions>
+			<li Class="Motorization.RotationalArcSpreadExtension">
+				<arc>35</arc>
+				<projectile>BulletCE_RTCSmokeSub</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="Base40x46mmGrenadeBullet">
+		<defName>BulletCE_RTCSmokeSub</defName>
+		<label>40x46mm grenade (Smoke)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<explosionRadius>2</explosionRadius>
+			<damageDef>Smoke</damageDef>
+			<suppressionFactor>0.0</suppressionFactor>
+			<dangerFactor>0.0</dangerFactor>
+			<postExplosionGasType>BlindSmoke</postExplosionGasType>
+			<preExplosionSpawnChance>1</preExplosionSpawnChance>
+		</projectile>
+		<comps>
+			<li Class="MotorizationCE.CompProperties_ProjectileSelfDestructCE">
+				<range>15</range>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>
