@@ -50,7 +50,8 @@
     <soundWorking>Recipe_Smelt</soundWorking>
     <uiIconThing>ComponentFuelTank</uiIconThing>
     <recipeUsers>
-      <li>RT_AssemblyBench</li>  <!-- 熔煉台 -->  
+      <li>RT_AssemblyBench</li>
+      <li>TableMachining</li>
     </recipeUsers>
     <ingredients>
       <li>
@@ -121,7 +122,8 @@
     <soundWorking>Recipe_Smelt</soundWorking>
     <uiIconThing>ComponentTransmission</uiIconThing>
     <recipeUsers>
-      <li>RT_AssemblyBench</li>  <!-- 熔煉台 -->  
+      <li>RT_AssemblyBench</li>
+      <li>TableMachining</li>
     </recipeUsers>
     <ingredients>
       <li>
