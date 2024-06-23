@@ -101,8 +101,8 @@
 
 	<ThingDef ParentName="BenchBase">
 		<defName>RT_AssemblyCrane</defName>
-		<label>assembly bridge crane</label>
-		<description>A type of crane found in industrial environments, often used in the assembly and maintenance of heavy equipment and vehicles.</description>
+		<label>assembly gantry</label>
+		<description>A type of crane found in industrial environments, often used in the assembly and maintenance of heavy equipment and vehicles, it requires 4 walls as pillar to support placing.</description>
 		<thingClass>Motorization.Building_RTCCrane</thingClass>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
@@ -190,7 +190,14 @@
 				</EndpointNorth>
 			</li>
 			<li Class="Motorization.ModExtension_CranePlaceWorker">
-				<pillarDef>Wall</pillarDef>
+				<pillarDefs>
+					<li>Wall</li>
+					<li MayRequire="aoba.fortress.medieval">FT_CastleWall</li>
+					<li MayRequire="aoba.fortress.industrial.citadel">FTC_CitadelWall</li>
+					<li MayRequire="vanillaexpanded.vfea">VFEA_VaultWall</li>
+					<li MayRequire="kentington.saveourship2">Ship_Beam</li>
+					<li MayRequire="kentington.saveourship2">Ship_Beam_Unpowered</li>
+				</pillarDefs>
 			</li>
 		</modExtensions>
 	</ThingDef>

@@ -6,9 +6,9 @@
   <!-- EN: A workbench with heavy equipment and tools for components assembly. -->
   <RT_AssemblyBench.description>一個能製造重型零件的重型工作檯.</RT_AssemblyBench.description>
   
-  <!-- EN: assembly bridge crane -->
+  <!-- EN: assembly gantry -->
   <RT_AssemblyCrane.label>重型組裝天車</RT_AssemblyCrane.label>
-  <!-- EN: A type of crane found in industrial environments, often used in the assembly and maintenance of heavy equipment and vehicles. -->
+  <!-- EN: A type of crane found in industrial environments, often used in the assembly and maintenance of heavy equipment and vehicles, it requires 4 walls as pillar to support placing. -->
   <RT_AssemblyCrane.description>一種用於建造與維護載具的室內起重天車.</RT_AssemblyCrane.description>
   
   <!-- EN: unfinished vehicle -->

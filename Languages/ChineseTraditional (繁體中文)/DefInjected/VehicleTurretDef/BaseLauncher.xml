@@ -2,10 +2,8 @@
 <LanguageData>
   
   <!-- EN: Smoke grenade launcher -->
-  <RT_GrenadeLauncher.label>煙霧發射器</RT_GrenadeLauncher.label>
-  <!-- EN: Single -->
-  <RT_GrenadeLauncher.fireModes.0.label>單發</RT_GrenadeLauncher.fireModes.0.label>
-  <!-- EN: Burst -->
-  <RT_GrenadeLauncher.fireModes.1.label>覆蓋</RT_GrenadeLauncher.fireModes.1.label>
+  <RT_GrenadeLauncher.label>煙幕裝置</RT_GrenadeLauncher.label>
+  <!-- EN: Select Target.\n\nFire for effect -->
+  <RT_GrenadeLauncher.gizmoDescription>用於掩護載具的煙霧彈發射器</RT_GrenadeLauncher.gizmoDescription>
   
 </LanguageData>

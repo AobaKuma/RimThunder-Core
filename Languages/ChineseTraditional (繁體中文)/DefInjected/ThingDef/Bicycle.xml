@@ -1,10 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: bicycle -->
   <RT_Bicycle.label>腳踏車</RT_Bicycle.label>
+  <!-- EN: A man-powered bicycle, cheap and useful in most cases. -->
   <RT_Bicycle.description>人力驅動的雙輪車,便宜簡易並且使用場景廣泛.</RT_Bicycle.description>
+  <!-- EN: Transmission gear -->
+  <RT_Bicycle.components.0.label>傳動齒輪</RT_Bicycle.components.0.label>
+  <!-- EN: Structure Frame -->
+  <RT_Bicycle.components.1.label>結構框架</RT_Bicycle.components.1.label>
+  <!-- EN: Transmission chain -->
+  <RT_Bicycle.components.2.label>傳動鍊</RT_Bicycle.components.2.label>
+  <!-- EN: Front Wheel -->
+  <RT_Bicycle.components.3.label>前輪</RT_Bicycle.components.3.label>
+  <!-- EN: Back Wheel -->
+  <RT_Bicycle.components.4.label>後輪</RT_Bicycle.components.4.label>
   
+  <!-- EN: bicycle -->
   <RT_Bicycle_Blueprint.label>腳踏車</RT_Bicycle_Blueprint.label>
+  <!-- EN: A man-powered bicycle, cheap and useful in most cases. -->
   <RT_Bicycle_Blueprint.description>人力驅動的雙輪車,便宜簡易並且使用場景廣泛.</RT_Bicycle_Blueprint.description>
   
 </LanguageData>

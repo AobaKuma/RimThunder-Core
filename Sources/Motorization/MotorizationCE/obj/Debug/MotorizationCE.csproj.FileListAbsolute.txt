@@ -4,3 +4,6 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\Sour
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\Sources\Motorization\MotorizationCE\obj\Debug\MotorizationCE.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\Sources\Motorization\MotorizationCE\obj\Debug\MotorizationCE.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\Sources\Motorization\MotorizationCE\obj\Debug\MotorizationCE.pdb
+D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\Sources\Motorization\MotorizationCE\obj\Debug\MotorizationCE.csproj.AssemblyReference.cache
+D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\Sources\Motorization\MotorizationCE\obj\Debug\MotorizationCE.csproj.CoreCompileInputs.cache
+D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\Sources\Motorization\MotorizationCE\obj\Debug\MotorizationCE.dll

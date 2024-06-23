@@ -1,34 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\",
+  "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\building_rtccrane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\building_rtccrane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\placeworker_crane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\placeworker_crane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\placeworker_crane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\unfinishedrtcvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\unfinishedrtcvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\unfinishedrtcvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\harmony\\harmony_billutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\harmony\\harmony_billutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\projectile_arcspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\projectile_arcspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\bill_rtcvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\bill_rtcvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorizationce\\projectilece_arcspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|solutionrelative:motorizationce\\projectilece_arcspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorizationce\\compprojectileselfdestruct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorizationce\\compprojectileselfdestruct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|solutionrelative:motorizationce\\compprojectileselfdestruct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\harmony\\harmonymain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\harmony\\harmonymain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\harmony\\harmony_billutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\harmony\\harmony_billutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\building_rtccrane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\building_rtccrane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\bill_rtcvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\bill_rtcvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +46,61 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Projectile_ArcSpread.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Projectile_ArcSpread.cs",
+              "RelativeDocumentMoniker": "Motorization\\Projectile_ArcSpread.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Projectile_ArcSpread.cs",
+              "RelativeToolTip": "Motorization\\Projectile_ArcSpread.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T07:39:50.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlaceWorker_Crane.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\PlaceWorker_Crane.cs",
+              "RelativeDocumentMoniker": "Motorization\\PlaceWorker_Crane.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\PlaceWorker_Crane.cs",
+              "RelativeToolTip": "Motorization\\PlaceWorker_Crane.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T07:39:44.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjectileCE_ArcSpread.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\ProjectileCE_ArcSpread.cs",
+              "RelativeDocumentMoniker": "MotorizationCE\\ProjectileCE_ArcSpread.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\ProjectileCE_ArcSpread.cs",
+              "RelativeToolTip": "MotorizationCE\\ProjectileCE_ArcSpread.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAzwAwAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T07:03:11.105Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "CompProjectileSelfDestruct.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\CompProjectileSelfDestruct.cs",
+              "RelativeDocumentMoniker": "MotorizationCE\\CompProjectileSelfDestruct.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\CompProjectileSelfDestruct.cs",
+              "RelativeToolTip": "MotorizationCE\\CompProjectileSelfDestruct.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T07:03:01.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Bill_RTCVehicle.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Bill_RTCVehicle.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Bill_RTCVehicle.cs",
               "RelativeDocumentMoniker": "Motorization\\Bill_RTCVehicle.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Bill_RTCVehicle.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Bill_RTCVehicle.cs",
               "RelativeToolTip": "Motorization\\Bill_RTCVehicle.cs",
               "ViewState": "AQIAADcAAAAAAAAAAADwv0kAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -54,24 +108,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Building_RTCCrane.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Building_RTCCrane.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Building_RTCCrane.cs",
               "RelativeDocumentMoniker": "Motorization\\Building_RTCCrane.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Building_RTCCrane.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Building_RTCCrane.cs",
               "RelativeToolTip": "Motorization\\Building_RTCCrane.cs",
               "ViewState": "AQIAADMAAAAAAAAAAAAIwDwAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-10-25T14:39:45.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-10-25T14:39:45.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Harmony_BillUtility.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_BillUtility.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_BillUtility.cs",
               "RelativeDocumentMoniker": "Motorization\\Harmony\\Harmony_BillUtility.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_BillUtility.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_BillUtility.cs",
               "RelativeToolTip": "Motorization\\Harmony\\Harmony_BillUtility.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -79,53 +132,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UnfinishedRTCVehicle.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\UnfinishedRTCVehicle.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\UnfinishedRTCVehicle.cs",
               "RelativeDocumentMoniker": "Motorization\\UnfinishedRTCVehicle.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\UnfinishedRTCVehicle.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\UnfinishedRTCVehicle.cs",
               "RelativeToolTip": "Motorization\\UnfinishedRTCVehicle.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-11-08T09:41:00.242Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlaceWorker_Crane.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\PlaceWorker_Crane.cs",
-              "RelativeDocumentMoniker": "Motorization\\PlaceWorker_Crane.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\PlaceWorker_Crane.cs",
-              "RelativeToolTip": "Motorization\\PlaceWorker_Crane.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAkwB0AAABgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-10-14T12:49:44.883Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HarmonyMain.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\HarmonyMain.cs",
-              "RelativeDocumentMoniker": "Motorization\\Harmony\\HarmonyMain.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\HarmonyMain.cs",
-              "RelativeToolTip": "Motorization\\Harmony\\HarmonyMain.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAuwA8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-10-09T08:30:59.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CompProjectileSelfDestruct.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\CompProjectileSelfDestruct.cs",
-              "RelativeDocumentMoniker": "MotorizationCE\\CompProjectileSelfDestruct.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\CompProjectileSelfDestruct.cs",
-              "RelativeToolTip": "MotorizationCE\\CompProjectileSelfDestruct.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-11-06T10:20:05.241Z"
             }
           ]
         }

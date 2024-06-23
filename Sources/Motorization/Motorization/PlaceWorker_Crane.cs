@@ -19,20 +19,20 @@ namespace Motorization
         {
             ModExtension_CranePlaceWorker ext = checkingDef.GetModExtension<ModExtension_CranePlaceWorker>();
             if (ext == null) { Log.ErrorOnce(checkingDef.defName + " has PlaceWorker_Crane without ModExtension_CranePlaceWorker", 1919810); return true; }
-            if (ext.pillarDef == null) { Log.ErrorOnce(checkingDef.defName + " has ModExtension_CranePlaceWorker without pillarDef", 114514); return true; }
+            if (ext.pillarDefs == null) { Log.ErrorOnce(checkingDef.defName + " has ModExtension_CranePlaceWorker without pillarDef", 114514); return true; }
             List<IntVec3> cells = GetAdjacentCorners(GenAdj.OccupiedRect(loc, rot, checkingDef.Size)).ToList();
 
             bool placeable = true;
             foreach (IntVec3 cell in cells)
             {
-                if (!(cell.GetEdifice(map)?.def == ext.pillarDef))
+                if (!(ext.pillarDefs.Contains(cell.GetEdifice(map)?.def)))
                 {
-                    GhostDrawer.DrawGhostThing(cell, rot, ext.pillarDef, ext.pillarDef.graphic, Color.red, AltitudeLayer.MetaOverlays);
-                    placeable = false;
+                    GhostDrawer.DrawGhostThing(cell, rot, ext.pillarDefs.First(), ext.pillarDefs.First().graphic, Color.red, AltitudeLayer.MetaOverlays);
+                    placeable = new AcceptanceReport(reasonText: "RTC_AllCornerMustBeSupportedByWall");
                 }
                 else
                 {
-                    GhostDrawer.DrawGhostThing(cell, rot, ext.pillarDef, ext.pillarDef.graphic, Color.green, AltitudeLayer.MetaOverlays);
+                    GhostDrawer.DrawGhostThing(cell, rot, ext.pillarDefs.First(), ext.pillarDefs.First().graphic, Color.green, AltitudeLayer.MetaOverlays);
                 }
             }
             return placeable;
@@ -41,6 +41,6 @@ namespace Motorization
 
     internal class ModExtension_CranePlaceWorker : DefModExtension
     {
-        public ThingDef pillarDef;
+        public List<ThingDef> pillarDefs = null;
     }
 }

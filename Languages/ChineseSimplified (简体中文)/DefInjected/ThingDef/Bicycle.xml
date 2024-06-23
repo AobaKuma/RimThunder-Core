@@ -4,6 +4,17 @@
   <RT_Bicycle.label>自行车</RT_Bicycle.label>
   <RT_Bicycle.description>人力驱动的双轮车,便宜简易并且使用场景广泛.</RT_Bicycle.description>
   
+  <!-- EN: Transmission gear -->
+  <RT_Bicycle.components.0.label>传动齿轮</RT_Bicycle.components.0.label>
+  <!-- EN: Structure Frame -->
+  <RT_Bicycle.components.1.label>结构框架</RT_Bicycle.components.1.label>
+  <!-- EN: Transmission chain -->
+  <RT_Bicycle.components.2.label>传动炼</RT_Bicycle.components.2.label>
+  <!-- EN: Front Wheel -->
+  <RT_Bicycle.components.3.label>前轮</RT_Bicycle.components.3.label>
+  <!-- EN: Back Wheel -->
+  <RT_Bicycle.components.4.label>后轮</RT_Bicycle.components.4.label>
+
   <RT_Bicycle_Blueprint.label>自行车</RT_Bicycle_Blueprint.label>
   <RT_Bicycle_Blueprint.description>人力驱动的双轮车,便宜简易并且使用场景广泛.</RT_Bicycle_Blueprint.description>
   
