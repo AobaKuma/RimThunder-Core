@@ -18,10 +18,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\1.4\CombatExtended\Assemblies\</OutputPath>
+    <OutputPath>..\..\..\1.5\CombatExtended\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,7 +42,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="CombatExtended">
-      <HintPath>..\..\..\..\CombatExtended-Anomaly-DLC\Assemblies\CombatExtended.dll</HintPath>
+      <HintPath>..\..\Reference\CombatExtended.dll</HintPath>
     </Reference>
     <Reference Include="SmashTools">
       <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3014915404\1.4\Assemblies\SmashTools.dll</HintPath>
