@@ -4,7 +4,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/Vehicles.VehicleTurretDef[defName="RT_GrenadeLauncher"]/projectile</xpath>
 		<value>
-			<projectile>Bullet_40x46mmGrenade_Smoke</projectile>
+			<projectile>BulletCE_RTCSmoke</projectile>
 		</value>
 	</Operation>
 
