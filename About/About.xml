@@ -18,6 +18,7 @@
 	</modDependencies>
 	<loadAfter>
 		<li>SmashPhil.VehicleFramework</li>
+		<li>ceteam.combatextended</li>
 		<li>Aoba.Motorization.Engine</li>
   	</loadAfter>
 </ModMetaData>

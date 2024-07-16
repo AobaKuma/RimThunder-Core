@@ -147,7 +147,7 @@
   <!-- 中型引擎 -->
   <ThingDef ParentName="EngineBase">  
     <defName>EngineMedium</defName>
-    <label>engine</label>
+    <label>medium engine</label>
     <description>a Four-stroke engine with optimum fuel conversion, it is the heart of an industrial world.</description>
     <graphicData>
       <texPath>Parts/EngineMedium</texPath>
