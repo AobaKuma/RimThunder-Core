@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>Ammo57x348sr</defName>
+		<label>57x348mmSR</label>
+		<parent>AmmoHighCaliber</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberAutocannonLarge</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_57x348sr</defName>
+		<label>57x348mmSR</label>
+		<ammoTypes>
+			<Ammo_57x348sr_AP>Bullet_57x348sr_AP</Ammo_57x348sr_AP>
+			<Ammo_57x348sr_HE>Bullet_57x348sr_HE</Ammo_57x348sr_HE>
+			<Ammo_57x348sr_Sabot>Bullet_57x348sr_Sabot</Ammo_57x348sr_Sabot>
+		</ammoTypes>
+		<similarTo>AmmoSet_LightCannon</similarTo>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="Ammo57x348srBase" ParentName="MediumAmmoBase" Abstract="True">
+		<description>Large caliber cartridge used by autocannons.</description>
+		<statBases>
+			<Mass>0.832</Mass>
+			<Bulk>0.69</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo57x348sr</li>
+		</thingCategories>
+		<stackLimit>500</stackLimit>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo57x348srBase">
+		<defName>Ammo_57x348sr_AP</defName>
+		<label>57x348mmSR (AP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/AP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>3.36</MarketValue>
+		</statBases>
+		<ammoClass>ArmorPiercing</ammoClass>
+		<cookOffProjectile>Bullet_57x348sr_AP</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo57x348srBase">
+		<defName>Ammo_57x348sr_HE</defName>
+		<label>57x348mmSR (AP-HE)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/HE</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>6.24</MarketValue>
+		</statBases>
+		<ammoClass>ExplosiveAP</ammoClass>
+		<cookOffProjectile>Bullet_57x348sr_HE</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo57x348srBase">
+		<defName>Ammo_57x348sr_Sabot</defName>
+		<label>57x348mmSR (Sabot)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/Sabot</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.665</Mass>
+			<MarketValue>3.81</MarketValue>
+		</statBases>
+		<ammoClass>Sabot</ammoClass>
+		<cookOffProjectile>Bullet_57x348sr_Sabot</cookOffProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="Base57x348srBullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>181</speed>
+			<flyOverhead>false</flyOverhead>
+			<dropsCasings>true</dropsCasings>
+			<casingMoteDefname>Fleck_BigShell</casingMoteDefname>
+			<casingFilthDefname>Filth_CannonAmmoCasings</casingFilthDefname>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base57x348srBullet">
+		<defName>Bullet_57x348sr_AP</defName>
+		<label>57x348mmSR bullet (AP)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>192</damageAmountBase>
+			<armorPenetrationSharp>152</armorPenetrationSharp>
+			<armorPenetrationBlunt>3159</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base57x348srBullet">
+		<defName>Bullet_57x348sr_HE</defName>
+		<label>57x348mmSR bullet (HE)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>108</damageAmountBase>
+			<explosionRadius>3</explosionRadius>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Large>7</Fragment_Large>
+					<Fragment_Small>14</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base57x348srBullet">
+		<defName>Bullet_57x348sr_Sabot</defName>
+		<label>57x348mmSR bullet (Sabot)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>183</damageAmountBase>
+			<armorPenetrationSharp>225</armorPenetrationSharp>
+			<armorPenetrationBlunt>4051.42</armorPenetrationBlunt>
+			<speed>223</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_57x348sr_AP</defName>
+		<label>make 57x348mmSR (AP) cartridge x50</label>
+		<description>Craft 50 57x348mmSR (AP) cartridges.</description>
+		<jobString>Making 57x348mmSR (AP) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>168</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_57x348sr_AP>50</Ammo_57x348sr_AP>
+		</products>
+		<workAmount>20160</workAmount>
+	</RecipeDef>
+
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_57x348sr_HE</defName>
+		<label>make 57x348mmSR (AP-HE) cartridge x50</label>
+		<description>Craft 50 57x348mmSR (AP-HE) cartridges.</description>
+		<jobString>Making 57x348mmSR (AP-HE) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>168</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>37</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_57x348sr_HE>50</Ammo_57x348sr_HE>
+		</products>
+		<workAmount>20400</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_57x348sr_Sabot</defName>
+		<label>make 57x348mmSR (Sabot) cartridge x50</label>
+		<description>Craft 50 57x348mmSR (Sabot) cartridges.</description>
+		<jobString>Making 57x348mmSR (Sabot) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>90</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>23</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>23</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Uranium</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_57x348sr_Sabot>50</Ammo_57x348sr_Sabot>
+		</products>
+		<workAmount>22800</workAmount>
+	</RecipeDef>
+
+</Defs>
