@@ -9,7 +9,6 @@ using UnityEngine;
 using Vehicles;
 using Verse;
 using Verse.Sound;
-using static SmashTools.ConditionalPatch;
 
 namespace Motorization
 {

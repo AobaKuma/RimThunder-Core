@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<JobDef>
+		<defName>RTC_LoadToCargo</defName>
+		<driverClass>Motorization.JobDriver_EnterCargoHold</driverClass>
+		<reportString>Entering TargetA.</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	  </JobDef>
+</Defs>

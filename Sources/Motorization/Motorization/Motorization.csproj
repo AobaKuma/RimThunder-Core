@@ -42,8 +42,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="SmashTools">
-      <HintPath>..\..\Reference\SmashTools.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\Vehicle-Framework\1.5\Assemblies\SmashTools.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,19 +61,28 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Vehicles">
-      <HintPath>Reference\Vehicles.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\Vehicle-Framework\1.5\Assemblies\Vehicles.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harmony\Harmony_FloatMenuOption.cs" />
+    <Compile Include="Mecha\CompDeployMode.cs" />
+    <Compile Include="Mecha\CompMechaWeapon.cs" />
+    <Compile Include="CompVehicleAbilities.cs" />
+    <Compile Include="Cargo\CompVehicleCargo.cs" />
+    <Compile Include="Mecha\FloatMenuUtility.cs" />
     <Compile Include="Harmony\HarmonyMain.cs" />
     <Compile Include="Harmony\Harmony_BillUtility.cs" />
-    <Compile Include="Building_RTCCrane.cs" />
-    <Compile Include="Bill_RTCVehicle.cs" />
-    <Compile Include="UnfinishedRTCVehicle.cs" />
+    <Compile Include="Crane\Building_RTCCrane.cs" />
+    <Compile Include="Crane\Bill_RTCVehicle.cs" />
+    <Compile Include="Mecha\IWeaponUsable.cs" />
+    <Compile Include="Cargo\JobDriver_EnterCargoHold.cs" />
+    <Compile Include="Mecha\MechaFrame.cs" />
+    <Compile Include="Mecha\MechaSupportedWeaponExtension.cs" />
+    <Compile Include="Crane\UnfinishedRTCVehicle.cs" />
     <Compile Include="Projectile_ArcSpread.cs" />
-    <Compile Include="PlaceWorker_Crane.cs" />
-    <Compile Include="VehicleTurret_TurretRotationTick.cs" />
+    <Compile Include="Crane\PlaceWorker_Crane.cs" />
+    <Compile Include="Harmony\Harmony_TurretRotationTick.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\cargovehicle\\vehicleloadcargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|solutionrelative:vehicleloadcargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\dialog_loadvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|solutionrelative:dialog_loadvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\cargovehiclesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|solutionrelative:cargovehiclesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\cargovehicle\\cargovehiclemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|solutionrelative:cargovehiclemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\patches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0362257C-9673-4203-A2ED-2358E08EEFCF}|VehicleLoadCargo.csproj|solutionrelative:patches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VehicleLoadCargo.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\VehicleLoadCargo.cs",
+              "RelativeDocumentMoniker": "VehicleLoadCargo.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\VehicleLoadCargo.cs",
+              "RelativeToolTip": "VehicleLoadCargo.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T07:08:05.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Patches.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\Patches.cs",
+              "RelativeDocumentMoniker": "Patches.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\Patches.cs",
+              "RelativeToolTip": "Patches.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAewEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T08:36:13.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dialog_LoadVehicle.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\Dialog_LoadVehicle.cs",
+              "RelativeDocumentMoniker": "Dialog_LoadVehicle.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\Dialog_LoadVehicle.cs",
+              "RelativeToolTip": "Dialog_LoadVehicle.cs",
+              "ViewState": "AQIAAOQAAAAAAAAAAAAAAEYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T08:36:14.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CargoVehicleMod.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\CargoVehicleMod.cs",
+              "RelativeDocumentMoniker": "CargoVehicleMod.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\CargoVehicleMod.cs",
+              "RelativeToolTip": "CargoVehicleMod.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T08:36:14.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CargoVehicleSettings.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\CargoVehicleSettings.cs",
+              "RelativeDocumentMoniker": "CargoVehicleSettings.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\CargoVehicle\\CargoVehicleSettings.cs",
+              "RelativeToolTip": "CargoVehicleSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T08:36:14.124Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
