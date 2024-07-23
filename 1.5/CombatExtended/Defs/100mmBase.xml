@@ -61,7 +61,7 @@
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<speed>43</speed>
 			<soundExplode>MortarBomb_Explode</soundExplode>
-			<flyOverhead>true</flyOverhead>
+			<flyOverhead>false</flyOverhead>
 			<dropsCasings>true</dropsCasings>
 			<casingMoteDefname>Fleck_BigShell</casingMoteDefname>
 			<casingFilthDefname>Filth_CannonAmmoCasings</casingFilthDefname>

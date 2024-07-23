@@ -39,17 +39,16 @@ namespace Motorization
             Toil toil = ToilMaker.MakeToil("GotoThing");
             toil.initAction = delegate
             {
-                toil.actor.pather.StartPath(ClosestCell(targetVehicle), PathEndMode.OnCell);
+                toil.actor.pather.StartPath(RearCell(targetVehicle), PathEndMode.OnCell);
             };
             toil.defaultCompleteMode = ToilCompleteMode.PatherArrival;
             toil.FailOnDespawnedOrNull(TargetIndex.A);
             return toil;
         }
-        private IntVec3 ClosestCell(VehiclePawn target)
+        private IntVec3 RearCell(VehiclePawn target)
         {
-            Vector2 v2 = target.FullRotation.Opposite.AsVector2;
+            Vector2 v2 = target.FullRotation.Opposite.AsVector2.normalized;
             IntVec3 v = new IntVec3((int)v2.x, 0, (int)v2.y) * ((target.def.Size.z + 3) / 2);
-            Log.Error(v.ToString());
             return target.Position + v;
             //到時候要做Unload時生成在指定位置
         }

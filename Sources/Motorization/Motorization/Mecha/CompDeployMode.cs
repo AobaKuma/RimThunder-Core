@@ -9,24 +9,27 @@ namespace Motorization
     {
         private bool _isDeployed = false;
         public CompProperties_DeployMode Props => base.props as CompProperties_DeployMode;
-
+            
         public override void CompTick()
         {
             if (Vehicle.Spawned)
             {
-                if (Vehicle.Deploying)
+                if (Vehicle.CompVehicleTurrets.CanDeploy)
                 {
-                    if (!_isDeployed)
+                    if (Vehicle.CompVehicleTurrets.Deployed)
                     {
-                        Vehicle.SetRetexture(Props.retextureDef);
-                        _isDeployed = true;
+                        if (!_isDeployed)
+                        {
+                            Vehicle.SetRetexture(Props.retextureDef);
+                            _isDeployed = true;
+                        }
                     }
-                }
-                else if (_isDeployed)
-                {
-                    Vehicle.SetRetexture(null);
-                    _isDeployed = false;
-                }
+                    else if (_isDeployed)
+                    {
+                        Vehicle.SetRetexture(null);
+                        _isDeployed = false;
+                    }
+                }        
             }
         }
     }
