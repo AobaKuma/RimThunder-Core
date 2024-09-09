@@ -41,7 +41,6 @@ namespace Motorization
                 vector = vector.RotatedBy(-Extension.arc);
                 for (int i = 0; i < Extension.amount; i++)
                 {
-                    Log.Message(vector.AngleFlat().ToString());
                     Projectile thing = (Projectile)GenSpawn.Spawn(Extension.projectile, launcher.Position, Map);
                     thing.Launch(launcher, origin, (origin + vector * Extension.range.RandomInRange).ToIntVec3(), intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
 

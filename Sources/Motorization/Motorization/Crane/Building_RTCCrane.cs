@@ -9,7 +9,6 @@ using UnityEngine;
 using Vehicles;
 using Verse;
 using Verse.Sound;
-using static SmashTools.ConditionalPatch;
 
 namespace Motorization
 {
@@ -73,7 +72,7 @@ namespace Motorization
 
         public bool IsCellOccupied()
         {
-            Log.Message("occupycheck");
+            //Log.Message("occupycheck");
             List<IntVec3> cells = GenAdj.CellsOccupiedBy(Position, Rotation, new IntVec2(def.size.x - 2, def.size.z - 2)).ToList();
             foreach (IntVec3 cell in cells)
             {

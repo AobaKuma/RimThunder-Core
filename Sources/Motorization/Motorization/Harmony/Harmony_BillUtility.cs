@@ -18,7 +18,7 @@ namespace Motorization
             [HarmonyPostfix]
             static void PostFix(RecipeDef recipe, ref Bill __result)
             {
-                Log.Message("Patch");
+                //Log.Message("Patch");
                 if (recipe.HasModExtension<ModExt_RTCVehicleRecipe>())
                 {
                     __result = new Bill_RTCVehicle(recipe, null);
