@@ -15,6 +15,7 @@ namespace Motorization
     }
     public class CompProperties_VehicleCargo : CompProperties
     {
+        public DrawData drawData;
         public CompProperties_VehicleCargo()
         {
             compClass = typeof(CompVehicleCargo);
@@ -80,7 +81,7 @@ namespace Motorization
 
                     //p.Drawer.renderer.RenderPawnAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)), Vehicle.FullRotation.AsAngle, Vehicle.FullRotation, true);
                     p.FullRotation = new SmashTools.Rot8(Vehicle.FullRotation.Opposite.AsInt);//這條等到時候更新要刪掉換成別的。             
-                    p.DrawAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)), Vehicle.FullRotation.Opposite,0);
+                    p.DrawAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)) + Props.drawData.OffsetForRot(Vehicle.Rotation), Vehicle.FullRotation.Opposite, 0);
                 }
             }
         }

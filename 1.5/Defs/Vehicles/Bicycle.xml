@@ -51,7 +51,10 @@
 		</vehicleStats>
 		<race>
 			<baseBodySize>1</baseBodySize>
-		</race>	
+		</race>
+		<comps>
+			<li Class="Motorization.CompProperties_VehicleCargo"/>
+		</comps>
 		<soundOneShotsOnEvent Inherit = "False"/>
 		<soundSustainersOnEvent Inherit = "False"/>
 		<properties>	<!-- 座位與功能 -->

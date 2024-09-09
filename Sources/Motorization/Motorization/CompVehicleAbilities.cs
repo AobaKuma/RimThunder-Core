@@ -32,13 +32,13 @@ namespace Motorization
                 }
             }
         }
-        public class CompProperties_Abilities : VehicleCompProperties
+    }
+    public class CompProperties_Abilities : VehicleCompProperties
+    {
+        public List<AbilityDef> abilities;
+        public CompProperties_Abilities()
         {
-            public List<AbilityDef> abilities;
-            public CompProperties_Abilities()
-            {
-                this.compClass = typeof(CompVehicleAbilities);
-            }
+            this.compClass = typeof(CompVehicleAbilities);
         }
     }
 }
