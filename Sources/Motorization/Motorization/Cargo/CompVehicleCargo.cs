@@ -34,14 +34,16 @@ namespace Motorization
             VehiclePawn pawn = Find.Selector.SingleSelectedThing as VehiclePawn; //總之先這樣寫
             if (pawn != null)
             {
-                yield return new FloatMenuOption("Test:" + pawn.Name, null);
+                yield return new FloatMenuOption("RT_Load:" + pawn.Name, null);
             }
 
 
             if (!(pawn is VehiclePawn)) yield break;//判斷是不是VehiclePawn
 
-
             //判斷是否為自家載具跟自家殖民者
+
+            if (!pawn.Faction.IsPlayer) yield break;
+
             yield return FloatMenuUtility.TryMakeFloatMenuForCargoLoad(pawn, Vehicle);
         }
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
@@ -50,7 +52,7 @@ namespace Motorization
             {
                 yield return item;
             }
-            yield return new FloatMenuOption("Test2:" + selPawn.Name, null);
+            yield return new FloatMenuOption("RT_Load:" + selPawn.Name, null);
         }
         public bool TryAcceptThing(VehiclePawn thing)
         {
@@ -65,7 +67,6 @@ namespace Motorization
         public float MassCapacity => Vehicle.GetStatValue(VehicleStatDefOf.CargoCapacity);
         public bool Accepts(Thing thing)
         {
-
             if (thing == null) return false;
             return true;//這邊之後判斷需要額外寫重量那些
         }

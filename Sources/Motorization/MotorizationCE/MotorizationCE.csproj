@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="CombatExtended">
       <HintPath>..\..\Reference\CombatExtended.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="SmashTools">
       <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3014915404\1.4\Assemblies\SmashTools.dll</HintPath>
