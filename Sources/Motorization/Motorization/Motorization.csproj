@@ -71,6 +71,7 @@
     <Compile Include="Mecha\CompDeployMode.cs" />
     <Compile Include="CompVehicleAbilities.cs" />
     <Compile Include="Cargo\CompVehicleCargo.cs" />
+    <Compile Include="Mecha\CompEffector.cs" />
     <Compile Include="Mecha\FloatMenuUtility.cs" />
     <Compile Include="Harmony\HarmonyMain.cs" />
     <Compile Include="Harmony\Harmony_BillUtility.cs" />
