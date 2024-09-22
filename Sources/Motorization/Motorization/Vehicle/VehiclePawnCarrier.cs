@@ -8,10 +8,7 @@ using UnityEngine;
 
 namespace Motorization
 {
-    public class VehiclePawnTrailer : VehiclePawn
-    {
-    }
-    public class MechaFrame : VehiclePawn
+    public class VehiclePawnCarrier : VehiclePawn
     {
         public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
         {

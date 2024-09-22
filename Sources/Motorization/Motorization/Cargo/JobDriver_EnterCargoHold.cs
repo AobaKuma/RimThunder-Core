@@ -32,7 +32,14 @@ namespace Motorization
             Toil t = Toils_General.Wait(60);
             t.PlaySoundAtEnd(SoundDefOf.Artillery_ShellLoaded);
             yield return t;
-            yield return Toils_General.Do(delegate { cargo.TryAcceptThing(pawn as VehiclePawn); });
+            yield return Toils_General.Do(delegate
+            {
+                VehiclePawn vehicle = pawn as VehiclePawn;
+                vehicle.DisembarkAll();
+                vehicle.ignition.Drafted = false;
+                cargo.TryAcceptThing(vehicle);
+                
+            });
         }
         private Toil ToNearestCell(VehiclePawn targetVehicle)
         {

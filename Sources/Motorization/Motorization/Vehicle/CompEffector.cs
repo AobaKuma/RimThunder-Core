@@ -57,7 +57,7 @@ namespace Motorization
         public EffecterDef effecter;
         public CompProperties_Effector()
         {
-            compClass = typeof(CompDeployMode);
+            compClass = typeof(CompDeployToggleTexture);
         }
     }
 }

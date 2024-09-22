@@ -7,6 +7,7 @@ using RimWorld;
 using Verse;
 using UnityEngine;
 using Vehicles;
+using SmashTools;
 
 namespace Motorization
 {
@@ -16,4 +17,5 @@ namespace Motorization
 
         public override string DisableReason => "RTC_TurretRestrictUndraftReason".Translate();
     }
+
 }

@@ -68,24 +68,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Harmony\Harmony_FloatMenuOption.cs" />
-    <Compile Include="Mecha\CompDeployMode.cs" />
+    <Compile Include="Depoly\LaunchRestriction_WingDeployed.cs" />
+    <Compile Include="Depoly\CompDeployable.cs" />
+    <Compile Include="Depoly\CompDeployToggleTexture.cs" />
     <Compile Include="CompVehicleAbilities.cs" />
     <Compile Include="Cargo\CompVehicleCargo.cs" />
-    <Compile Include="Mecha\CompEffector.cs" />
-    <Compile Include="Mecha\FloatMenuUtility.cs" />
+    <Compile Include="Vehicle\CompEffector.cs" />
+    <Compile Include="Vehicle\FloatMenuUtility.cs" />
     <Compile Include="Harmony\HarmonyMain.cs" />
     <Compile Include="Harmony\Harmony_BillUtility.cs" />
     <Compile Include="Crane\Building_RTCCrane.cs" />
     <Compile Include="Crane\Bill_RTCVehicle.cs" />
     <Compile Include="Cargo\JobDriver_EnterCargoHold.cs" />
-    <Compile Include="Mecha\MechaFrame.cs" />
+    <Compile Include="Depoly\JobDriver_Deploy.cs" />
+    <Compile Include="Vehicle\VehiclePawnCarrier.cs" />
     <Compile Include="Crane\UnfinishedRTCVehicle.cs" />
     <Compile Include="Projectile\Projectile_ArcSpread.cs" />
     <Compile Include="Crane\PlaceWorker_Crane.cs" />
     <Compile Include="Harmony\Harmony_TurretRotationTick.cs" />
     <Compile Include="Projectile\Projectile_Parabola.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TurretRestrictions_Undraft.cs" />
+    <Compile Include="Depoly\TurretRestrictions_Undraft.cs" />
+    <Compile Include="Vehicle\VehiclePawnTrailer.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

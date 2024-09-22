@@ -12,10 +12,15 @@ namespace Motorization
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            foreach (var item in Props.abilities)
+            foreach (AbilityDef item in Props.abilities)
             {
-                this.Vehicle.abilities.GetAbility(item);
+                this.Vehicle.abilities.GainAbility(item);
             }
+        }
+        public override void CompTick()
+        {
+            base.CompTick();
+            this.Vehicle.abilities.AbilitiesTick();
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

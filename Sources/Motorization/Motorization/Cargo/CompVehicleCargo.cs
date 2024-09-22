@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using RimWorld;
 using System.Linq;
 using UnityEngine;
+using SmashTools;
 
 
 namespace Motorization
@@ -15,11 +16,48 @@ namespace Motorization
     }
     public class CompProperties_VehicleCargo : CompProperties
     {
-        public DrawData drawData;
+        public bool renderVehicle = true;
+        public VehicleDrawData drawData = new VehicleDrawData();
+        public Vector3 GetOffsetFor(Rot8 rot)
+        {
+            switch (rot.AsInt)
+            {
+                case 0:
+                    return drawData.dataNorth;
+                case 1:
+                    return drawData.dataEast;
+                case 2:
+                    return drawData.dataSouth;
+                case 3:
+                    return drawData.dataWest;
+                case 4://NorthEastInt
+                    return drawData.dataNorthEast;
+                case 5://SouthEastInt
+                    return drawData.dataSouthEast;
+                case 6://SouthWestInt
+                    return drawData.dataSouthWest;
+                case 7://NorthWestInt
+                    return drawData.dataNorthWest;
+            }
+            return Vector3.zero;
+        }
         public CompProperties_VehicleCargo()
         {
             compClass = typeof(CompVehicleCargo);
         }
+    }
+    [System.Serializable]
+    public class VehicleDrawData
+    {
+        public Vector3
+            dataEast = Vector3.zero,
+            dataWest = Vector3.zero,
+            dataSouth = Vector3.zero,
+            dataNorth = Vector3.zero,
+            dataNorthEast = Vector3.zero,
+            dataSouthEast = Vector3.zero,
+            dataSouthWest = Vector3.zero,
+            dataNorthWest = Vector3.zero;
     }
     public class CompVehicleCargo : VehicleComp
     {
@@ -37,7 +75,6 @@ namespace Motorization
             {
                 yield return new FloatMenuOption("RT_Load:" + pawn.Name, null);
             }
-
 
             if (!(pawn is VehiclePawn)) yield break;//判斷是不是VehiclePawn
 
@@ -73,25 +110,46 @@ namespace Motorization
         }
         public override void PostDraw()
         {
-            if (Vehicle.Spawned)
+            if (Vehicle.Spawned && Props.renderVehicle)
             {
                 if (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() != null)
                 {
                     VehiclePawn p = (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() as VehiclePawn);
 
-                    //p.Drawer.renderer.RenderPawnAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)), Vehicle.FullRotation.AsAngle, Vehicle.FullRotation, true);
-                    p.FullRotation = new SmashTools.Rot8(Vehicle.FullRotation.Opposite.AsInt);//這條等到時候更新要刪掉換成別的。             
-                    p.DrawAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)) + Props.drawData.OffsetForRot(Vehicle.Rotation), Vehicle.FullRotation.Opposite, 0);
+                    //p.Drawer.renderer.RenderPawnAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)) + Props.drawData.OffsetForRot(Vehicle.Rotation), Vehicle.FullRotation.Opposite.AsAngle, true);
+
+                    p.FullRotation = Vehicle.Rotation.Opposite;
+                    p.DrawAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)) + GetDrawOffset(), Vehicle.FullRotation.Opposite, GetAngle(), compDraw: true);
                 }
             }
         }
         private Vector3 CompDrawPos()
         {
-            return  Vehicle.FullRotation.Opposite.AsVector2.ToVector3();
+            return Vehicle.FullRotation.Opposite.AsVector2.ToVector3();
+        }
+        private float GetAngle()
+        {
+            switch (Vehicle.FullRotation.AsInt)
+            {
+                case 4:
+                    return 90;
+                case 5:
+                    return -90;
+                case 6:
+                    return 90;
+                case 7:
+                    return -90;
+                default:
+                    return 0;
+            }
+        }
+        private Vector3 GetDrawOffset()
+        {
+            return Props.GetOffsetFor(Vehicle.FullRotation);
         }
         private float AllLength(VehiclePawn pawn)
         {
-            return GapLength(pawn) + GapLength(Vehicle)+1.5f;
+            return GapLength(pawn) + GapLength(Vehicle) + 1.5f;
         }
         private float GapLength(VehiclePawn pawn)
         {
