@@ -12,7 +12,7 @@ namespace Motorization
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return Vehicle.TryGetComp<CompDeployable>(out var _c) && _c.CanDeploy;
+            return Vehicle.TryGetComp<CompDeployable>(out var _c);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -30,7 +30,7 @@ namespace Motorization
                 Vehicle.vehiclePather.StopDead();
                 if (comp.Deployed)
                 {
-                    if(retextureComp !=null) retextureComp.ToggleDeployment();
+                    retextureComp?.ToggleDeployment();
                 }
 
                 if (comp.Props.deployingSustainer != null)

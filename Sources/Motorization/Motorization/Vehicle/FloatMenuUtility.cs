@@ -51,5 +51,59 @@ namespace Motorization
                 });
             }
         }
+
+
+        public static IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsForTractor(Pawn tractor, IntVec3 sq)
+        {
+            if (tractor == null)
+            {
+                Log.Error("Error");
+                yield break;
+            }
+            if (tractor.Map == null)
+            {
+                Log.Error("Error");
+                yield break;
+            }
+            List<Thing> things = sq.GetThingList(tractor.Map);
+
+            for (int i = 0; i < things.Count; i++)
+            {
+                if (things[i] is VehiclePawn_Trailer tmp && tmp != tractor)
+                {
+                    if (tractor is VehiclePawn_Tractor tractorPawn && tractorPawn.HasTrailer)
+                    {
+                        yield return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + "RTC_AlreadyTowing".Translate(), null);
+                    }
+                    else if (false)
+                    {
+                        yield return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + "RTC_NoEnoughPower".Translate(), null);
+                    }
+                    else
+                    {
+                        yield return TryMakeFloatMenuForTrailerLoad(tractor, tmp);
+                    }
+                }
+            }
+        }
+        public static FloatMenuOption TryMakeFloatMenuForTrailerLoad(Pawn pawn, Pawn targetPawn)//targetPawn是被裝的
+        {
+            if (pawn == null) Log.Error("pawn is null");
+            if (targetPawn == null) Log.Error("targetPawn is null");
+
+            string key = string.Format("Load {0} into {1}'s cargo", targetPawn.Label, pawn.Label);
+            if (!pawn.CanReach(targetPawn, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
+            {
+                return new FloatMenuOption("CanNotReach" + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+            }
+            else
+            {
+                return new FloatMenuOption(key.Translate(), () =>
+                {
+                    Job j = JobMaker.MakeJob(VehicleJobDefOf.RTC_ConnectToTrailer, targetPawn);
+                    pawn.jobs.TryTakeOrderedJob(j);
+                });
+            }
+        }
     }
 }

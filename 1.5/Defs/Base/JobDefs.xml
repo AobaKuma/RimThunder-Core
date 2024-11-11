@@ -6,4 +6,11 @@
 		<reportString>Entering TargetA.</reportString>
 		<casualInterruptible>false</casualInterruptible>
 	  </JobDef>
+
+	  <JobDef>
+		  <defName>RTC_ConnectToTrailer</defName>
+		  <driverClass>Motorization.JobDriver_ConnectToTrailer</driverClass>
+		  <reportString>Connecting TargetA.</reportString>
+		  <casualInterruptible>false</casualInterruptible>
+		</JobDef>
 </Defs>

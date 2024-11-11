@@ -6,8 +6,6 @@ using RimWorld;
 using Vehicles;
 using UnityEngine;
 using SmashTools;
-using Verse.Noise;
-using static UnityEngine.GraphicsBuffer;
 
 
 namespace Motorization
@@ -29,7 +27,7 @@ namespace Motorization
 
             CompVehicleCargo cargo = Vehicle.TryGetComp<CompVehicleCargo>();
             this.FailOn(() => !cargo.Accepts(pawn));
-            Toil t = Toils_General.Wait(60);
+            Toil t = Toils_General.Wait(EnterDelay);
             t.PlaySoundAtEnd(SoundDefOf.Artillery_ShellLoaded);
             yield return t;
             yield return Toils_General.Do(delegate
@@ -38,7 +36,6 @@ namespace Motorization
                 vehicle.DisembarkAll();
                 vehicle.ignition.Drafted = false;
                 cargo.TryAcceptThing(vehicle);
-                
             });
         }
         private Toil ToNearestCell(VehiclePawn targetVehicle)
@@ -46,6 +43,8 @@ namespace Motorization
             Toil toil = ToilMaker.MakeToil("GotoThing");
             toil.initAction = delegate
             {
+                VehiclePawn vehicle = toil.actor as VehiclePawn;
+                vehicle.ignition.Drafted = true;
                 toil.actor.pather.StartPath(RearCell(targetVehicle), PathEndMode.OnCell);
             };
             toil.defaultCompleteMode = ToilCompleteMode.PatherArrival;

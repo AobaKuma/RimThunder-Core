@@ -3,6 +3,7 @@ using Verse;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using SmashTools;
 
 
 namespace Motorization
@@ -11,43 +12,27 @@ namespace Motorization
     {
         private bool _isDeployed = false;
         public CompProperties_DeployToggleTexture Props => base.props as CompProperties_DeployToggleTexture;
-        private CompDeployable _cachedComp = null;
+
         public bool IsDeployed => _isDeployed;
         public override void CompTick()
         {
-            if (Vehicle.Spawned)
-            {
-                if (Vehicle.CompVehicleTurrets == null) return;
-                if (Vehicle.CompVehicleTurrets.CanDeploy)
-                {
-                    if (Vehicle.CompVehicleTurrets.Deployed)
-                    {
-                        if (!_isDeployed)
-                        {
-                            Vehicle.SetRetexture(Props.GetRetexture(null)); //現在還沒辦法獲取當前retexture，等Phil
-                            _isDeployed = true;
-                        }
-                    }
-                    else if (_isDeployed)
-                    {
-                        Vehicle.SetRetexture(null);
-                        _isDeployed = false;
-                    }
-                }
-            }
+            //Log.Message(IsDeployed);
+        }
+        public override void EventRegistration()
+        {
+            base.EventRegistration();
+            base.Vehicle.AddEvent(VehicleEventDefOf.Deployed, ToggleDeployment);
+            base.Vehicle.AddEvent(VehicleEventDefOf.Undeployed, ToggleDeployment);
         }
         public void ToggleDeployment()
         {
-            if (_cachedComp == null) _cachedComp = Vehicle.GetComp<CompDeployable>();
-            if (_cachedComp.Deployed)
+            if (Vehicle.CompVehicleTurrets.Deployed)
             {
-                if (!_isDeployed)
-                {
-                    Vehicle.SetRetexture(Props.GetRetexture(null)); //現在還沒辦法獲取當前retexture，等Phil
-                    _isDeployed = true;
-                }
+                Vehicle.SetRetexture(Props.GetRetexture(Vehicle.Retexture)); //理論上能用了
+                this.Vehicle.ignition.Drafted = false; 
+                _isDeployed = true;
             }
-            else if (_isDeployed)
+            else
             {
                 Vehicle.SetRetexture(null);
                 _isDeployed = false;
@@ -61,9 +46,11 @@ namespace Motorization
     }
     public class CompProperties_DeployToggleTexture : CompProperties
     {
+        public RetextureDef defaultRetexture = null;
         public List<TogglePair> retexturePairs = new List<TogglePair>();
         public RetextureDef GetRetexture(RetextureDef original)
         {
+            if (original is null) return defaultRetexture;
             return retexturePairs.Where(p => p.originalDef == original)?.First().textureDef;
         }
         public CompProperties_DeployToggleTexture()

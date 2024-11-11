@@ -1,19 +1,12 @@
 ﻿using Vehicles;
 using Verse;
 using System.Collections.Generic;
-using RimWorld;
 using System.Linq;
 using UnityEngine;
 using SmashTools;
 
-
 namespace Motorization
 {
-    [DefOf]
-    public static class VehicleJobDefOf
-    {
-        public static JobDef RTC_LoadToCargo;
-    }
     public class CompProperties_VehicleCargo : CompProperties
     {
         public bool renderVehicle = true;
@@ -46,22 +39,14 @@ namespace Motorization
             compClass = typeof(CompVehicleCargo);
         }
     }
-    [System.Serializable]
-    public class VehicleDrawData
-    {
-        public Vector3
-            dataEast = Vector3.zero,
-            dataWest = Vector3.zero,
-            dataSouth = Vector3.zero,
-            dataNorth = Vector3.zero,
-            dataNorthEast = Vector3.zero,
-            dataSouthEast = Vector3.zero,
-            dataSouthWest = Vector3.zero,
-            dataNorthWest = Vector3.zero;
-    }
     public class CompVehicleCargo : VehicleComp
     {
-        ThingOwner<Thing> Cargo => Vehicle.inventory.innerContainer;
+        public override void Initialize(CompProperties props)
+        {
+            base.Initialize(props);
+        }
+        public ThingOwner<Thing> Cargo => Vehicle.inventory.innerContainer;
+
         public CompProperties_VehicleCargo Props => base.props as CompProperties_VehicleCargo;
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions() //其他Pawn選擇這個Pawn時產生
         {
@@ -90,7 +75,27 @@ namespace Motorization
             {
                 yield return item;
             }
-            yield return new FloatMenuOption("RT_Load:" + selPawn.Name, null);
+            yield return new FloatMenuOption("RT_Load: " + selPawn.Name, null);
+        }
+        public bool TryGetTrailer(out VehiclePawn_Trailer pawn)
+        {
+            pawn = null;
+            if (!Cargo.NullOrEmpty() && Cargo?.Where(a => a is VehiclePawn_Trailer).First() is VehiclePawn_Trailer trailer)
+            {
+                pawn = trailer;
+                return true;
+            }
+            return false;
+        }
+        public bool TryUnloadThing(VehiclePawn thing)
+        {
+            if (Cargo.Contains(thing))
+            {
+                Cargo.Remove(thing);
+                GenDrop.TryDropSpawn(thing, this.parent.Rotation.FacingCell * (int)(parent.def.Size.x / 2), parent.Map, ThingPlaceMode.Near, out var _);
+                return true;
+            }
+            return false;
         }
         public bool TryAcceptThing(VehiclePawn thing)
         {
@@ -112,15 +117,17 @@ namespace Motorization
         {
             if (Vehicle.Spawned && Props.renderVehicle)
             {
-                if (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() != null)
+                if (Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
                 {
                     VehiclePawn p = (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() as VehiclePawn);
-
-                    //p.Drawer.renderer.RenderPawnAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)) + Props.drawData.OffsetForRot(Vehicle.Rotation), Vehicle.FullRotation.Opposite.AsAngle, true);
-
                     p.FullRotation = Vehicle.Rotation.Opposite;
                     p.DrawAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)) + GetDrawOffset(), Vehicle.FullRotation.Opposite, GetAngle(), compDraw: true);
                 }
+            }
+            if (TryGetTrailer(out var trailer) && parent.TryGetComp<CompTrailerMount>(out var mount))
+            {
+                if (mount.LatestRot == null) mount.Initial(Vehicle.FullRotation);
+                mount.DrawTrailer(trailer,Vehicle.DrawPos, Vehicle.FullRotation, GetAngle()); //由母車的Comp來叫，並在內部調用子車的Comp
             }
         }
         private Vector3 CompDrawPos()

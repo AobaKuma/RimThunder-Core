@@ -7,9 +7,9 @@ namespace Motorization
     {
         public override bool CanStartProtocol(VehiclePawn vehicle, Map map, IntVec3 position, Rot4 rot)
         {
-            if (vehicle.TryGetComp<CompDeployable>(out var comp))
+            if (vehicle.CompVehicleTurrets.CanDeploy)
             {
-                if (comp.Deployed)
+                if (vehicle.CompVehicleTurrets.Deployed)
                 {
                     return base.CanStartProtocol(vehicle, map, position, rot);
                 }

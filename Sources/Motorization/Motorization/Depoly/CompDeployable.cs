@@ -18,7 +18,6 @@ namespace Motorization
         private bool deployed;
         internal int deployTicks;
 
-        public bool CanDeploy { get; private set; }
         public bool Deployed => deployed;
         public int DeployTicks => Mathf.RoundToInt(Props.deployTime * 60f);
 
@@ -28,7 +27,7 @@ namespace Motorization
             {
                 yield break;
             }
-            if (CanDeploy)
+
             {
                 Command_Toggle deployToggle = new Command_Toggle
                 {
@@ -65,10 +64,6 @@ namespace Motorization
                 yield return deployToggle;
             }
         }
-        public void RecacheDeployment()
-        {
-            CanDeploy = SettingsCache.TryGetValue(base.Vehicle.VehicleDef, typeof(CompProperties_VehicleTurrets), "deployTime", Props.deployTime) > 0f;
-        }
         public void ToggleDeployment()
         {
             deployed = !deployed;
@@ -85,6 +80,10 @@ namespace Motorization
                 base.Vehicle.EventRegistry[VehicleEventDefOf.Undeployed].ExecuteEvents();
                 if (Props.mobileWhileDeployed) Vehicle.movementStatus = VehicleMovementStatus.Online;
             }
+            if (this.parent.TryGetComp<CompDeployToggleTexture>(out var compDeployToggleTexture))
+            {
+                compDeployToggleTexture.ToggleDeployment();
+            }
         }
         public override void PostExposeData()
         {
@@ -96,8 +95,7 @@ namespace Motorization
     public class CompProperties_Deployable : CompProperties
     {
         public bool mobileWhileDeployed = true;
-        public int deployTime;
-
+        public int deployTime  =4;
         public SoundDef deployingSustainer;
         public SoundDef deploySound;
         public SoundDef undeploySound;
