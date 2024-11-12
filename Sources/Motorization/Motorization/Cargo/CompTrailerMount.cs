@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using SmashTools;
 using UnityEngine;
 using RimWorld;
-using LudeonTK;
-using static RimWorld.MechClusterSketch;
 using System;
 using System.Linq;
 
@@ -57,7 +55,8 @@ namespace Motorization
         public bool Accepts(Thing thing)
         {
             if (thing == null) return false;
-            if(!(thing is VehiclePawn_Trailer)) return false;
+            if (thing is VehiclePawn_Tractor tractor && tractor.TrailerMount.TryGetTrailer(out var _)) return false;
+            else if(!(thing is VehiclePawn_Trailer)) return false;
             return true;//這邊之後判斷需要額外寫重量那些
         }
         public bool TryAcceptThing(VehiclePawn thing)
@@ -79,20 +78,31 @@ namespace Motorization
         {
             base.Notify_DefsHotReloaded();
         }
+        public bool TryUnloadThing(VehiclePawn thing)
+        {
+            if (Cargo.Contains(thing))
+            {
+                Cargo.Remove(thing);
+                GenDrop.TryDropSpawn(thing, this.Vehicle.FullRotation.FacingCell * (int)((parent.def.Size.z + thing.def.Size.z) / 2), parent.Map, ThingPlaceMode.Near, out var _);
+                thing.FullRotation = Props.flipWhenTrailer ? Vehicle.FullRotation.Opposite : Vehicle.FullRotation;
+                return true;
+            }
+            return false;
+        }
         public override void PostDraw()
         {
             base.PostDraw();
             if (parent.Spawned)
             {
-                DebugDraw(parent.DrawPos + GetPivot(Vehicle.FullRotation));
+                if (DebugSettings.godMode) DebugDraw(parent.DrawPos + GetPivot(Vehicle.FullRotation));
                 if (parent is VehiclePawn_Tractor && TryGetTrailer(out var trailer) && parent.TryGetComp<CompTrailerMount>(out var mount))
                 {
                     if (mount.LatestRot == null) mount.Initial(Vehicle.FullRotation);
-                    mount.DrawTrailer(trailer, Vehicle.DrawPos, Vehicle.FullRotation, GetAngle(Vehicle.FullRotation)); //由母車的Comp來叫，並在內部調用子車的Comp
+                    mount.DrawTrailer(trailer, Vehicle.DrawPos, Vehicle.FullRotation); //由母車的Comp來叫，並在內部調用子車的Comp
                 }
             }
         }
-        public void DrawTrailer(VehiclePawn_Trailer pawn_Trailer, Vector3 exactPos, Rot8 rot, float angle)
+        public void DrawTrailer(VehiclePawn_Trailer pawn_Trailer, Vector3 exactPos, Rot8 rot)
         {
             //旋轉更新
             if (Find.TickManager.CurTimeSpeed != 0 && Pawn.movementStatus == VehicleMovementStatus.Online && Pawn.vehiclePather.Moving)
@@ -114,12 +124,15 @@ namespace Motorization
             {
                 //子車旋轉
                 Rot8 trailerRot = compTrailerMount.Props.flipWhenTrailer ? LatestRot.Opposite : LatestRot;//顯示的時候如果為逆向則會翻轉。
+                pawn_Trailer.Rotation = trailerRot;
                 //子車掛點位置
                 Vector3 trailerMount = compTrailerMount.GetPivot(trailerRot);
 
                 float trailerAngle = GetAngle(trailerRot);
 
                 //母車位置+母車(自身轉向時的)旋轉偏移 +子車(自身轉向時的)旋轉偏移
+
+                //砲塔
                 if (pawn_Trailer.CompVehicleTurrets != null && !pawn_Trailer.CompVehicleTurrets.turrets.NullOrEmpty())
                 {
                     foreach (var item in pawn_Trailer.CompVehicleTurrets.turrets)

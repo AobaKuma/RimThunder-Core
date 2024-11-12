@@ -13,7 +13,7 @@ namespace Motorization
     public class JobDriver_ConnectToTrailer : JobDriver
     {
         public VehiclePawn TrailerPawn => job.GetTarget(TargetIndex.A).Pawn as VehiclePawn;
-        VehiclePawn TractorPawn => GetActor() as VehiclePawn;
+        VehiclePawn_Tractor TractorPawn => GetActor() as VehiclePawn_Tractor;
         public const int EnterDelay = 60;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -25,9 +25,7 @@ namespace Motorization
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             yield return ToNearestCell(TrailerPawn);
-
-            CompTrailerMount mount = TractorPawn.GetComp<CompTrailerMount>();
-            this.FailOn(() => !mount.Accepts(TrailerPawn));
+            this.FailOn(() => !TractorPawn.TrailerMount.Accepts(TrailerPawn));
             if (TrailerPawn.CompVehicleTurrets != null && TrailerPawn.CompVehicleTurrets.CanDeploy)
             {
                 if (TrailerPawn.CompVehicleTurrets.Deployed)
@@ -62,7 +60,7 @@ namespace Motorization
                     }
                 }
                 TrailerPawn.ignition.Drafted = false;
-                mount.TryAcceptThing(TrailerPawn);
+                TractorPawn.TrailerMount.TryAcceptThing(TrailerPawn);
 
             });
         }
@@ -88,26 +86,6 @@ namespace Motorization
                 }
             }
         }
-        public static Toil BoardVehicle(Pawn pawn)
-        {
-            Toil toil = new Toil();
-            toil.initAction = delegate ()
-            {
-                VehiclePawn vehicle = toil.actor.jobs.curJob.GetTarget(TargetIndex.A).Thing as VehiclePawn;
-                if (pawn.GetLord()?.LordJob is LordJob_FormAndSendVehicles lordJob)
-                {
-                    (VehiclePawn vehicle, VehicleHandler handler) assignedSeat = lordJob.GetVehicleAssigned(pawn);
-                    assignedSeat.vehicle.TryAddPawn(pawn, assignedSeat.handler);
-                    return;
-                }
-                vehicle.Notify_Boarded(pawn);
-                ThrowAppropriateHistoryEvent(vehicle.VehicleDef.vehicleType, toil.actor);
-
-            };
-            toil.defaultCompleteMode = ToilCompleteMode.Instant;
-            return toil;
-        }
-
         private Toil ToNearestCell(VehiclePawn targetVehicle)
         {
             Toil toil = ToilMaker.MakeToil("GotoThing");
@@ -122,7 +100,7 @@ namespace Motorization
         }
         private IntVec3 RearCell(VehiclePawn target)
         {
-            Vector2 v2 = target.FullRotation.Opposite.AsVector2.normalized;
+            Vector2 v2 = target.FullRotation.AsVector2.normalized;
             IntVec3 v = new IntVec3((int)v2.x, 0, (int)v2.y) * ((target.def.Size.z + 3) / 2);
             return target.Position + v;
             //到時候要做Unload時生成在指定位置

@@ -9,7 +9,24 @@ namespace Motorization
 {
     public static class FloatMenuUtility
     {
-        public static IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(Pawn pawn, IntVec3 sq)
+        public static IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsForCarrier(Pawn pawn, Thing selectedThing)
+        {
+            if (pawn == null)
+            {
+                Log.Error("Error");
+                yield break;
+            }
+            if (pawn.Map == null)
+            {
+                Log.Error("Error");
+                yield break;
+            }
+            if (selectedThing.GetType().IsSubclassOf(typeof(VehiclePawn)))
+            {
+                    yield return TryMakeFloatMenuForCargoLoad(pawn, selectedThing as Pawn);
+            }
+        }
+        public static IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsForCarrier(Pawn pawn, IntVec3 sq)
         {
             if (pawn == null)
             {
@@ -22,13 +39,11 @@ namespace Motorization
                 yield break;
             }
             List<Thing> things = sq.GetThingList(pawn.Map);
-
             for (int i = 0; i < things.Count; i++)
             {
                 if (things[i] is VehiclePawn tmp && tmp != pawn)
                 {
                     yield return TryMakeFloatMenuForCargoLoad(pawn, tmp);
-                    break;
                 }
             }
         }
@@ -36,6 +51,7 @@ namespace Motorization
         {
             if (pawn == null) Log.Error("pawn is null");
             if (targetPawn == null) Log.Error("targetPawn is null");
+
             string key = string.Format("Load {1} into {0}'s cargo", targetPawn.Name, pawn.Name);
             if (!targetPawn.CanReach(pawn, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
             {
@@ -47,7 +63,6 @@ namespace Motorization
                 {
                     Job j = JobMaker.MakeJob(VehicleJobDefOf.RTC_LoadToCargo, pawn);
                     targetPawn.jobs.TryTakeOrderedJob(j);
-                    //targetPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(VehicleJobDefOf.RTC_LoadToCargo, pawn), JobTag.Misc);
                 });
             }
         }

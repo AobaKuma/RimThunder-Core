@@ -18,6 +18,7 @@ namespace Motorization
         {
             return true;
         }
+        List<Pawn> cacheCrews = null;
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
@@ -33,7 +34,28 @@ namespace Motorization
             yield return Toils_General.Do(delegate
             {
                 VehiclePawn vehicle = pawn as VehiclePawn;
-                vehicle.DisembarkAll();
+
+                if (!vehicle.AllPawnsAboard.NullOrEmpty()) //crew transport
+                {
+                    cacheCrews = new List<Pawn>();
+                    for (int i = vehicle.AllPawnsAboard.Count - 1; i >= 0; i--)
+                    {
+                        cacheCrews.Add(vehicle.AllPawnsAboard[i]);
+                        Log.Message(vehicle.AllPawnsAboard[i].Name);
+                    }
+                    vehicle.DisembarkAll();
+
+                    if (!cacheCrews.NullOrEmpty())
+                    {
+                        foreach (var item in cacheCrews)
+                        {
+                            if (vehicle.SeatsAvailable <= 0) break;
+                            vehicle.TryAddPawn(item);
+                        }
+                        cacheCrews = null;
+                    }
+                }
+
                 vehicle.ignition.Drafted = false;
                 cargo.TryAcceptThing(vehicle);
             });
@@ -45,7 +67,7 @@ namespace Motorization
             {
                 VehiclePawn vehicle = toil.actor as VehiclePawn;
                 vehicle.ignition.Drafted = true;
-                toil.actor.pather.StartPath(RearCell(targetVehicle), PathEndMode.OnCell);
+                toil.actor.pather.StartPath(RearCell(targetVehicle), PathEndMode.Touch);
             };
             toil.defaultCompleteMode = ToilCompleteMode.PatherArrival;
             toil.FailOnDespawnedOrNull(TargetIndex.A);
@@ -54,7 +76,7 @@ namespace Motorization
         private IntVec3 RearCell(VehiclePawn target)
         {
             Vector2 v2 = target.FullRotation.Opposite.AsVector2.normalized;
-            IntVec3 v = new IntVec3((int)v2.x, 0, (int)v2.y) * ((target.def.Size.z + 3) / 2);
+            IntVec3 v = new IntVec3((int)v2.x, 0, (int)v2.y) * ((target.def.Size.z + (pawn as VehiclePawn).def.Size.z) / 2);
             return target.Position + v;
             //到時候要做Unload時生成在指定位置
         }

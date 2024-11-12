@@ -46,6 +46,13 @@ namespace Motorization
             {
                 yield return item;
             }
+            if (this.TryGetComp<CompVehicleCargo>(out CompVehicleCargo vehicleCargo))
+            {
+                foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForCarrier(this, sq))
+                {
+                    yield return item;
+                }
+            }
         }
     }
 }

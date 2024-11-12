@@ -9,13 +9,19 @@ namespace Motorization
 {
     public class VehiclePawn_Trailer : VehiclePawn
     {
-        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)//其他pawn選擇這個載具時顯示
+        public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
         {
-            if (selPawn is VehiclePawn_Tractor) //拖車拖掛的部分
+            foreach (var item in base.GetExtraFloatMenuOptionsFor(sq))
             {
-                Log.Message(selPawn);
+                yield return item;
             }
-            return base.GetFloatMenuOptions(selPawn);
+            if (this.TryGetComp<CompVehicleCargo>(out CompVehicleCargo vehicleCargo))
+            {
+                foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForCarrier(this, sq))
+                {
+                    yield return item;
+                }
+            }
         }
         public CompTrailerMount TrailerMount 
         {
@@ -33,6 +39,17 @@ namespace Motorization
 
         private CompTrailerMount cacheComp;
 
+        public override void DrawAt(Vector3 drawLoc, Rot8 rot, float extraRotation, bool flip = false, bool compDraw = true)
+        {
+            base.DrawAt(drawLoc, rot, extraRotation, flip, compDraw);
+            if (compDraw)
+            {
+                if (this.TryGetComp<CompVehicleCargo>(out CompVehicleCargo vehicleCargo))
+                {
+                    vehicleCargo.PostDrawUnspawned(drawLoc, rot, extraRotation);
+                }
+            }
+        }
         public void DrawTrailer(Map map, Vector3 pos, float angleFloat, Rot8 rot8Direction)
         {
             DrawAt(pos, Rot8.FromAngle(angleFloat), 0);
