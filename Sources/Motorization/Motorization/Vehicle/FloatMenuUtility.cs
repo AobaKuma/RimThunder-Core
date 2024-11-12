@@ -75,6 +75,10 @@ namespace Motorization
                     {
                         yield return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + "RTC_AlreadyTowing".Translate(), null);
                     }
+                    else if (!CanTowVehicle(tractor as VehiclePawn_Tractor, tmp))
+                    {
+                        yield return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + "RTC_NoSupportedType".Translate(), null);
+                    }
                     else if (false)
                     {
                         yield return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + "RTC_NoEnoughPower".Translate(), null);
@@ -85,6 +89,17 @@ namespace Motorization
                     }
                 }
             }
+        }
+        public static bool CanTowVehicle(VehiclePawn_Tractor tractor, VehiclePawn_Trailer trailer)
+        {
+            if (!tractor.TryGetComp<CompTrailerMount>(out var tractorMount) & !trailer.TryGetComp<CompTrailerMount>(out var trailerMount)) return false;
+            if(tractorMount.Props.supportedType.NullOrEmpty()|| trailerMount.Props.supportedType.NullOrEmpty()) return false;
+
+            foreach (string item in tractorMount.Props.supportedType)
+            {
+                if(trailerMount.Props.supportedType.Contains(item)) return true;
+            }
+            return false;
         }
         public static FloatMenuOption TryMakeFloatMenuForTrailerLoad(Pawn pawn, Pawn targetPawn)//targetPawn是被裝的
         {

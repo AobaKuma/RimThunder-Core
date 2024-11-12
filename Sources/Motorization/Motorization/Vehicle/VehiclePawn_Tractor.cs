@@ -11,18 +11,8 @@ namespace Motorization
 {
     public class VehiclePawn_Tractor : VehiclePawn //負責拖別人的母車。
     {
-        public bool HasTrailer => VehicleCargo.TryGetTrailer(out var _);
+        public bool HasTrailer => TrailerMount.TryGetTrailer(out var _);
 
-        protected CompVehicleCargo vehicleCargo;
-        public CompVehicleCargo VehicleCargo
-        {
-            get
-            {
-                if (vehicleCargo == null) vehicleCargo = this.TryGetComp<CompVehicleCargo>();
-                return vehicleCargo;
-            }
-            private set { }
-        }
 
         protected CompTrailerMount trailerMount;
         public CompTrailerMount TrailerMount 

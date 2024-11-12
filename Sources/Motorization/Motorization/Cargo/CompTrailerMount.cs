@@ -4,17 +4,34 @@ using System.Collections.Generic;
 using SmashTools;
 using UnityEngine;
 using RimWorld;
+using LudeonTK;
+using static RimWorld.MechClusterSketch;
+using System;
+using System.Linq;
 
 
 namespace Motorization
 {
     public class CompProperties_TrailerMount : CompProperties
     {
+        public List<string> supportedType = new List<string>() { "lowTrailerMount"};
         public List<Vector3> rotationPivot;
         public bool flipWhenTrailer = false;
+
+
         public CompProperties_TrailerMount()
         {
             compClass = typeof(CompTrailerMount);
+        }
+        public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
+        {
+            if (this.supportedType.NullOrEmpty())
+            {
+                if(this.supportedType ==null) supportedType = new List<string>();
+                Log.Error(parentDef.defName + " has empty supportType of trailers. it will make it not able to mount on any trailer or tractors");
+            }
+            return base.ConfigErrors(parentDef);
+            
         }
     }
 
@@ -23,10 +40,36 @@ namespace Motorization
         public Rot8 LatestRot => latestRot;
         protected VehiclePawn Pawn => parent as VehiclePawn;
         protected Rot8 latestRot;
-        protected int UpdateInterval = 180;
+        protected int UpdateInterval = 360;
         protected float tempInterval = 0;
         public CompProperties_TrailerMount Props => base.props as CompProperties_TrailerMount;
-
+        public ThingOwner<Thing> Cargo => Vehicle.inventory.innerContainer;
+        public bool TryGetTrailer(out VehiclePawn_Trailer pawn)
+        {
+            pawn = null;
+            if (!Cargo.NullOrEmpty() && Cargo?.Where(a => a is VehiclePawn_Trailer).First() is VehiclePawn_Trailer trailer)
+            {
+                pawn = trailer;
+                return true;
+            }
+            return false;
+        }
+        public bool Accepts(Thing thing)
+        {
+            if (thing == null) return false;
+            if(!(thing is VehiclePawn_Trailer)) return false;
+            return true;//這邊之後判斷需要額外寫重量那些
+        }
+        public bool TryAcceptThing(VehiclePawn thing)
+        {
+            if (!this.Accepts(thing))
+            {
+                return false;
+            }
+            thing.DeSpawn();
+            Vehicle.AddOrTransfer(thing);
+            return true;
+        }
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -35,6 +78,19 @@ namespace Motorization
         public override void Notify_DefsHotReloaded()
         {
             base.Notify_DefsHotReloaded();
+        }
+        public override void PostDraw()
+        {
+            base.PostDraw();
+            if (parent.Spawned)
+            {
+                DebugDraw(parent.DrawPos + GetPivot(Vehicle.FullRotation));
+                if (parent is VehiclePawn_Tractor && TryGetTrailer(out var trailer) && parent.TryGetComp<CompTrailerMount>(out var mount))
+                {
+                    if (mount.LatestRot == null) mount.Initial(Vehicle.FullRotation);
+                    mount.DrawTrailer(trailer, Vehicle.DrawPos, Vehicle.FullRotation, GetAngle(Vehicle.FullRotation)); //由母車的Comp來叫，並在內部調用子車的Comp
+                }
+            }
         }
         public void DrawTrailer(VehiclePawn_Trailer pawn_Trailer, Vector3 exactPos, Rot8 rot, float angle)
         {
@@ -62,18 +118,26 @@ namespace Motorization
                 Vector3 trailerMount = compTrailerMount.GetPivot(trailerRot);
 
                 float trailerAngle = GetAngle(trailerRot);
-                //if (compTrailerMount.Props.flipWhenTrailer && trailerRot.IsDiagonal)
-                //{
-                //    trailerAngle += angle > 180 ? 90 : -90;
-                //}
 
                 //母車位置+母車(自身轉向時的)旋轉偏移 +子車(自身轉向時的)旋轉偏移
-                foreach (var item in pawn_Trailer.CompVehicleTurrets.turrets)
+                if (pawn_Trailer.CompVehicleTurrets != null && !pawn_Trailer.CompVehicleTurrets.turrets.NullOrEmpty())
                 {
-                    item.TurretRotation = item.defaultAngleRotated + trailerRot.AsAngle;
+                    foreach (var item in pawn_Trailer.CompVehicleTurrets.turrets)
+                    {
+                        item.TurretRotation = item.defaultAngleRotated + trailerRot.AsAngle;
+                    }
                 }
                 pawn_Trailer.DrawAt(exactPos + tractorMount - trailerMount, trailerRot, trailerAngle, compDraw: true);
             }
+        }
+        public void DebugDraw(Vector3 exactPos)
+        {
+            Mesh mesh;
+            mesh = MeshPool.plane10;
+            Matrix4x4 matrix = Matrix4x4.TRS(exactPos + Vector3.up, Quaternion.identity, Vector3.one * 2);
+            Texture2D texture = ContentFinder<Texture2D>.Get("RT_Dummy");
+            Material m = MaterialPool.MatFrom(texture);
+            Graphics.DrawMesh(mesh, matrix, m, 0);
         }
         private float GetAngle(Rot8 rot)
         {
@@ -103,11 +167,10 @@ namespace Motorization
             //4 - 3 = 1
             float ra = Vehicle.FullRotation.AsAngle - latestRot.AsAngle;
             if (ra < 0) ra += 360;
-            Log.Message(ra);
+
 
             RotationDirection direction = ra > 180 ? RotationDirection.Counterclockwise : RotationDirection.Clockwise;
             latestRot.Rotate(direction,true);
-            Log.Message(latestRot +" "+ direction);
         }
         public Vector3 GetPivot(Rot8 rot)
         {

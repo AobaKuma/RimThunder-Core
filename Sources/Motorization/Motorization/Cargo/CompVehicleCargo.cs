@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using SmashTools;
+using RimWorld;
 
 namespace Motorization
 {
@@ -48,44 +49,16 @@ namespace Motorization
         public ThingOwner<Thing> Cargo => Vehicle.inventory.innerContainer;
 
         public CompProperties_VehicleCargo Props => base.props as CompProperties_VehicleCargo;
-        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions() //其他Pawn選擇這個Pawn時產生
+
+        public FloatMenuOption FloatMenuOptionForCargo(Pawn selPawn)
         {
-            foreach (var item in base.CompFloatMenuOptions())
+            if (selPawn == null ||selPawn.Faction !=Faction.OfPlayer || !(selPawn is VehiclePawn))
             {
-                yield return item;
+                return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + "RTC_NotAvaliable".Translate(), null);
             }
 
-            VehiclePawn pawn = Find.Selector.SingleSelectedThing as VehiclePawn; //總之先這樣寫
-            if (pawn != null)
-            {
-                yield return new FloatMenuOption("RT_Load:" + pawn.Name, null);
-            }
-
-            if (!(pawn is VehiclePawn)) yield break;//判斷是不是VehiclePawn
-
-            //判斷是否為自家載具跟自家殖民者
-
-            if (!pawn.Faction.IsPlayer) yield break;
-
-            yield return FloatMenuUtility.TryMakeFloatMenuForCargoLoad(pawn, Vehicle);
-        }
-        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
-        {
-            foreach (var item in base.CompFloatMenuOptions(selPawn))
-            {
-                yield return item;
-            }
-            yield return new FloatMenuOption("RT_Load: " + selPawn.Name, null);
-        }
-        public bool TryGetTrailer(out VehiclePawn_Trailer pawn)
-        {
-            pawn = null;
-            if (!Cargo.NullOrEmpty() && Cargo?.Where(a => a is VehiclePawn_Trailer).First() is VehiclePawn_Trailer trailer)
-            {
-                pawn = trailer;
-                return true;
-            }
-            return false;
+            VehiclePawn vehicle = selPawn as VehiclePawn;
+            return FloatMenuUtility.TryMakeFloatMenuForCargoLoad(vehicle, Vehicle);
         }
         public bool TryUnloadThing(VehiclePawn thing)
         {
@@ -123,11 +96,6 @@ namespace Motorization
                     p.FullRotation = Vehicle.Rotation.Opposite;
                     p.DrawAt(Vehicle.DrawPos + (CompDrawPos() * AllLength(p)) + GetDrawOffset(), Vehicle.FullRotation.Opposite, GetAngle(), compDraw: true);
                 }
-            }
-            if (TryGetTrailer(out var trailer) && parent.TryGetComp<CompTrailerMount>(out var mount))
-            {
-                if (mount.LatestRot == null) mount.Initial(Vehicle.FullRotation);
-                mount.DrawTrailer(trailer,Vehicle.DrawPos, Vehicle.FullRotation, GetAngle()); //由母車的Comp來叫，並在內部調用子車的Comp
             }
         }
         private Vector3 CompDrawPos()

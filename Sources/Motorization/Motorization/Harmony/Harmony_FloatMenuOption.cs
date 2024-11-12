@@ -16,23 +16,17 @@ namespace Motorization
         [HarmonyPatch(typeof(VehiclePawn), nameof(VehiclePawn.GetFloatMenuOptions))]
         class Harmony_FloatMenuOption_PostFix
         {
-            //static IEnumerable<FloatMenuOption> Postfix(VehiclePawn __instance, object __0)
-            //{
-            //    if(!(__0 is Pawn pawn)) yield break;
+            static IEnumerable<FloatMenuOption> Postfix(VehiclePawn __instance, Pawn selPawn)
+            {
+                if (selPawn is null) yield break;
+                if (selPawn.Faction != Faction.OfPlayer) yield break;
+                if (!(selPawn is VehiclePawn pawn)) yield break;
 
-            //    foreach (ThingComp thingComp in __instance.AllComps)
-            //    {
-            //        if (!(thingComp is VehicleComp vehicleComp))
-            //        {
-            //            continue;
-            //        }
-
-            //        foreach (FloatMenuOption item in vehicleComp.CompFloatMenuOptions(selPawn: pawn))
-            //        {
-            //            yield return item;
-            //        }
-            //    }
-            //}
+                if (__instance.TryGetComp<CompVehicleCargo>(out var vehicleCargo))
+                {
+                        yield return vehicleCargo.FloatMenuOptionForCargo(pawn);
+                }
+            }
         }
     }
 }

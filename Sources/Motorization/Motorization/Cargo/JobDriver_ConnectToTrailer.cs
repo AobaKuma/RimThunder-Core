@@ -12,27 +12,28 @@ namespace Motorization
 {
     public class JobDriver_ConnectToTrailer : JobDriver
     {
-        public VehiclePawn Vehicle => job.GetTarget(TargetIndex.A).Pawn as VehiclePawn;
+        public VehiclePawn TrailerPawn => job.GetTarget(TargetIndex.A).Pawn as VehiclePawn;
         VehiclePawn TractorPawn => GetActor() as VehiclePawn;
         public const int EnterDelay = 60;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            if (!TractorPawn.TryGetComp<CompVehicleCargo>(out var _)) return false;
+            if (!TractorPawn.TryGetComp<CompTrailerMount>(out var _)) return false;
             return true;
         }
         List<Pawn> cacheCrews = null;
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-            this.FailOnDowned(TargetIndex.A);
+            yield return ToNearestCell(TrailerPawn);
 
-            yield return ToNearestCell(Vehicle);
-
-            CompVehicleCargo cargo = pawn.GetComp<CompVehicleCargo>();
-            this.FailOn(() => !cargo.Accepts(Vehicle));
-            if (Vehicle.CompVehicleTurrets.Deployed)
+            CompTrailerMount mount = TractorPawn.GetComp<CompTrailerMount>();
+            this.FailOn(() => !mount.Accepts(TrailerPawn));
+            if (TrailerPawn.CompVehicleTurrets != null && TrailerPawn.CompVehicleTurrets.CanDeploy)
             {
-                Vehicle.CompVehicleTurrets.ToggleDeployment();
+                if (TrailerPawn.CompVehicleTurrets.Deployed)
+                {
+                    TrailerPawn.CompVehicleTurrets.ToggleDeployment();
+                }
             }
             Toil t = Toils_General.Wait(EnterDelay);
             t.PlaySoundAtEnd(SoundDefOf.Artillery_ShellLoaded);
@@ -41,25 +42,27 @@ namespace Motorization
             yield return Toils_General.Do(delegate
             {
                 cacheCrews = new List<Pawn>();
-                Log.Message(Vehicle.AllPawnsAboard.Count);
-                for (int i = Vehicle.AllPawnsAboard.Count - 1; i >= 0; i--)
+                if (!TrailerPawn.AllPawnsAboard.NullOrEmpty()) //crew transport
                 {
-                    cacheCrews.Add(Vehicle.AllPawnsAboard[i]);
-                    Log.Message(Vehicle.AllPawnsAboard[i].Name);
-                }
-                Vehicle.DisembarkAll();
-
-                if (!cacheCrews.NullOrEmpty())
-                {
-                    foreach (var item in cacheCrews)
+                    for (int i = TrailerPawn.AllPawnsAboard.Count - 1; i >= 0; i--)
                     {
-                        if (TractorPawn.SeatsAvailable <= 0) break;
-                        TractorPawn.TryAddPawn(item);
+                        cacheCrews.Add(TrailerPawn.AllPawnsAboard[i]);
+                        Log.Message(TrailerPawn.AllPawnsAboard[i].Name);
                     }
-                    cacheCrews = null;
+                    TrailerPawn.DisembarkAll();
+
+                    if (!cacheCrews.NullOrEmpty())
+                    {
+                        foreach (var item in cacheCrews)
+                        {
+                            if (TractorPawn.SeatsAvailable <= 0) break;
+                            TractorPawn.TryAddPawn(item);
+                        }
+                        cacheCrews = null;
+                    }
                 }
-                Vehicle.ignition.Drafted = false;
-                cargo.TryAcceptThing(Vehicle);
+                TrailerPawn.ignition.Drafted = false;
+                mount.TryAcceptThing(TrailerPawn);
 
             });
         }
