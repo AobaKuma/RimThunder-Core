@@ -9,5 +9,6 @@ namespace Motorization
     {
         public static JobDef RTC_LoadToCargo;
         public static JobDef RTC_ConnectToTrailer;
+        public static JobDef RTC_LoadToSelf;
     }
 }

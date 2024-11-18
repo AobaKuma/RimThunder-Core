@@ -12,10 +12,9 @@ namespace Motorization
 {
     public class CompProperties_TrailerMount : CompProperties
     {
-        public List<string> supportedType = new List<string>() { "lowTrailerMount"};
+        public List<string> supportedType = new List<string>() { "lowTrailerMount" };
         public List<Vector3> rotationPivot;
         public bool flipWhenTrailer = false;
-
 
         public CompProperties_TrailerMount()
         {
@@ -25,11 +24,10 @@ namespace Motorization
         {
             if (this.supportedType.NullOrEmpty())
             {
-                if(this.supportedType ==null) supportedType = new List<string>();
+                if (this.supportedType == null) supportedType = new List<string>();
                 Log.Error(parentDef.defName + " has empty supportType of trailers. it will make it not able to mount on any trailer or tractors");
             }
             return base.ConfigErrors(parentDef);
-            
         }
     }
 
@@ -41,22 +39,23 @@ namespace Motorization
         protected int UpdateInterval = 360;
         protected float tempInterval = 0;
         public CompProperties_TrailerMount Props => base.props as CompProperties_TrailerMount;
-        public ThingOwner<Thing> Cargo => Vehicle.inventory.innerContainer;
+        public ThingOwner<Thing> Cargo => Vehicle.inventory?.innerContainer;
         public bool TryGetTrailer(out VehiclePawn_Trailer pawn)
         {
             pawn = null;
-            if (!Cargo.NullOrEmpty() && Cargo?.Where(a => a is VehiclePawn_Trailer).First() is VehiclePawn_Trailer trailer)
+            if (!Cargo.NullOrEmpty() && Cargo.Where(a => a is VehiclePawn_Trailer).First() is VehiclePawn_Trailer trailer)
             {
                 pawn = trailer;
                 return true;
             }
             return false;
         }
-        public bool Accepts(Thing thing)
+        public AcceptanceReport Accepts(Thing thing)
         {
             if (thing == null) return false;
-            if (thing is VehiclePawn_Tractor tractor && tractor.TrailerMount.TryGetTrailer(out var _)) return false;
-            else if(!(thing is VehiclePawn_Trailer)) return false;
+            else if (!(thing is VehiclePawn_Trailer)) return new AcceptanceReport("RTC_TargetIsNotTrailer".Translate());
+            if (TryGetTrailer(out var _)) return new AcceptanceReport("RTC_AlreadyTowing".Translate());
+            if (thing is VehiclePawn_Trailer trailer && !CanTowVehicle(Vehicle as VehiclePawn_Tractor, trailer)) return new AcceptanceReport("RTC_NotSupportType".Translate());
             return true;//這邊之後判斷需要額外寫重量那些
         }
         public bool TryAcceptThing(VehiclePawn thing)
@@ -74,10 +73,6 @@ namespace Motorization
             base.PostSpawnSetup(respawningAfterLoad);
             Initial(Vehicle.FullRotation);
         }
-        public override void Notify_DefsHotReloaded()
-        {
-            base.Notify_DefsHotReloaded();
-        }
         public bool TryUnloadThing(VehiclePawn thing)
         {
             if (Cargo.Contains(thing))
@@ -94,7 +89,7 @@ namespace Motorization
             base.PostDraw();
             if (parent.Spawned)
             {
-                if (DebugSettings.godMode) DebugDraw(parent.DrawPos + GetPivot(Vehicle.FullRotation));
+                if (DebugSettings.godMode) CarrierUtility.DebugDraw(parent.DrawPos + GetPivot(Vehicle.FullRotation));
                 if (parent is VehiclePawn_Tractor && TryGetTrailer(out var trailer) && parent.TryGetComp<CompTrailerMount>(out var mount))
                 {
                     if (mount.LatestRot == null) mount.Initial(Vehicle.FullRotation);
@@ -143,14 +138,16 @@ namespace Motorization
                 pawn_Trailer.DrawAt(exactPos + tractorMount - trailerMount, trailerRot, trailerAngle, compDraw: true);
             }
         }
-        public void DebugDraw(Vector3 exactPos)
+        public static bool CanTowVehicle(VehiclePawn_Tractor tractor, VehiclePawn_Trailer trailer)
         {
-            Mesh mesh;
-            mesh = MeshPool.plane10;
-            Matrix4x4 matrix = Matrix4x4.TRS(exactPos + Vector3.up, Quaternion.identity, Vector3.one * 2);
-            Texture2D texture = ContentFinder<Texture2D>.Get("RT_Dummy");
-            Material m = MaterialPool.MatFrom(texture);
-            Graphics.DrawMesh(mesh, matrix, m, 0);
+            if (!tractor.TryGetComp<CompTrailerMount>(out var tractorMount) & !trailer.TryGetComp<CompTrailerMount>(out var trailerMount)) return false;
+            if (tractorMount.Props.supportedType.NullOrEmpty() || trailerMount.Props.supportedType.NullOrEmpty()) return false;
+
+            foreach (string item in tractorMount.Props.supportedType)
+            {
+                if (trailerMount.Props.supportedType.Contains(item)) return true;
+            }
+            return false;
         }
         private float GetAngle(Rot8 rot)
         {
@@ -183,7 +180,7 @@ namespace Motorization
 
 
             RotationDirection direction = ra > 180 ? RotationDirection.Counterclockwise : RotationDirection.Clockwise;
-            latestRot.Rotate(direction,true);
+            latestRot.Rotate(direction, true);
         }
         public Vector3 GetPivot(Rot8 rot)
         {
@@ -195,9 +192,9 @@ namespace Motorization
         }
         public override void PostExposeData()
         {
-            base.PostExposeData();
             Scribe_Values.Look(ref latestRot, "latestRot", defaultValue: Rot8.Invalid);
             Scribe_Values.Look(ref tempInterval, "tempInterval", defaultValue: UpdateInterval);
+            Vehicle.ResetRenderStatus();
         }
     }
 }

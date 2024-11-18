@@ -50,9 +50,10 @@ namespace Motorization
                 }
             }
         }
-        public void DrawTrailer(Map map, Vector3 pos, float angleFloat, Rot8 rot8Direction)
+        public override void ExposeData()
         {
-            DrawAt(pos, Rot8.FromAngle(angleFloat), 0);
+            base.ExposeData();
+            this.ResetRenderStatus();
         }
     }
 }

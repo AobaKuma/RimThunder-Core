@@ -70,18 +70,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cargo\CarrierUtility.cs" />
     <Compile Include="Cargo\CompTrailerMount.cs" />
     <Compile Include="Cargo\ITab_VehicleTransport.cs" />
+    <Compile Include="Cargo\JobDriver_LoadToSelf.cs" />
     <Compile Include="Cargo\JobDriver_ConnectToTrailer.cs" />
     <Compile Include="VehicleDrawData.cs" />
     <Compile Include="VehicleJobDefOf.cs" />
-    <Compile Include="Harmony\Harmony_FloatMenuOption.cs" />
     <Compile Include="Depoly\LaunchRestriction_WingDeployed.cs" />
     <Compile Include="Depoly\CompDeployToggleTexture.cs" />
     <Compile Include="CompVehicleAbilities.cs" />
     <Compile Include="Cargo\CompVehicleCargo.cs" />
     <Compile Include="Vehicle\CompEffector.cs" />
-    <Compile Include="Vehicle\FloatMenuUtility.cs" />
+    <Compile Include="FloatMenuUtility.cs" />
     <Compile Include="Harmony\HarmonyMain.cs" />
     <Compile Include="Harmony\Harmony_BillUtility.cs" />
     <Compile Include="Crane\Building_RTCCrane.cs" />

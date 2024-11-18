@@ -50,7 +50,7 @@ namespace Motorization
         {
             base.Initialize(props);
         }
-        public ThingOwner<Thing> Cargo => Vehicle.inventory.innerContainer;
+        public ThingOwner<Thing> Cargo => Vehicle.inventory?.innerContainer;
         public CompProperties_VehicleCargo Props => base.props as CompProperties_VehicleCargo;
         public bool TryUnloadThing(VehiclePawn thing)
         {
@@ -74,17 +74,28 @@ namespace Motorization
             return true;
         }
         public float MassCapacity => Vehicle.GetStatValue(VehicleStatDefOf.CargoCapacity);
-        public bool Accepts(Thing thing)
+
+        public bool HasPayload
+        {
+            get
+            {
+                return !Cargo.ContainsAny(v => v is VehiclePawn);
+            }
+            internal set { }
+        }
+
+        public AcceptanceReport Accepts(Thing thing)
         {
             if (thing == null) return false;
-            if(thing.def.Size.z> Props.lengthLimit) return false;
+            if (thing is VehiclePawn_Tractor tractor && tractor.HasTrailer) return new AcceptanceReport("RTC_TargetIsTowing".Translate());
+            if (thing.def.Size.z > Props.lengthLimit) return new AcceptanceReport("RTC_SizeOutOfLimit".Translate(Props.lengthLimit));
             return true;//這邊之後判斷需要額外寫重量那些
         }
         public override void PostDraw()
         {
             if (Vehicle.Spawned && Props.renderVehicle)
             {
-                if (DebugSettings.godMode) DebugDraw(Vehicle.DrawPos + GetDrawOffset(Vehicle.FullRotation));
+                if (DebugSettings.godMode) CarrierUtility.DebugDraw(Vehicle.DrawPos + GetDrawOffset(Vehicle.FullRotation));
 
                 if (Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
                 {
@@ -107,29 +118,17 @@ namespace Motorization
                 }
             }
         }
-        public void DebugDraw(Vector3 exactPos)
-        {
-            Mesh mesh;
-            mesh = MeshPool.plane10;
-            Matrix4x4 matrix = Matrix4x4.TRS(exactPos + Vector3.up, Quaternion.identity, Vector3.one * 2);
-            Texture2D texture = ContentFinder<Texture2D>.Get("RT_Dummy");
-            Material m = MaterialPool.MatFrom(texture);
-            Graphics.DrawMesh(mesh, matrix, m, 0);
-        }
         public override void PostDrawUnspawned(Vector3 drawLoc, Rot8 rot8, float rotation)
         {
-            base.PostDrawUnspawned(drawLoc, rot8, rotation);
-            if(!Props.renderVehicle) return;
+            if (!Props.renderVehicle) return;
+            if (DebugSettings.godMode) CarrierUtility.DebugDraw(drawLoc + GetDrawOffset(rot8));
 
-            if (DebugSettings.godMode) DebugDraw(drawLoc + GetDrawOffset(rot8));
-
-            if (Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
+            if (Cargo != null && Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
             {
                 VehiclePawn p = (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() as VehiclePawn);
 
                 //顯示的時候如果為逆向則會翻轉。
                 Rot8 rot = this.Props.renderOpposite ? rot8.Opposite : rot8;
-                float trailerAngle = GetAngle(rot);
 
                 //砲塔
                 if (p.CompVehicleTurrets != null && !p.CompVehicleTurrets.turrets.NullOrEmpty())
@@ -139,8 +138,12 @@ namespace Motorization
                         item.TurretRotation = item.defaultAngleRotated + rot.AsAngle;
                     }
                 }
-                p.DrawAt(drawLoc + (CompDrawPos(rot8) * Length(p)) + GetDrawOffset(rot8), rot, trailerAngle, compDraw: true);
+                p.DrawAt(drawLoc + (CompDrawPos(rot8) * Length(p)) + GetDrawOffset(rot8), rot, GetAngle(rot), compDraw: true);
             }
+        }
+        public override void PostExposeData()
+        {
+            Vehicle.ResetRenderStatus();
         }
         private Vector3 CompDrawPos(Rot8 rot)
         {

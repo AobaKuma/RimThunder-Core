@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-
   <Vehicles.VehicleBuildDef ParentName="RT_BaseVehicleBuild"><!-- 建築型態的載具，基本上與BuildingDef相同-->
 		<defName>RT_Bicycle_Blueprint</defName>
 		<label>bicycle</label>

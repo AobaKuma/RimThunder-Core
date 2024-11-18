@@ -13,7 +13,6 @@ namespace Motorization
     {
         public bool HasTrailer => TrailerMount.TryGetTrailer(out var _);
 
-
         protected CompTrailerMount trailerMount;
         public CompTrailerMount TrailerMount 
         {
@@ -36,13 +35,13 @@ namespace Motorization
                 yield return item;
             }
         }
-        public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq) 
+        public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
         {
             foreach (var item in base.GetExtraFloatMenuOptionsFor(sq))
             {
                 yield return item;
             }
-            foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForTractor(this,sq))
+            foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForTractor(this, sq))
             {
                 yield return item;
             }
@@ -53,6 +52,21 @@ namespace Motorization
                     yield return item;
                 }
             }
+            if (this.TrailerMount.TryGetTrailer(out var trailer))
+            {
+                if (trailer.TryGetComp<CompVehicleCargo>(out var cargo))
+                {
+                    foreach (var item in FloatMenuUtility.TryMakeFloatMenuForActiveLoad(this, sq))
+                    {
+                        yield return item;
+                    }
+                }
+            }
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            this.ResetRenderStatus();
         }
     }
 }
