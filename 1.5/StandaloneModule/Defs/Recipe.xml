@@ -41,6 +41,9 @@
 		  <Crafting>3</Crafting>
 		</skillRequirements>
 		<researchPrerequisite>EngineBasis</researchPrerequisite>
+    <recipeUsers>
+		  <li>TableMachining</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="Recipe_MakeEngineBase">  <!-- Make_EngineAssemble_Medium --> 
@@ -78,6 +81,9 @@
 		  <Crafting>6</Crafting>
 		</skillRequirements>
 		<researchPrerequisite>EnginePlus</researchPrerequisite>
+    <recipeUsers>
+		  <li>TableMachining</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="Recipe_MakeEngineBase">  <!-- Make_EngineAssemble_Heavy --> 
@@ -300,6 +306,7 @@
   <soundWorking>Recipe_Smelt</soundWorking>
   <uiIconThing>ComponentHeavyCasting</uiIconThing>
   <recipeUsers>
+    <li>ElectricSmelter</li>  <!-- 熔煉台 -->  
     <li>RT_AssemblyBench</li>  <!-- 組裝台 -->
   </recipeUsers>
   <ingredients>

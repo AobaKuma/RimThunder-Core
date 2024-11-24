@@ -13,6 +13,9 @@
     <baseCost>200</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>HeavyIndustry</tab>
+    <tags>
+      <li>ClassicStart</li>
+    </tags>
     <prerequisites>
       <li>Machining</li>
     </prerequisites>
@@ -32,6 +35,9 @@
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>HeavyIndustry</tab>
+    <tags>
+      <li>ClassicStart</li>
+    </tags>
     <prerequisites>
       <li>EngineBasis</li>
     </prerequisites>

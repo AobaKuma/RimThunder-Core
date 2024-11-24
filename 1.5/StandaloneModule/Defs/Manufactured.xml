@@ -61,7 +61,7 @@
       <MarketValue>50</MarketValue>
       <Mass>75</Mass>
     </statBases>
-    <tradeability>Buyable</tradeability>
+    <tradeability>All</tradeability>
     <thingSetMakerTags>
       <li>RewardStandardCore</li>
     </thingSetMakerTags>
@@ -95,9 +95,9 @@
 
   <!-- 抽象繼承，關於引擎類別 -->
   <ThingDef Name="EngineBase" ParentName="HeavyItemBase" Abstract="True">
-    <tradeability>Sellable</tradeability>
+    <tradeability>All</tradeability>
     <statBases>
-      <SellPriceFactor>1</SellPriceFactor>
+      <SellPriceFactor>1.4</SellPriceFactor>
     </statBases>
     <thingSetMakerTags>
       <li>RewardStandardCore</li>
