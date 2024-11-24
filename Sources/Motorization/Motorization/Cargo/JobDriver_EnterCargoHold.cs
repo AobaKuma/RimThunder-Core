@@ -45,16 +45,16 @@ namespace Motorization
                     }
                     Loader.DisembarkAll();
 
-                    if (!cacheCrews.NullOrEmpty())
-                    {
-                        foreach (var item in cacheCrews)
-                        {
-                            if (Carrier.SeatsAvailable <= 0) break;
+                    //if (!cacheCrews.NullOrEmpty())
+                    //{
+                    //    foreach (var item in cacheCrews)
+                    //    {
+                    //        if (Carrier.SeatsAvailable <= 0) break;
 
-                            Carrier.TryAddPawn(item);
-                        }
-                        cacheCrews = null;
-                    }
+                    //        Carrier.TryAddPawn(item);
+                    //    }
+                    //    cacheCrews = null;
+                    //}
                 }
                 Loader.ignition.Drafted = false;
                 cargo.TryAcceptThing(Loader);

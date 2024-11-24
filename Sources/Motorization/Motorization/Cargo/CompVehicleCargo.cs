@@ -46,6 +46,7 @@ namespace Motorization
     }
     public class CompVehicleCargo : VehicleComp
     {
+        private bool initCheck = false;
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
@@ -100,7 +101,12 @@ namespace Motorization
                 if (Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
                 {
                     VehiclePawn p = (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() as VehiclePawn);
-
+                    if (!initCheck)
+                    {
+                        initCheck = true;
+                        p.ResetRenderStatus();
+                        return;
+                    }
                     //顯示的時候如果為逆向則會翻轉。
                     Rot8 rot = this.Props.renderOpposite ? Vehicle.FullRotation.Opposite : Vehicle.FullRotation;
                     p.Rotation = rot;
@@ -126,7 +132,12 @@ namespace Motorization
             if (Cargo != null && Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
             {
                 VehiclePawn p = (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() as VehiclePawn);
-
+                if (!initCheck)
+                {
+                    initCheck = true;
+                    p.ResetRenderStatus();
+                    return;
+                }
                 //顯示的時候如果為逆向則會翻轉。
                 Rot8 rot = this.Props.renderOpposite ? rot8.Opposite : rot8;
 
@@ -140,10 +151,6 @@ namespace Motorization
                 }
                 p.DrawAt(drawLoc + (CompDrawPos(rot8) * Length(p)) + GetDrawOffset(rot8), rot, GetAngle(rot), compDraw: true);
             }
-        }
-        public override void PostExposeData()
-        {
-            Vehicle.ResetRenderStatus();
         }
         private Vector3 CompDrawPos(Rot8 rot)
         {

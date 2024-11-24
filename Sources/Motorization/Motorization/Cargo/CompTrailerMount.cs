@@ -30,9 +30,9 @@ namespace Motorization
             return base.ConfigErrors(parentDef);
         }
     }
-
     public class CompTrailerMount : VehicleComp//掛在母車跟子車上的
     {
+        private bool initCheck = false;
         public Rot8 LatestRot => latestRot;
         protected VehiclePawn Pawn => parent as VehiclePawn;
         protected Rot8 latestRot;
@@ -87,14 +87,16 @@ namespace Motorization
         public override void PostDraw()
         {
             base.PostDraw();
-            if (parent.Spawned)
+            if (!initCheck)
             {
-                if (DebugSettings.godMode) CarrierUtility.DebugDraw(parent.DrawPos + GetPivot(Vehicle.FullRotation));
-                if (parent is VehiclePawn_Tractor && TryGetTrailer(out var trailer) && parent.TryGetComp<CompTrailerMount>(out var mount))
-                {
-                    if (mount.LatestRot == null) mount.Initial(Vehicle.FullRotation);
-                    mount.DrawTrailer(trailer, Vehicle.DrawPos, Vehicle.FullRotation); //由母車的Comp來叫，並在內部調用子車的Comp
-                }
+                initCheck = true;
+                return;
+            }
+            if (DebugSettings.godMode) CarrierUtility.DebugDraw(parent.DrawPos + GetPivot(Vehicle.FullRotation));
+            if (parent is VehiclePawn_Tractor && TryGetTrailer(out var trailer) && parent.TryGetComp<CompTrailerMount>(out var mount))
+            {
+                if (mount.LatestRot == null) mount.Initial(Vehicle.FullRotation);
+                mount.DrawTrailer(trailer, Vehicle.DrawPos, Vehicle.FullRotation); //由母車的Comp來叫，並在內部調用子車的Comp
             }
         }
         public void DrawTrailer(VehiclePawn_Trailer pawn_Trailer, Vector3 exactPos, Rot8 rot)
@@ -177,8 +179,6 @@ namespace Motorization
             //4 - 3 = 1
             float ra = Vehicle.FullRotation.AsAngle - latestRot.AsAngle;
             if (ra < 0) ra += 360;
-
-
             RotationDirection direction = ra > 180 ? RotationDirection.Counterclockwise : RotationDirection.Clockwise;
             latestRot.Rotate(direction, true);
         }
@@ -194,7 +194,6 @@ namespace Motorization
         {
             Scribe_Values.Look(ref latestRot, "latestRot", defaultValue: Rot8.Invalid);
             Scribe_Values.Look(ref tempInterval, "tempInterval", defaultValue: UpdateInterval);
-            Vehicle.ResetRenderStatus();
         }
     }
 }

@@ -3,48 +3,24 @@
   "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\vehicle\\vehiclepawn_tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\vehicle\\vehiclepawn_tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\cargo\\compvehiclecargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\cargo\\compvehiclecargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\cargo\\compvehiclecargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\cargo\\jobdriver_entercargohold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\cargo\\jobdriver_entercargohold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\cargo\\comptrailermount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\cargo\\comptrailermount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\floatmenuutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\floatmenuutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\vehicle\\vehiclepawn_tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\vehicle\\vehiclepawn_tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\cargo\\jobdriver_connecttotrailer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\cargo\\jobdriver_connecttotrailer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\motorization\\vehicle\\vehiclepawn_trailer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\vehicle\\vehiclepawn_trailer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\cargo\\jobdriver_loadtoself.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\cargo\\jobdriver_loadtoself.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\cargo\\carrierutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\cargo\\carrierutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\cargo\\itab_vehicletransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\cargo\\itab_vehicletransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\crane\\placeworker_crane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\crane\\placeworker_crane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\compvehicleabilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\compvehicleabilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\harmony\\harmony_turretrotationtick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\harmony\\harmony_turretrotationtick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\depoly\\compdeploytoggletexture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\depoly\\compdeploytoggletexture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 449,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,149 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CompVehicleCargo.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CompVehicleCargo.cs",
-              "RelativeDocumentMoniker": "Motorization\\Cargo\\CompVehicleCargo.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CompVehicleCargo.cs",
-              "RelativeToolTip": "Motorization\\Cargo\\CompVehicleCargo.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAvwJAAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CompDeployToggleTexture.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Depoly\\CompDeployToggleTexture.cs",
+              "RelativeDocumentMoniker": "Motorization\\Depoly\\CompDeployToggleTexture.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Depoly\\CompDeployToggleTexture.cs",
+              "RelativeToolTip": "Motorization\\Depoly\\CompDeployToggleTexture.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T18:29:16.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "JobDriver_EnterCargoHold.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\JobDriver_EnterCargoHold.cs",
-              "RelativeDocumentMoniker": "Motorization\\Cargo\\JobDriver_EnterCargoHold.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\JobDriver_EnterCargoHold.cs",
-              "RelativeToolTip": "Motorization\\Cargo\\JobDriver_EnterCargoHold.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAiwDkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T14:36:25.694Z",
+              "WhenOpened": "2024-11-24T21:56:20.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CompVehicleCargo.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CompVehicleCargo.cs",
+              "RelativeDocumentMoniker": "Motorization\\Cargo\\CompVehicleCargo.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CompVehicleCargo.cs",
+              "RelativeToolTip": "Motorization\\Cargo\\CompVehicleCargo.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAvwIkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T21:39:26.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompTrailerMount.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CompTrailerMount.cs",
+              "RelativeDocumentMoniker": "Motorization\\Cargo\\CompTrailerMount.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CompTrailerMount.cs",
+              "RelativeToolTip": "Motorization\\Cargo\\CompTrailerMount.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAMwFgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T21:22:08.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "VehiclePawn_Tractor.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Vehicle\\VehiclePawn_Tractor.cs",
               "RelativeDocumentMoniker": "Motorization\\Vehicle\\VehiclePawn_Tractor.cs",
               "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Vehicle\\VehiclePawn_Tractor.cs",
               "RelativeToolTip": "Motorization\\Vehicle\\VehiclePawn_Tractor.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAA/wEMAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T15:38:04.362Z",
+              "WhenOpened": "2024-11-24T21:18:41.04Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FloatMenuUtility.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\FloatMenuUtility.cs",
-              "RelativeDocumentMoniker": "Motorization\\FloatMenuUtility.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\FloatMenuUtility.cs",
-              "RelativeToolTip": "Motorization\\FloatMenuUtility.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAnwBQAAAAhAAAAAAAAAA==",
+              "Title": "VehiclePawn_Trailer.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Vehicle\\VehiclePawn_Trailer.cs",
+              "RelativeDocumentMoniker": "Motorization\\Vehicle\\VehiclePawn_Trailer.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Vehicle\\VehiclePawn_Trailer.cs",
+              "RelativeToolTip": "Motorization\\Vehicle\\VehiclePawn_Trailer.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwC4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T16:41:04.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "JobDriver_LoadToSelf.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\JobDriver_LoadToSelf.cs",
-              "RelativeDocumentMoniker": "Motorization\\Cargo\\JobDriver_LoadToSelf.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\JobDriver_LoadToSelf.cs",
-              "RelativeToolTip": "Motorization\\Cargo\\JobDriver_LoadToSelf.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCYAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T15:44:27.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CarrierUtility.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CarrierUtility.cs",
-              "RelativeDocumentMoniker": "Motorization\\Cargo\\CarrierUtility.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CarrierUtility.cs",
-              "RelativeToolTip": "Motorization\\Cargo\\CarrierUtility.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAnwB4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T18:10:52.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ITab_VehicleTransport.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\ITab_VehicleTransport.cs",
-              "RelativeDocumentMoniker": "Motorization\\Cargo\\ITab_VehicleTransport.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\ITab_VehicleTransport.cs",
-              "RelativeToolTip": "Motorization\\Cargo\\ITab_VehicleTransport.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T14:43:13.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "JobDriver_ConnectToTrailer.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\JobDriver_ConnectToTrailer.cs",
-              "RelativeDocumentMoniker": "Motorization\\Cargo\\JobDriver_ConnectToTrailer.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\JobDriver_ConnectToTrailer.cs",
-              "RelativeToolTip": "Motorization\\Cargo\\JobDriver_ConnectToTrailer.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAmwBcAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T14:09:29.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlaceWorker_Crane.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Crane\\PlaceWorker_Crane.cs",
-              "RelativeDocumentMoniker": "Motorization\\Crane\\PlaceWorker_Crane.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Crane\\PlaceWorker_Crane.cs",
-              "RelativeToolTip": "Motorization\\Crane\\PlaceWorker_Crane.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAQwB4AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T15:35:29.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CompVehicleAbilities.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\CompVehicleAbilities.cs",
-              "RelativeDocumentMoniker": "Motorization\\CompVehicleAbilities.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\CompVehicleAbilities.cs",
-              "RelativeToolTip": "Motorization\\CompVehicleAbilities.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T14:42:50.773Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Harmony_TurretRotationTick.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_TurretRotationTick.cs",
-              "RelativeDocumentMoniker": "Motorization\\Harmony\\Harmony_TurretRotationTick.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_TurretRotationTick.cs",
-              "RelativeToolTip": "Motorization\\Harmony\\Harmony_TurretRotationTick.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T14:09:26.095Z",
+              "WhenOpened": "2024-11-24T21:18:36.752Z",
               "EditorCaption": ""
             }
           ]

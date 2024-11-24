@@ -66,15 +66,15 @@ namespace Motorization
                     }
                     TargetPawn.DisembarkAll();
 
-                    if (!cacheCrews.NullOrEmpty())
-                    {
-                        foreach (var item in cacheCrews)
-                        {
-                            if (CarrierPawn.SeatsAvailable <= 0) break;
-                            CarrierPawn.TryAddPawn(item);
-                        }
-                        cacheCrews = null;
-                    }
+                    //if (!cacheCrews.NullOrEmpty())
+                    //{
+                    //    foreach (var item in cacheCrews)
+                    //    {
+                    //        if (CarrierPawn.SeatsAvailable <= 0) break;
+                    //        CarrierPawn.TryAddPawn(item);
+                    //    }
+                    //    cacheCrews = null;
+                    //}
                 }
                 TargetPawn.ignition.Drafted = false;
                 cargo.TryAcceptThing(TargetPawn);

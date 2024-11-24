@@ -6,7 +6,6 @@ using Verse.AI;
 using UnityEngine;
 using SmashTools;
 
-
 namespace Motorization
 {
     public class VehiclePawn_Tractor : VehiclePawn //負責拖別人的母車。
@@ -22,11 +21,6 @@ namespace Motorization
                 return trailerMount; 
             } 
             private set{ } 
-        }
-
-        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
-        {
-            base.DynamicDrawPhaseAt(phase, drawLoc, flip);
         }
         public override IEnumerable<Gizmo> GetGizmos()
         {
@@ -62,11 +56,6 @@ namespace Motorization
                     }
                 }
             }
-        }
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            this.ResetRenderStatus();
         }
     }
 }

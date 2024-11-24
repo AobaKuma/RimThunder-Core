@@ -9,6 +9,7 @@ namespace Motorization
 {
     public class VehiclePawn_Trailer : VehiclePawn
     {
+        private bool initCheck = false;
         public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
         {
             foreach (var item in base.GetExtraFloatMenuOptionsFor(sq))
@@ -41,6 +42,12 @@ namespace Motorization
 
         public override void DrawAt(Vector3 drawLoc, Rot8 rot, float extraRotation, bool flip = false, bool compDraw = true)
         {
+            if (!initCheck)
+            {
+                initCheck = true;
+                this.ResetRenderStatus(); //媽的你不要動他。
+                return;
+            }
             base.DrawAt(drawLoc, rot, extraRotation, flip, compDraw);
             if (compDraw)
             {
@@ -49,11 +56,6 @@ namespace Motorization
                     vehicleCargo.PostDrawUnspawned(drawLoc, rot, extraRotation);
                 }
             }
-        }
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            this.ResetRenderStatus();
         }
     }
 }

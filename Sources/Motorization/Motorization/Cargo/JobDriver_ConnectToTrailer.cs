@@ -52,15 +52,15 @@ namespace Motorization
                     }
                     TrailerPawn.DisembarkAll();
 
-                    if (!cacheCrews.NullOrEmpty())
-                    {
-                        foreach (var item in cacheCrews)
-                        {
-                            if (TractorPawn.SeatsAvailable <= 0) break;
-                            TractorPawn.TryAddPawn(item);
-                        }
-                        cacheCrews = null;
-                    }
+                    //if (!cacheCrews.NullOrEmpty())
+                    //{
+                    //    foreach (var item in cacheCrews)
+                    //    {
+                    //        if (TractorPawn.SeatsAvailable <= 0) break;
+                    //        TractorPawn.TryAddPawn(item);
+                    //    }
+                    //    cacheCrews = null;
+                    //}
                 }
                 TrailerPawn.ignition.Drafted = false;
                 TractorPawn.TrailerMount.TryAcceptThing(TrailerPawn);

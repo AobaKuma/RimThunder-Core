@@ -28,7 +28,8 @@ namespace Motorization
         {
             if (Vehicle.CompVehicleTurrets.Deployed)
             {
-                Vehicle.SetRetexture(Props.GetRetexture(Vehicle.Retexture)); //理論上能用了
+                //Vehicle.SetRetexture(Props.GetRetexture(Vehicle.Retexture)); //理論上能用了//很抱歉Phil還沒更新。
+                Vehicle.SetRetexture(Props.defaultRetexture);
                 this.Vehicle.ignition.Drafted = false; 
                 _isDeployed = true;
             }
