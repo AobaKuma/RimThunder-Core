@@ -9,6 +9,9 @@ namespace Motorization
 {
     public class VehiclePawn_Trailer : VehiclePawn
     {
+        public bool HasCargoComp => CargoComp != null;
+        public CompVehicleCargo CargoComp => GetComp<CompVehicleCargo>();
+
         private bool initCheck = false;
         public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
         {
@@ -16,7 +19,7 @@ namespace Motorization
             {
                 yield return item;
             }
-            if (this.TryGetComp<CompVehicleCargo>(out CompVehicleCargo vehicleCargo))
+            if (this.HasCargoComp)
             {
                 foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForCarrier(this, sq))
                 {
@@ -51,9 +54,9 @@ namespace Motorization
             base.DrawAt(drawLoc, rot, extraRotation, flip, compDraw);
             if (compDraw)
             {
-                if (this.TryGetComp<CompVehicleCargo>(out CompVehicleCargo vehicleCargo))
+                if (HasCargoComp)
                 {
-                    vehicleCargo.PostDrawUnspawned(drawLoc, rot, extraRotation);
+                    CargoComp.PostDrawUnspawned(drawLoc, rot, extraRotation);
                 }
             }
         }

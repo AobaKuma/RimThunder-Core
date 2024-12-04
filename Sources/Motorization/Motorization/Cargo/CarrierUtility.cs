@@ -2,6 +2,7 @@
 using Verse.AI;
 using Vehicles;
 using UnityEngine;
+using RimWorld;
 
 
 namespace Motorization

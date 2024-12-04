@@ -64,7 +64,8 @@ namespace Motorization
                 }
                 TrailerPawn.ignition.Drafted = false;
                 TractorPawn.TrailerMount.TryAcceptThing(TrailerPawn);
-
+                TractorPawn.ignition.Drafted = false;
+                TractorPawn.ignition.Drafted = true;
             });
         }
     }

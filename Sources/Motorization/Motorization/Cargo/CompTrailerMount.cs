@@ -73,13 +73,18 @@ namespace Motorization
             base.PostSpawnSetup(respawningAfterLoad);
             Initial(Vehicle.FullRotation);
         }
-        public bool TryUnloadThing(VehiclePawn thing)
+        public bool TryDisconnectTrailer(VehiclePawn dropTarget)//作為拖車被母車Unload
         {
-            if (Cargo.Contains(thing))
+            if(!(Vehicle is VehiclePawn_Tractor) || !Vehicle.Spawned) return false;
+
+            if (this.Cargo.Contains(dropTarget))
             {
-                Cargo.Remove(thing);
-                GenDrop.TryDropSpawn(thing, this.Vehicle.FullRotation.FacingCell * (int)((parent.def.Size.z + thing.def.Size.z) / 2), parent.Map, ThingPlaceMode.Near, out var _);
-                thing.FullRotation = Props.flipWhenTrailer ? Vehicle.FullRotation.Opposite : Vehicle.FullRotation;
+                Cargo.Remove(dropTarget);
+                var trailerRot = Props.flipWhenTrailer ? Vehicle.FullRotation.Opposite : Vehicle.FullRotation;
+                IntVec3 tractorMount = this.GetPivot(Vehicle.FullRotation).ToIntVec3();
+                IntVec3 trailerMount = dropTarget.TryGetComp<CompTrailerMount>().GetPivot(Vehicle.FullRotation).ToIntVec3();
+                GenDrop.TryDropSpawn(dropTarget, Vehicle.Position + tractorMount - trailerMount, Vehicle.Map, ThingPlaceMode.Near, out var _);
+                dropTarget.FullRotation = Props.flipWhenTrailer ? Vehicle.FullRotation.Opposite : Vehicle.FullRotation;
                 return true;
             }
             return false;
@@ -140,9 +145,9 @@ namespace Motorization
                 pawn_Trailer.DrawAt(exactPos + tractorMount - trailerMount, trailerRot, trailerAngle, compDraw: true);
             }
         }
-        public static bool CanTowVehicle(VehiclePawn_Tractor tractor, VehiclePawn_Trailer trailer)
+        public static bool CanTowVehicle(VehiclePawn_Tractor tractor, VehiclePawn target)
         {
-            if (!tractor.TryGetComp<CompTrailerMount>(out var tractorMount) & !trailer.TryGetComp<CompTrailerMount>(out var trailerMount)) return false;
+            if (!tractor.TryGetComp<CompTrailerMount>(out var tractorMount) & !target.TryGetComp<CompTrailerMount>(out var trailerMount)) return false;
             if (tractorMount.Props.supportedType.NullOrEmpty() || trailerMount.Props.supportedType.NullOrEmpty()) return false;
 
             foreach (string item in tractorMount.Props.supportedType)

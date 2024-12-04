@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using Verse.AI;
 using Vehicles;
 using System.Linq;
+using System;
+using static UnityEngine.GraphicsBuffer;
 
 
 namespace Motorization
 {
     public static class FloatMenuUtility
     {
-        static string key = "RTC_Load".Translate();
         public static IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsForCarrier(Pawn pawn, IntVec3 sq)
         {
             if (pawn == null)
@@ -25,7 +26,7 @@ namespace Motorization
             }
             if (!pawn.CanReach(sq, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
             {
-                yield return new FloatMenuOption("CanNotReach" + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+                yield return new FloatMenuOption("CanNotReach".Translate() + ": " + "NoPath".Translate().CapitalizeFirst(), null);
                 yield break;
             }
             List<Thing> things = sq.GetThingList(pawn.Map);
@@ -34,6 +35,24 @@ namespace Motorization
                 if (things[i] is VehiclePawn tmp && tmp != pawn)
                 {
                     yield return TryMakeFloatMenuForCargoLoad(pawn, tmp);
+                }
+                else
+                {   //自行解除連接的選項。
+                    if (pawn is VehiclePawn_Trailer trailer)
+                    {
+                        if (trailer.HasCargoComp && trailer.CargoComp.HasPayload)
+                        {
+                            VehiclePawn target = trailer.CargoComp.GetPayload;
+                            yield return new FloatMenuOption("RTC_Unload".Translate(target.Label.Translate()), () =>
+                            {
+                                trailer.CargoComp.TryUnloadThingUnspawned(trailer, target);
+                            });
+                        }
+                        else
+                        {
+                            yield return new FloatMenuOption("RTC_NoPayload".Translate(), null);
+                        }
+                    }
                 }
             }
         }
@@ -58,7 +77,7 @@ namespace Motorization
             }
             if (!tractor.CanReach(sq, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
             {
-                yield return new FloatMenuOption("CanNotReach" + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+                yield return new FloatMenuOption("CanNotReach".Translate() + ": " + "NoPath".Translate().CapitalizeFirst(), null);
                 yield break;
             }
             if (!tractor.TrailerMount.TryGetTrailer(out var pawn_Trailer)) yield break;
@@ -68,22 +87,44 @@ namespace Motorization
 
             for (int i = 0; i < things.Count; i++)
             {
-                if (things[i] != tractor)
+                if (things[i] != tractor)//不是自己就行。
                 {
-                    var cargo = pawn_Trailer.GetComp<CompVehicleCargo>();
                     yield return TryMakeFloatMenuForActiveLoad(tractor, things[i] as Pawn);
+                }
+                else
+                {   //自行解除連接掛車的選項。
+                    if (tractor.TrailerMount.TryGetTrailer(out var trailer))
+                    {
+                        if (trailer.HasCargoComp && trailer.CargoComp.HasPayload)
+                        {
+                            VehiclePawn target = trailer.CargoComp.GetPayload;
+                            yield return new FloatMenuOption("RTC_Unload".Translate(target.Label.Translate()), () =>
+                            {
+                                trailer.CargoComp.TryUnloadThingUnspawned(tractor, target);
+                            });
+                        }
+                        yield return new FloatMenuOption("RTC_Disconnect".Translate(trailer.Label.Translate()), () =>
+                        {
+                            tractor.TrailerMount.TryDisconnectTrailer(trailer);
+                        });
+                    }
+                    else
+                    {
+                        yield return new FloatMenuOption("RTC_NoPayload".Translate(), null);
+                    }
                 }
             }
         }
+
         public static FloatMenuOption TryMakeFloatMenuForActiveLoad(VehiclePawn_Tractor tractor, Pawn targetPawn)//targetPawn是被裝的
         {
             if (tractor.TrailerMount.TryGetTrailer(out var trailer) && !trailer.GetComp<CompVehicleCargo>().Accepts(targetPawn))
             {
-                return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + tractor.TrailerMount.Accepts(targetPawn).Reason, null);
+                return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + trailer.GetComp<CompVehicleCargo>().Accepts(targetPawn).Reason, null);
             }
             else
             {
-                return new FloatMenuOption(key.Translate(), () =>
+                return new FloatMenuOption("RTC_Load".Translate(targetPawn.Label.Translate()), () =>
                 {
                     Job j = JobMaker.MakeJob(VehicleJobDefOf.RTC_LoadToSelf, targetPawn);
                     tractor.jobs.TryTakeOrderedJob(j);
@@ -95,15 +136,21 @@ namespace Motorization
         {
             if (!targetPawn.CanReach(pawn, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
             {
-                return new FloatMenuOption("CanNotReach" + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+                return new FloatMenuOption("CanNotReach".Translate() + ": " + "NoPath".Translate().CapitalizeFirst(), null);
             }
-            else
+
+            AcceptanceReport report = pawn.TryGetComp<CompVehicleCargo>().Accepts(targetPawn);
+            if (report.Accepted)
             {
-                return new FloatMenuOption(key.Translate(), () =>
+                return new FloatMenuOption("RTC_Load".Translate(targetPawn.Label.Translate()), () =>
                 {
                     Job j = JobMaker.MakeJob(VehicleJobDefOf.RTC_LoadToCargo, pawn);
                     targetPawn.jobs.TryTakeOrderedJob(j);
                 });
+            }
+            else
+            {
+                return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + report.Reason, null);
             }
         }
 
@@ -121,7 +168,7 @@ namespace Motorization
             }
             if (!tractor.CanReach(sq, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
             {
-                yield return new FloatMenuOption("CanNotReach" + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+                yield return new FloatMenuOption("CanNotReach".Translate() + ": " + "NoPath".Translate().CapitalizeFirst(), null);
                 yield break;
             }
 
@@ -142,7 +189,7 @@ namespace Motorization
             }
             else
             {
-                return new FloatMenuOption(key.Translate(), () =>
+                return new FloatMenuOption("RTC_Load".Translate(targetPawn.Label.Translate()), () =>
                 {
                     Job j = JobMaker.MakeJob(VehicleJobDefOf.RTC_ConnectToTrailer, targetPawn);
                     tractor.jobs.TryTakeOrderedJob(j);

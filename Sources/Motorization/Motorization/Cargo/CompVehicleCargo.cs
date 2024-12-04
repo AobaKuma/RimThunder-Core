@@ -64,6 +64,35 @@ namespace Motorization
             }
             return false;
         }
+        public bool TryUnloadThingUnspawned(VehiclePawn Parent, VehiclePawn thing)
+        {
+            if (Cargo.Contains(thing))
+            {
+                Cargo.Remove(thing);
+                GenDrop.TryDropSpawn(thing, Parent.Position + this.Vehicle.FullRotation.FacingCell * (int)((parent.def.Size.z + thing.def.Size.z) / 2), Parent.Map, ThingPlaceMode.Near, out var _);
+                thing.FullRotation = Props.renderOpposite ? Parent.FullRotation.Opposite : Parent.FullRotation;
+                return true;
+            }
+            return false;
+        }
+        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
+        {
+            foreach (var item in base.CompFloatMenuOptions(selPawn))
+            {
+                yield return item;
+            }
+            yield return FloatMenuOptionForCargo(selPawn);
+        }
+        public FloatMenuOption FloatMenuOptionForCargo(Pawn selPawn)
+        {
+            if (selPawn == null || selPawn.Faction != Faction.OfPlayer || !(selPawn is VehiclePawn))
+            {
+                return new FloatMenuOption("RTC_CanNotLoad".Translate() + ": " + "RTC_NotAvaliable".Translate(), null);
+            }
+
+            VehiclePawn vehicle = selPawn as VehiclePawn;
+            return FloatMenuUtility.TryMakeFloatMenuForCargoLoad(vehicle, Vehicle);
+        }
         public bool TryAcceptThing(VehiclePawn thing)
         {
             if (!this.Accepts(thing))
@@ -80,10 +109,11 @@ namespace Motorization
         {
             get
             {
-                return !Cargo.ContainsAny(v => v is VehiclePawn);
+                return !Cargo.NullOrEmpty() && Cargo.ContainsAny(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn)));
             }
             internal set { }
         }
+        public VehiclePawn GetPayload => Cargo.Where(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn))).First() as VehiclePawn;
 
         public AcceptanceReport Accepts(Thing thing)
         {
@@ -98,9 +128,9 @@ namespace Motorization
             {
                 if (DebugSettings.godMode) CarrierUtility.DebugDraw(Vehicle.DrawPos + GetDrawOffset(Vehicle.FullRotation));
 
-                if (Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
+                if (Cargo.Where(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn))).FirstOrDefault() != null)
                 {
-                    VehiclePawn p = (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() as VehiclePawn);
+                    VehiclePawn p = (Cargo.Where(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn))).FirstOrDefault() as VehiclePawn);
                     if (!initCheck)
                     {
                         initCheck = true;
@@ -129,9 +159,9 @@ namespace Motorization
             if (!Props.renderVehicle) return;
             if (DebugSettings.godMode) CarrierUtility.DebugDraw(drawLoc + GetDrawOffset(rot8));
 
-            if (Cargo != null && Cargo.Where(v => v is VehiclePawn && !(v is VehiclePawn_Trailer)).FirstOrDefault() != null)
+            if (Cargo != null && Cargo.Where(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn))).FirstOrDefault() != null)
             {
-                VehiclePawn p = (Cargo.Where(v => v is VehiclePawn).FirstOrDefault() as VehiclePawn);
+                VehiclePawn p = (Cargo.Where(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn))).FirstOrDefault() as VehiclePawn);
                 if (!initCheck)
                 {
                     initCheck = true;

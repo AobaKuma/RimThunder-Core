@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <RTC_Load>裝載: {0}</RTC_Load>
+  <RTC_Unload>卸載: {0}</RTC_Unload>
+  <RTC_CanNotLoad>無法裝載</RTC_CanNotLoad>
+  <RTC_NoPayload>沒有裝載</RTC_NoPayload>
+  <RTC_NotAvaliable>目標不可用</RTC_NotAvaliable>
+  <RTC_Disconnect>分離: {0}</RTC_Disconnect>
+  <RTC_TargetIsNotTrailer>並非可拖曳載具</RTC_TargetIsNotTrailer>
+  <RTC_TargetIsTowing>目標有拖曳掛車</RTC_TargetIsTowing>
+  <RTC_AlreadyTowing>正在拖曳載具</RTC_AlreadyTowing>
+  <RTC_NotSupportType>掛載點不兼容</RTC_NotSupportType>
+  <RTC_SizeOutOfLimit>超出裝載限長: 上限{0}</RTC_SizeOutOfLimit>
+
+</LanguageData>
