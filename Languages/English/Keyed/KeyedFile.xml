@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <RTC_Load>Load: {0}</RTC_Load>
+  <RTC_Unload>Unload: {0}</RTC_Unload>
+  <RTC_CanNotLoad>Can not load</RTC_CanNotLoad>
+  <RTC_NoPayload>No payload</RTC_NoPayload>
+  <RTC_NotAvaliable>Dot available</RTC_NotAvaliable>
+  <RTC_Disconnect>Disconnect: {0}</RTC_Disconnect>
+  <RTC_TargetIsNotTrailer>Not a trailer</RTC_TargetIsNotTrailer>
+  <RTC_TargetIsTowing>Tractor is towing trailer</RTC_TargetIsTowing>
+  <RTC_AlreadyTowing>Already towing trailer</RTC_AlreadyTowing>
+  <RTC_NotSupportType>Mount point not supported</RTC_NotSupportType>
+  <RTC_SizeOutOfLimit>Size exceeds: max {0}</RTC_SizeOutOfLimit>
+</LanguageData>

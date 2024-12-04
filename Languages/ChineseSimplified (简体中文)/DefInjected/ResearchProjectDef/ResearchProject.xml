@@ -1,23 +1,21 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
   <!-- EN: turbocharged -->
   <EngineAdvanced.label>涡轮增压</EngineAdvanced.label>
   <!-- EN: a type of reaction engine, discharging a fast-moving jet of heated gas that generates thrust by jet propulsion. -->
-  <EngineAdvanced.description>透过叶片转子压缩空气能够使燃烧更佳的有效且强烈,而其应用包含一种反应式发动机,能排出高速加热气体射流,并通过涡轮扇叶产生可观的扭矩.</EngineAdvanced.description>
-  
+  <EngineAdvanced.description>透过叶片转子压缩空气能够使燃烧更佳的有效且强烈，而其应用包含一种反应式发动机，能排出快速移动的加热气体射流，并通过涡轮扇叶产生可观的扭矩。</EngineAdvanced.description>
+
   <!-- EN: engine making -->
   <EngineBasis.label>发动机组装</EngineBasis.label>
   <!-- EN: a mature and reliable internal combustion engine, consume fuel and produce stable torque. -->
-  <EngineBasis.description>透过对技术扩散所获取的经验配合轨道商人给予的设计图,解锁生产结构简单的轻型二冲程发动机与动力强劲的蒸汽发动机.</EngineBasis.description>
+  <EngineBasis.description>透过对技术扩散所获取的经验配合轨道商人给予的设计图，解锁生产结构简单的轻型二冲程发动机与动力强劲的蒸汽发动机。</EngineBasis.description>
   <!-- EN: Sometimes you may get some unused engines, you can sell them to traders or disassemble them on the machining table. -->
   <EngineBasis.discoveredLetterText>有时你也可能会从任务奖励中获取发动机，你能够将其贩售或着在机械加工台上拆解来获取有用的资源。</EngineBasis.discoveredLetterText>
   <!-- EN: About: disassemble engine -->
-  <EngineBasis.discoveredLetterTitle>关于:发动机回收</EngineBasis.discoveredLetterTitle>
-  
+  <EngineBasis.discoveredLetterTitle>关於:发动机回收</EngineBasis.discoveredLetterTitle>
+ 
   <!-- EN: Otto Cycle -->
   <EnginePlus.label>奥托循环</EnginePlus.label>
   <!-- EN: an engineering experience that was proposed in ancient times, it's applications are known as the four-stroke engine, the most common internal combustion engine design for motorized land transport, being used in automobiles, trucks, diesel trains and light aircraft. -->
-  <EnginePlus.description>这是古代人类奥托提出的一种内燃机工程学经验,其应用被称为四冲程发动机,是工业世界中最常见的内燃机设计,被广泛用于用于汽车、卡车、柴油火车和长程螺旋桨飞机等等.</EnginePlus.description>
-  
+  <EnginePlus.description>这是古代人类奥托提出的一种内燃机工程学经验，其应用被称为四冲程发动机，是工业世界中最常见的内燃机设计，被广泛用於用於汽车、卡车、柴油火车和长程螺旋桨飞机等等。</EnginePlus.description> 
 </LanguageData>

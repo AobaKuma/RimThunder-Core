@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: make road wheel -->
+  <Make_ComponentWheelRoad.label>make road wheel</Make_ComponentWheelRoad.label>
+  <!-- EN: Make a road wheel. -->
+  <Make_ComponentWheelRoad.description>Make a road wheel.</Make_ComponentWheelRoad.description>
+  <!-- EN: Making road wheel. -->
+  <Make_ComponentWheelRoad.jobString>Making road wheel.</Make_ComponentWheelRoad.jobString>
+  
+  <!-- EN: make tyre -->
+  <Make_ComponentWheelTire.label>make tyre</Make_ComponentWheelTire.label>
+  <!-- EN: Make a tyre. -->
+  <Make_ComponentWheelTire.description>Make a tyre.</Make_ComponentWheelTire.description>
+  <!-- EN: Making tyre. -->
+  <Make_ComponentWheelTire.jobString>Making tyre.</Make_ComponentWheelTire.jobString>
+  
+</LanguageData>

@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: blast cabinet -->
   <RTC_BlastCabinet.label>喷砂柜</RTC_BlastCabinet.label>
   <!-- EN: A blast cabinet is essentially a closed loop system that allows the operator to blast the part and recycle the abrasive. Increases work speed when placed near an Assembly platfrom. One workbench can use one blast cabinet. -->
-  <RTC_BlastCabinet.description>用于对零件进行喷砂除锈与打磨的箱型机柜, 放置在重型组装平台附近时可提高工作速度。 一座重型组装平台最多能连接一台喷砂柜.</RTC_BlastCabinet.description>
+  <RTC_BlastCabinet.description>用於对零件进行喷砂除锈与打磨的箱型机柜， 放置在重型组装平台附近时可提高工作速度。 一座重型组装平台最多能连接一台喷砂柜。</RTC_BlastCabinet.description>
   
   <!-- EN: engine hanger -->
   <RTC_EngineHanger.label>发动机吊架</RTC_EngineHanger.label>
   <!-- EN: Increases work speed when placed near a bridge crane. One workbench can use up to two engine hanger. -->
-  <RTC_EngineHanger.description>用于移动发动机的小型起重挂架, 放置在重型组装天车附近时可提高工作速度。 一具天车最多能连接两个吊架.</RTC_EngineHanger.description>
+  <RTC_EngineHanger.description>用於移动发动机的小型起重挂架， 放置在重型组装天车附近时可提高工作速度。 一具天车最多能连接两个吊架。</RTC_EngineHanger.description>
   
   <!-- EN: tool shelf -->
   <RTC_ToolShelf.label>零件柜</RTC_ToolShelf.label>
   <!-- EN: Increases work speed when placed near a bridge crane or Assembly platfrom. One workbench can use up to two tool shelves. -->
-  <RTC_ToolShelf.description>用于在组装时方便拿取零件的收纳柜,通常被用于流水线或脉动生产工艺的组装车间,一个工作贵最多能连接两个零件柜.</RTC_ToolShelf.description>
+  <RTC_ToolShelf.description>用於在组装时方便拿取零件的收纳柜，通常被用於流水线或脉动生产工艺的组装车间，一个工作贵最多能连接两个零件柜。</RTC_ToolShelf.description>
   
 </LanguageData>

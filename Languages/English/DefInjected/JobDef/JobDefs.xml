@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Connecting TargetA. -->
+  <RTC_ConnectToTrailer.reportString>Connecting TargetA.</RTC_ConnectToTrailer.reportString>
+  
+  <!-- EN: Entering TargetA. -->
+  <RTC_LoadToCargo.reportString>Entering TargetA.</RTC_LoadToCargo.reportString>
+  
+  <!-- EN: Loading TargetA. -->
+  <RTC_LoadToSelf.reportString>Loading TargetA.</RTC_LoadToSelf.reportString>
+  
+</LanguageData>

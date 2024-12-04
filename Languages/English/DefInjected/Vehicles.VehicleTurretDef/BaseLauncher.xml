@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Smoke grenade launcher -->
+  <RT_GrenadeLauncher.label>Smoke grenade launcher</RT_GrenadeLauncher.label>
+  <!-- EN: Select Target.\n\nFire for effect -->
+  <RT_GrenadeLauncher.gizmoDescription>Select Target.
+
+Fire for effect</RT_GrenadeLauncher.gizmoDescription>
+  
+</LanguageData>

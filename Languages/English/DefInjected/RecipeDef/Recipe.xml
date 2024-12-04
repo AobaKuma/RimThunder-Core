@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: make heavy compoment -->
+  <CastFromMold.label>make heavy compoment</CastFromMold.label>
+  <!-- EN: Use melted steel to make heavy compoment. -->
+  <CastFromMold.description>Use melted steel to make heavy compoment.</CastFromMold.description>
+  <!-- EN: Casting metal. -->
+  <CastFromMold.jobString>Casting metal.</CastFromMold.jobString>
+  
+  <!-- EN: disassemble engine -->
+  <DisassembleEngine.label>disassemble engine</DisassembleEngine.label>
+  <!-- EN: disassemble an engine into components. some part might break during to process so it can not full-recycled. -->
+  <DisassembleEngine.description>disassemble an engine into components. some part might break during to process so it can not full-recycled.</DisassembleEngine.description>
+  <!-- EN: disassembling. -->
+  <DisassembleEngine.jobString>disassembling.</DisassembleEngine.jobString>
+  
+  <!-- EN: extract metal from heavy compoment -->
+  <ExtractMetalFromCasting.label>extract metal from heavy compoment</ExtractMetalFromCasting.label>
+  <!-- EN: Use heat and strong electromagnets to recycle useful metal from heavy compoment. -->
+  <ExtractMetalFromCasting.description>Use heat and strong electromagnets to recycle useful metal from heavy compoment.</ExtractMetalFromCasting.description>
+  <!-- EN: Smelting metal from slag. -->
+  <ExtractMetalFromCasting.jobString>Smelting metal from slag.</ExtractMetalFromCasting.jobString>
+  
+  <!-- EN: extract metal from engine -->
+  <ExtractMetalFromEngine.label>extract metal from engine</ExtractMetalFromEngine.label>
+  <!-- EN: disassemble an engine into components. some part might break during to process so it can not full-recycled. -->
+  <ExtractMetalFromEngine.description>disassemble an engine into components. some part might break during to process so it can not full-recycled.</ExtractMetalFromEngine.description>
+  <!-- EN: smelting. -->
+  <ExtractMetalFromEngine.jobString>smelting.</ExtractMetalFromEngine.jobString>
+  
+  <!-- EN: make fueling compoment -->
+  <Make_ComponentFuelTank.label>make fueling compoment</Make_ComponentFuelTank.label>
+  <!-- EN: make fueling compoment. -->
+  <Make_ComponentFuelTank.description>make fueling compoment.</Make_ComponentFuelTank.description>
+  <!-- EN: Assembling metal. -->
+  <Make_ComponentFuelTank.jobString>Assembling metal.</Make_ComponentFuelTank.jobString>
+  
+  <!-- EN: make transmisson compoment -->
+  <Make_ComponentTransmission.label>make transmisson compoment</Make_ComponentTransmission.label>
+  <!-- EN: make transmisson compoment. -->
+  <Make_ComponentTransmission.description>make transmisson compoment.</Make_ComponentTransmission.description>
+  <!-- EN: Assembling metal. -->
+  <Make_ComponentTransmission.jobString>Assembling metal.</Make_ComponentTransmission.jobString>
+  
+  <!-- EN: assemble heavy engine -->
+  <Make_EngineAssemble_Heavy.label>assemble heavy engine</Make_EngineAssemble_Heavy.label>
+  <!-- EN: assemble a heavy engine, which is common used by heavy tank and transport aircraft. -->
+  <Make_EngineAssemble_Heavy.description>assemble a heavy engine, which is common used by heavy tank and transport aircraft.</Make_EngineAssemble_Heavy.description>
+  <!-- EN: assembling engine. -->
+  <Make_EngineAssemble_Heavy.jobString>assembling engine.</Make_EngineAssemble_Heavy.jobString>
+  
+  <!-- EN: assemble light engine -->
+  <Make_EngineAssemble_Light.label>assemble light engine</Make_EngineAssemble_Light.label>
+  <!-- EN: assemble a light engine, which is common used by motor boat, motorcycle and light aircraft. -->
+  <Make_EngineAssemble_Light.description>assemble a light engine, which is common used by motor boat, motorcycle and light aircraft.</Make_EngineAssemble_Light.description>
+  <!-- EN: assembling engine. -->
+  <Make_EngineAssemble_Light.jobString>assembling engine.</Make_EngineAssemble_Light.jobString>
+  
+  <!-- EN: assemble medium engine -->
+  <Make_EngineAssemble_Medium.label>assemble medium engine</Make_EngineAssemble_Medium.label>
+  <!-- EN: assemble a medium engine, which is common used by tanks, trucks and aircrafts. -->
+  <Make_EngineAssemble_Medium.description>assemble a medium engine, which is common used by tanks, trucks and aircrafts.</Make_EngineAssemble_Medium.description>
+  <!-- EN: assembling engine. -->
+  <Make_EngineAssemble_Medium.jobString>assembling engine.</Make_EngineAssemble_Medium.jobString>
+  
+  <!-- EN: assemble turbine engine -->
+  <Make_EngineAssemble_Turbine.label>assemble turbine engine</Make_EngineAssemble_Turbine.label>
+  <!-- EN: assemble a turbine engine, which is powered by gas expansion driving turbine blades, but fuel consumption is quite high. widely used in pre-spacer world jets and military vehicles.. -->
+  <Make_EngineAssemble_Turbine.description>assemble a turbine engine, which is powered by gas expansion driving turbine blades, but fuel consumption is quite high. widely used in pre-spacer world jets and military vehicles..</Make_EngineAssemble_Turbine.description>
+  <!-- EN: assembling engine. -->
+  <Make_EngineAssemble_Turbine.jobString>assembling engine.</Make_EngineAssemble_Turbine.jobString>
+  
+  <!-- EN: assemble turbojet -->
+  <Make_EngineAssemble_TurboJet.label>assemble turbojet</Make_EngineAssemble_TurboJet.label>
+  <!-- EN: assemble a turbojet, an airbreathing jet engine which is typically used in aircraft and cruise missile, consists of a gas turbine with a propelling nozzle. -->
+  <Make_EngineAssemble_TurboJet.description>assemble a turbojet, an airbreathing jet engine which is typically used in aircraft and cruise missile, consists of a gas turbine with a propelling nozzle.</Make_EngineAssemble_TurboJet.description>
+  <!-- EN: assembling engine. -->
+  <Make_EngineAssemble_TurboJet.jobString>assembling engine.</Make_EngineAssemble_TurboJet.jobString>
+  
+</LanguageData>

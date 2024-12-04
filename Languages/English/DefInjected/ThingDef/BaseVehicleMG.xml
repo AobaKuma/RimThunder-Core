@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: HMG bullet -->
+  <RT_Bullet_HMG.label>HMG bullet</RT_Bullet_HMG.label>
+  
+  <!-- EN: LMG bullet -->
+  <RT_Bullet_LMG.label>LMG bullet</RT_Bullet_LMG.label>
+  
+  <!-- EN: MMG bullet -->
+  <RT_Bullet_MMG.label>MMG bullet</RT_Bullet_MMG.label>
+  
+</LanguageData>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Operate Machine -->
+  <RTC_Operate.label>Operate Machine</RTC_Operate.label>
+  <!-- EN: Operating at -->
+  <RTC_Operate.gerund>Operating at</RTC_Operate.gerund>
+  <!-- EN: Operate -->
+  <RTC_Operate.verb>Operate</RTC_Operate.verb>
+  
+</LanguageData>

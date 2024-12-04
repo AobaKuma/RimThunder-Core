@@ -1,18 +1,18 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: 制作金属车轮 -->
   <Make_ComponentWheelRoad.label>制造金属路轮</Make_ComponentWheelRoad.label>
   <!-- EN: 制作金属车轮 -->
-  <Make_ComponentWheelRoad.description>制造金属路轮.</Make_ComponentWheelRoad.description>
-  <!-- EN: 正在制作金属车轮。 -->
-  <Make_ComponentWheelRoad.jobString>正在造轮子.</Make_ComponentWheelRoad.jobString>
+  <Make_ComponentWheelRoad.description>制造金属路轮。</Make_ComponentWheelRoad.description>
+  <!-- EN: 正在制作金属车轮 -->
+  <Make_ComponentWheelRoad.jobString>正在造轮子。</Make_ComponentWheelRoad.jobString>
   
   <!-- EN: 制作充气轮胎 -->
   <Make_ComponentWheelTire.label>制造充气轮胎</Make_ComponentWheelTire.label>
   <!-- EN: 制作充气轮胎 -->
-  <Make_ComponentWheelTire.description>制造充气轮胎.</Make_ComponentWheelTire.description>
-  <!-- EN: 正在制作充气轮胎。 -->
-  <Make_ComponentWheelTire.jobString>正在造轮子.</Make_ComponentWheelTire.jobString>
+  <Make_ComponentWheelTire.description>制造充气轮胎。</Make_ComponentWheelTire.description>
+  <!-- EN: 正在制作充气轮胎 -->
+  <Make_ComponentWheelTire.jobString>正在造轮子。</Make_ComponentWheelTire.jobString>
   
 </LanguageData>

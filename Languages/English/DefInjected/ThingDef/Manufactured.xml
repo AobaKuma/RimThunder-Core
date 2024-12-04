@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: heavy casting -->
+  <ComponentHeavyCasting.label>heavy casting</ComponentHeavyCasting.label>
+  <!-- EN: large metal parts such as cylinders, cranks, manifolds and turbine blades that cannot be simply processed by smithing. -->
+  <ComponentHeavyCasting.description>large metal parts such as cylinders, cranks, manifolds and turbine blades that cannot be simply processed by smithing.</ComponentHeavyCasting.description>
+  
+  <!-- EN: heavy engine -->
+  <EngineHeavy.label>heavy engine</EngineHeavy.label>
+  <!-- EN: an six cylender distel engine with powerful torque, it is commonly used by heavy vehicles and ships. -->
+  <EngineHeavy.description>an six cylender distel engine with powerful torque, it is commonly used by heavy vehicles and ships.</EngineHeavy.description>
+  
+  <!-- EN: turbojet -->
+  <EngineJet.label>turbojet</EngineJet.label>
+  <!-- EN: an airbreathing jet engine which is typically used in aircraft, consists of a gas turbine with a propelling nozzle. -->
+  <EngineJet.description>an airbreathing jet engine which is typically used in aircraft, consists of a gas turbine with a propelling nozzle.</EngineJet.description>
+  
+  <!-- EN: light engine -->
+  <EngineLight.label>light engine</EngineLight.label>
+  <!-- EN: two-stroke cycle engine,it is simple and produce a large torque, but the fuel consumption is relatively higher. -->
+  <EngineLight.description>two-stroke cycle engine,it is simple and produce a large torque, but the fuel consumption is relatively higher.</EngineLight.description>
+  
+  <!-- EN: medium engine -->
+  <EngineMedium.label>medium engine</EngineMedium.label>
+  <!-- EN: a Four-stroke engine with optimum fuel conversion, it is the heart of an industrial world. -->
+  <EngineMedium.description>a Four-stroke engine with optimum fuel conversion, it is the heart of an industrial world.</EngineMedium.description>
+  
+  <!-- EN: turbine engine -->
+  <EngineTurbine.label>turbine engine</EngineTurbine.label>
+  <!-- EN: An engine powered by gas expansion driving turbine blades, but fuel consumption is quite high. widely used in pre-spacer jets and military vehicles. -->
+  <EngineTurbine.description>An engine powered by gas expansion driving turbine blades, but fuel consumption is quite high. widely used in pre-spacer jets and military vehicles.</EngineTurbine.description>
+  
+  <!-- EN: unfinished engine -->
+  <UnfinishedEngine.label>unfinished engine</UnfinishedEngine.label>
+  <!-- EN: An unfinished / in-disassemble engine of some kind. -->
+  <UnfinishedEngine.description>An unfinished / in-disassemble engine of some kind.</UnfinishedEngine.description>
+  
+</LanguageData>
