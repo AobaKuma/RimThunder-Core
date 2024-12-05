@@ -10,6 +10,6 @@
   <RTC_TargetIsTowing>目標有拖曳掛車</RTC_TargetIsTowing>
   <RTC_AlreadyTowing>正在拖曳載具</RTC_AlreadyTowing>
   <RTC_NotSupportType>掛載點不兼容</RTC_NotSupportType>
-  <RTC_SizeOutOfLimit>超出裝載限長: 上限{0}</RTC_SizeOutOfLimit>
+  <RTC_SizeOutOfLimit>超出限長(上限{0})</RTC_SizeOutOfLimit>
 
 </LanguageData>

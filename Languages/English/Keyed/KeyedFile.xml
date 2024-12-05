@@ -10,5 +10,5 @@
   <RTC_TargetIsTowing>Tractor is towing trailer</RTC_TargetIsTowing>
   <RTC_AlreadyTowing>Already towing trailer</RTC_AlreadyTowing>
   <RTC_NotSupportType>Mount point not supported</RTC_NotSupportType>
-  <RTC_SizeOutOfLimit>Size exceeds: max {0}</RTC_SizeOutOfLimit>
+  <RTC_SizeOutOfLimit>Size exceeds(Max {0})</RTC_SizeOutOfLimit>
 </LanguageData>
