@@ -72,11 +72,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APS\CompAbilityEffect_ActiveProtectionSystem.cs" />
     <Compile Include="Cargo\CarrierUtility.cs" />
     <Compile Include="Cargo\CompTrailerMount.cs" />
     <Compile Include="Cargo\ITab_VehicleTransport.cs" />
     <Compile Include="Cargo\JobDriver_LoadToSelf.cs" />
     <Compile Include="Cargo\JobDriver_ConnectToTrailer.cs" />
+    <Compile Include="CircleConst.cs" />
+    <Compile Include="Harmony\Patch_VehiclePawn_GetExtraFloatMenuOptionsFor.cs" />
+    <Compile Include="Projectile\CompAfterBurner.cs" />
+    <Compile Include="Projectile\Projectile_ConeExplosive.cs" />
     <Compile Include="VehicleDrawData.cs" />
     <Compile Include="VehicleJobDefOf.cs" />
     <Compile Include="Depoly\LaunchRestriction_WingDeployed.cs" />

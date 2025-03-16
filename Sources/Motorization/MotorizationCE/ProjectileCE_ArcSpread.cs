@@ -13,8 +13,7 @@ namespace MotorizationCE
     public class ProjectileCE_ArcSpread : BulletCE
     {
         RotationalArcSpreadExtension Extension => def.GetModExtension<RotationalArcSpreadExtension>();
-
-        public override void Launch(Thing launcher, Vector2 origin, float shotAngle, float shotRotation, float shotHeight = 0, float shotSpeed = -1, Thing equipment = null, float distance = -1)
+        public override void Launch(Thing launcher, Vector2 origin, float shotAngle, float shotRotation, float shotHeight = 0, float shotSpeed = -1, Thing equipment = null, float distance = -1, int ticksToTruePosition = 3)
         {
             for (int i = 0; i < Extension.amount; i++)
             {
