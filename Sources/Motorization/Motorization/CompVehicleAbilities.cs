@@ -22,7 +22,6 @@ namespace Motorization
             base.CompTick();
             this.Vehicle.abilities.AbilitiesTick();
         }
-
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             List<Ability> comp = this.Vehicle.abilities.abilities;

@@ -66,6 +66,9 @@
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\_CindersFromTheEmbergarden\_Sources\Reference\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
     <Reference Include="Vehicles">
       <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3014915404\1.5\Assemblies\Vehicles.dll</HintPath>
       <Private>False</Private>
@@ -81,6 +84,7 @@
     <Compile Include="CircleConst.cs" />
     <Compile Include="Harmony\Patch_VehiclePawn_GetExtraFloatMenuOptionsFor.cs" />
     <Compile Include="Projectile\CompAfterBurner.cs" />
+    <Compile Include="Projectile\VehicleCompProjectileInterceptor.cs" />
     <Compile Include="Projectile\Projectile_ConeExplosive.cs" />
     <Compile Include="VehicleDrawData.cs" />
     <Compile Include="VehicleJobDefOf.cs" />

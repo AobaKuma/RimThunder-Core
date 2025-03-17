@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\projectile\\vehiclecompprojectileinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\projectile\\vehiclecompprojectileinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\projectile\\projectile_coneexplosive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\projectile\\projectile_coneexplosive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\aps\\compabilityeffect_activeprotectionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\aps\\compabilityeffect_activeprotectionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorizationce\\aps\\compabilityeffect_activeprotectionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|solutionrelative:motorizationce\\aps\\compabilityeffect_activeprotectionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorizationce\\projectilece_arcspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE4304B7-7E6B-477A-AEA7-B186F9490AA1}|MotorizationCE\\MotorizationCE.csproj|solutionrelative:motorizationce\\projectilece_arcspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\aps\\compabilityeffect_activeprotectionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|solutionrelative:motorization\\aps\\compabilityeffect_activeprotectionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8687230C-6C9B-44AE-A966-F79E583F984D}|Motorization\\Motorization.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\rimthunder-core\\sources\\motorization\\motorization\\compvehicleabilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,7 +94,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Harmony_TurretRotationTick.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_TurretRotationTick.cs",
               "RelativeDocumentMoniker": "Motorization\\Harmony\\Harmony_TurretRotationTick.cs",
@@ -100,6 +108,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "VehicleCompProjectileInterceptor.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Projectile\\VehicleCompProjectileInterceptor.cs",
+              "RelativeDocumentMoniker": "Motorization\\Projectile\\VehicleCompProjectileInterceptor.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Projectile\\VehicleCompProjectileInterceptor.cs",
+              "RelativeToolTip": "Motorization\\Projectile\\VehicleCompProjectileInterceptor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T21:08:37.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Projectile_ConeExplosive.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Projectile\\Projectile_ConeExplosive.cs",
+              "RelativeDocumentMoniker": "Motorization\\Projectile\\Projectile_ConeExplosive.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Projectile\\Projectile_ConeExplosive.cs",
+              "RelativeToolTip": "Motorization\\Projectile\\Projectile_ConeExplosive.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:55:33.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CompAbilityEffect_ActiveProtectionSystem.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\APS\\CompAbilityEffect_ActiveProtectionSystem.cs",
               "RelativeDocumentMoniker": "MotorizationCE\\APS\\CompAbilityEffect_ActiveProtectionSystem.cs",
@@ -112,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ProjectileCE_ArcSpread.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\MotorizationCE\\ProjectileCE_ArcSpread.cs",
               "RelativeDocumentMoniker": "MotorizationCE\\ProjectileCE_ArcSpread.cs",
@@ -125,20 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FloatMenuUtility.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\FloatMenuUtility.cs",
-              "RelativeDocumentMoniker": "Motorization\\FloatMenuUtility.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\FloatMenuUtility.cs",
-              "RelativeToolTip": "Motorization\\FloatMenuUtility.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T20:44:05.684Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CompVehicleAbilities.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\CompVehicleAbilities.cs",
               "RelativeDocumentMoniker": "Motorization\\CompVehicleAbilities.cs",
@@ -157,9 +178,22 @@
               "RelativeDocumentMoniker": "Motorization\\APS\\CompAbilityEffect_ActiveProtectionSystem.cs",
               "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\APS\\CompAbilityEffect_ActiveProtectionSystem.cs",
               "RelativeToolTip": "Motorization\\APS\\CompAbilityEffect_ActiveProtectionSystem.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAswFIAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAALMAAAAAAAAAAAAUwGsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T20:43:16.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FloatMenuUtility.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\FloatMenuUtility.cs",
+              "RelativeDocumentMoniker": "Motorization\\FloatMenuUtility.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\FloatMenuUtility.cs",
+              "RelativeToolTip": "Motorization\\FloatMenuUtility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:44:05.684Z",
               "EditorCaption": ""
             },
             {
@@ -168,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Projectile_Parabola.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Projectile\\Projectile_Parabola.cs",
               "RelativeDocumentMoniker": "Motorization\\Projectile\\Projectile_Parabola.cs",
@@ -185,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "VehicleJobDefOf.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\VehicleJobDefOf.cs",
               "RelativeDocumentMoniker": "Motorization\\VehicleJobDefOf.cs",
@@ -197,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "CompEffector.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Vehicle\\CompEffector.cs",
               "RelativeDocumentMoniker": "Motorization\\Vehicle\\CompEffector.cs",
@@ -209,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "VehiclePawn_Trailer.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Vehicle\\VehiclePawn_Trailer.cs",
               "RelativeDocumentMoniker": "Motorization\\Vehicle\\VehiclePawn_Trailer.cs",
@@ -221,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Patch_VehiclePawn_GetExtraFloatMenuOptionsFor.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Patch_VehiclePawn_GetExtraFloatMenuOptionsFor.cs",
               "RelativeDocumentMoniker": "Motorization\\Harmony\\Patch_VehiclePawn_GetExtraFloatMenuOptionsFor.cs",
@@ -234,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "VehicleDrawData.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\VehicleDrawData.cs",
               "RelativeDocumentMoniker": "Motorization\\VehicleDrawData.cs",
@@ -246,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "VehiclePawn_Tractor.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Vehicle\\VehiclePawn_Tractor.cs",
               "RelativeDocumentMoniker": "Motorization\\Vehicle\\VehiclePawn_Tractor.cs",
@@ -258,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "JobDriver_Deploy.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Depoly\\JobDriver_Deploy.cs",
               "RelativeDocumentMoniker": "Motorization\\Depoly\\JobDriver_Deploy.cs",
@@ -270,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "HarmonyMain.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\HarmonyMain.cs",
               "RelativeDocumentMoniker": "Motorization\\Harmony\\HarmonyMain.cs",
@@ -282,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Harmony_BillUtility.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Harmony\\Harmony_BillUtility.cs",
               "RelativeDocumentMoniker": "Motorization\\Harmony\\Harmony_BillUtility.cs",
@@ -294,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "CompTrailerMount.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CompTrailerMount.cs",
               "RelativeDocumentMoniker": "Motorization\\Cargo\\CompTrailerMount.cs",
@@ -306,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "CarrierUtility.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimThunder-Core\\Sources\\Motorization\\Motorization\\Cargo\\CarrierUtility.cs",
               "RelativeDocumentMoniker": "Motorization\\Cargo\\CarrierUtility.cs",
