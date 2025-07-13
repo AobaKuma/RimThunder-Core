@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase" Name="RT_BaseLauncher">
+		<defName>RT_GrenadeLauncher</defName>
+		<label>Smoke grenade launcher</label>
+		<turretType>Static</turretType>
+		<shotSound>Shot_IncendiaryLauncher</shotSound>
+		<projectile>Bullet_RTCSmoke</projectile>
+		<reloadTimer>10</reloadTimer>
+		<autoRefuelProportion>1</autoRefuelProportion>
+		<warmUpTimer>0</warmUpTimer>
+		<magazineCapacity>2</magazineCapacity>
+		<chargePerAmmoCount>15</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<maxRange>15</maxRange>
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>1</ticksBetweenShots>
+				<ticksBetweenBursts>4</ticksBetweenBursts>
+				<spreadRadius>2</spreadRadius>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>4</shotsPerBurst>
+				<ticksBetweenShots>1</ticksBetweenShots>
+				<ticksBetweenBursts>4</ticksBetweenBursts>
+				<spreadRadius>12</spreadRadius>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+		<gizmoIconTexPath>VehicleGuns/Smoke</gizmoIconTexPath>
+		<gizmoIconScale>1.25</gizmoIconScale>
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_RTCSmoke</defName>
+		<label>smoke launcher shell</label>
+		<graphicData>
+			<texPath>Things/Projectile/LauncherShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(140,135,156)</color>
+		</graphicData>
+		<thingClass>Motorization.Projectile_ArcSpread</thingClass>
+		<projectile>
+			<speed>40</speed>
+			<damageDef>Smoke</damageDef>
+		</projectile>
+		<modExtensions>
+			<li Class="Motorization.RotationalArcSpreadExtension">
+				<projectile>Bullet_SmokeLauncher</projectile>
+				<range>10~15</range>
+			</li>
+		</modExtensions>
+	</ThingDef>
+</Defs>

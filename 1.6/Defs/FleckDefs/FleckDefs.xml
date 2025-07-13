@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<FleckDef ParentName = "FleckBase_Thrown">
+		<defName>RT_RocketSmoke</defName>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<renderInstanced>true</renderInstanced>
+		</graphicData>
+
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>1</fadeInTime>
+		<solidTime>4.5</solidTime>
+		<fadeOutTime>2.5</fadeOutTime>
+		<growthRate>0.01</growthRate>
+	</FleckDef>
+
+	<FleckDef ParentName="FleckBaseSmoke">
+		<defName>RT_RocketExhaust</defName>
+		<graphicData>
+			<texPath>Things/Mote/FireGlow</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<solidTime>0.03</solidTime>
+		<fadeOutTime>0.15</fadeOutTime>
+	</FleckDef>
+</Defs>

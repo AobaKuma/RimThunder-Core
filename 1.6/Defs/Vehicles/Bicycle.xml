@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <Vehicles.VehicleBuildDef ParentName="RT_BaseVehicleBuild"><!-- 建築型態的載具，基本上與BuildingDef相同-->
+		<defName>RT_Bicycle_Blueprint</defName>
+		<label>bicycle</label>
+		<description>A man-powered bicycle, cheap and useful in most cases.</description>
+		<graphicData>
+			<texPath>Vehicle/Bicycle/vehicle</texPath>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>	
+		<statBases> 		
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>300</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		<size>(1,2)</size>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>	
+		<costList>
+			<ComponentTransmission>1</ComponentTransmission>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<Steel>75</Steel>
+		</costList>
+		<thingToSpawn>RT_Bicycle</thingToSpawn>	<!-- 建造後生成的載具Kind,這是與建築唯一不一樣的-->
+	</Vehicles.VehicleBuildDef>
+
+	<!-- 載具本體 -->
+	<Vehicles.VehicleDef ParentName="RT_BaseVehicle">
+		<defName>RT_Bicycle</defName>
+		<label>bicycle</label>
+		<description>A man-powered bicycle, cheap and useful in most cases.</description>
+		<buildDef>RT_Bicycle_Blueprint</buildDef>
+		<graphicData>
+			<texPath>Vehicle/Bicycle/vehicle</texPath>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<size>(1,2)</size>
+		<fillPercent>0.1</fillPercent>
+		<vehicleCategory>Combat</vehicleCategory>
+		<statBases><!--平衡相关-->
+			<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+			<Flammability>0</Flammability>
+			<MarketValue>200</MarketValue>
+		</statBases>
+		<vehicleStats><!--平衡相关-->
+			<Mass>10</Mass>
+			<MoveSpeed>6</MoveSpeed>
+			<CargoCapacity>30</CargoCapacity>
+			<RepairRate>0.5</RepairRate>
+		</vehicleStats>
+		<race>
+			<baseBodySize>1</baseBodySize>
+		</race>
+		<soundOneShotsOnEvent Inherit = "False"/>
+		<soundSustainersOnEvent Inherit = "False"/>
+		<properties>	<!-- 座位與功能 -->
+			<diagonalRotation>false</diagonalRotation>
+			<customRoadCosts AssignDefaults = "0.4"/>
+			<worldSpeedMultiplier>1.1</worldSpeedMultiplier>
+			<winterSpeedMultiplier>0.5</winterSpeedMultiplier>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 1)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>rider</key>
+					<label>Rider</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<side>Body</side>
+					</hitbox>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>-1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0,0,0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(0,0,0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0,0,0.25)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+		</properties>	
+		<components>	<!-- 各種零件 --><!--平衡相关-->
+		<!-- Internal mobile Part 內部驅動部件-->
+			<li><!--Engine 100-->
+				<key>Engine</key>
+				<label>Transmission gear</label>
+				<health>25</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<categories><li>MoveSpeed</li></categories>
+				<depth>External</depth>								
+			</li>
+			<li><!-- transmission shaft 40 -->
+				<key>Structure</key>
+				<label>Structure Frame</label>
+				<health>30</health>
+				<depth>External</depth>
+			</li>	
+			<li><!-- transmission shaft 40 -->
+				<key>TransmissionShaft</key>
+				<label>Transmission chain</label>
+				<health>30</health>
+				<depth>External</depth>
+			</li>			
+		<!-- External mobile Part 外部驅動部件-->		
+			<li>
+				<key>FrontWheel</key>
+				<label>Front Wheel</label>
+				<health>20</health>
+				<depth>External</depth>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackWheel</key>
+				<label>Back Wheel</label>
+				<health>20</health>
+				<depth>External</depth>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+</Defs>

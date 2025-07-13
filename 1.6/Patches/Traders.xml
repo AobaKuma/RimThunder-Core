@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- Vehicle Parts--> 
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraderKindDef[
+					defName="Base_Outlander_Standard" or
+					defName="Orbital_Exotic" or
+					defName="Caravan_Outlander_Exotic"
+					]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_Category">
+						<categoryDef>Engine</categoryDef>
+						<thingDefCountRange>0~3</thingDefCountRange>
+						<countRange>0~3</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>ComponentHeavyCasting</thingDef>
+						<countRange>1~8</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>ComponentTransmission</thingDef>
+						<countRange>0~4</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>ComponentFuelTank</thingDef>
+						<countRange>0~4</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>ComponentWheelRoad</thingDef>
+						<countRange>0~6</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>ComponentWheelTire</thingDef>
+						<countRange>4~6</countRange>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

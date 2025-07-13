@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>AmmoBGM71TOW</defName>
+		<label>TOW missile</label>
+		<parent>AmmoMissiles</parent>
+		<iconPath>Things/Ammo/Ammo_TOW2A/Ammo_TOW2A_a</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_BGM71TOW</defName>
+		<label>TOW missile</label>
+		<ammoTypes>
+			<Ammo_TOW2_HEAT>Bullet_TOW2_HEAT</Ammo_TOW2_HEAT>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="BGM71TOWBase" ParentName="MediumAmmoBase" Abstract="True">
+		<thingCategories>
+			<li>AmmoBGM71TOW</li>
+		</thingCategories>
+		<stackLimit>25</stackLimit>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_TableMachining</li>
+		</tradeTags>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Mass>50</Mass>
+			<Bulk>50</Bulk>
+		</statBases>
+		<cookOffFlashScale>30</cookOffFlashScale>
+		<cookOffSound>MortarBomb_Explode</cookOffSound>
+		<isMortarAmmo>true</isMortarAmmo>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BGM71TOWBase">
+		<defName>Ammo_TOW2_HEAT</defName>
+		<label>TOW2 AntiTank missile(HEAT)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Ammo_TOW2A</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>120</MarketValue>
+		</statBases>
+		<ammoClass>RocketHEAT</ammoClass>
+		<detonateProjectile>Bullet_TOW2_HEAT</detonateProjectile>
+	</ThingDef>
+
+
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="BaseTOW" ParentName="BaseExplosiveBullet" Abstract="true">
+		<graphicData>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>64</speed>
+			<soundAmbient>RocketPropelledLoop_Small</soundAmbient>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ProjectileFleck">
+				<FleckDatas>
+					<li>
+						<fleck>Fleck_CERocketFlame</fleck>
+						<emissionsPerTick>7</emissionsPerTick>
+						<flecksPerEmission>3</flecksPerEmission>
+						<scale>1.5</scale>
+						<cutoffTickRange>25~60</cutoffTickRange>
+						<originOffset>0.4</originOffset>
+					</li>
+					<li>
+						<fleck>Fleck_CERocketSmokeTrail</fleck>
+						<emissionsPerTick>1</emissionsPerTick>
+						<rotation>0~360</rotation>
+						<scale>3</scale>
+						<flecksPerEmission>1</flecksPerEmission>
+					</li>
+					<li>
+						<fleck>Fleck_CERocketSmoke</fleck>
+						<emissionsPerTick>2</emissionsPerTick>
+						<rotation>0~360</rotation>
+						<scale>2</scale>
+						<flecksPerEmission>1</flecksPerEmission>
+						<cutoffTickRange>25~60</cutoffTickRange>
+					</li>
+				</FleckDatas>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseTOW">
+		<defName>Bullet_TOW2_HEAT</defName>
+		<label>TOW2 AntiTank missile(HEAT)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Ammo_TOW2A</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>525</damageAmountBase>
+			<armorPenetrationSharp>800</armorPenetrationSharp>
+			<armorPenetrationBlunt>375</armorPenetrationBlunt>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<damageAmountBase>375</damageAmountBase>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<explosiveRadius>4.9</explosiveRadius>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			    <explosionSound>MortarBomb_Explode</explosionSound>
+			</li>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Large>6</Fragment_Large>
+					<Fragment_Small>38</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+
+	<!-- ==================== Recipes ========================== -->
+	<RecipeDef ParentName="LauncherAmmoRecipeBase">
+		<defName>MakeAmmo_TOW2_HEAT</defName>
+		<label>Make TOW2 Missiles x5</label>
+		<description>Craft 5 TOW2 Missiles.</description>
+		<jobString>Making 5 TOW2 Missiles.</jobString>
+		<workAmount>18800</workAmount>
+		<researchPrerequisite>CE_AdvancedLaunchers</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>35</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+				<li>ComponentIndustrial</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_TOW2_HEAT>5</Ammo_TOW2_HEAT>
+		</products>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+
+
+</Defs>

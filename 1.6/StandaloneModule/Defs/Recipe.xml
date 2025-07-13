@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <RecipeDef Name="Recipe_MakeEngineBase" Abstract="True">
+		<jobString>assembling engine.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Repair</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workSkill>Crafting</workSkill>
+    <unfinishedThingDef>UnfinishedEngine</unfinishedThingDef>
+    <recipeUsers>
+		  <li>RT_AssemblyBench</li>
+		</recipeUsers>
+  </RecipeDef>
+
+	<RecipeDef ParentName="Recipe_MakeEngineBase">  <!-- Make_EngineAssemble_Light -->  
+		<defName>Make_EngineAssemble_Light</defName>
+		<label>assemble light engine</label>
+		<description>assemble a light engine, which is common used by motor boat, motorcycle and light aircraft.</description>
+		<workAmount>20000</workAmount>
+		<ingredients>
+		  <li>
+        <filter>
+          <thingDefs>
+          <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			  <li>ComponentIndustrial</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <EngineLight>1</EngineLight>
+		</products>	
+		<skillRequirements>
+		  <Crafting>3</Crafting>
+		</skillRequirements>
+		<researchPrerequisite>EngineBasis</researchPrerequisite>
+    <recipeUsers>
+		  <li>TableMachining</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Recipe_MakeEngineBase">  <!-- Make_EngineAssemble_Medium --> 
+		<defName>Make_EngineAssemble_Medium</defName>
+		<label>assemble medium engine</label>
+		<description>assemble a medium engine, which is common used by tanks, trucks and aircrafts.</description>
+		<workAmount>64000</workAmount>
+		<ingredients>
+		  <li>
+        <filter>
+          <thingDefs>
+          <li>ComponentHeavyCasting</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+		  </li>
+		  <li>
+        <filter>
+          <thingDefs>
+          <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			  <li>ComponentHeavyCasting</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <EngineMedium>1</EngineMedium>
+		</products>	
+		<skillRequirements>
+		  <Crafting>6</Crafting>
+		</skillRequirements>
+		<researchPrerequisite>EnginePlus</researchPrerequisite>
+    <recipeUsers>
+		  <li>TableMachining</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Recipe_MakeEngineBase">  <!-- Make_EngineAssemble_Heavy --> 
+		<defName>Make_EngineAssemble_Heavy</defName>
+		<label>assemble heavy engine</label>
+		<description>assemble a heavy engine, which is common used by heavy tank and transport aircraft.</description>
+		<workAmount>75000</workAmount>
+		<ingredients>
+		  <li>
+        <filter>
+          <thingDefs>
+          <li>ComponentHeavyCasting</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+		  </li>
+		  <li>
+        <filter>
+          <thingDefs>
+          <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			  <li>ComponentHeavyCasting</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <EngineHeavy>1</EngineHeavy>
+		</products>	
+		<skillRequirements>
+		  <Crafting>7</Crafting>
+		</skillRequirements>
+		<researchPrerequisite>EnginePlus</researchPrerequisite>
+	</RecipeDef>
+<!-- 渦輪引擎 -->
+<!-- 組裝一具渦輪引擎。一種由燃燒膨脹驅動渦輪葉片提供強勁動力的引擎，但油耗量相當的高。被用於後工業時代的噴氣飛機與軍用載具 -->
+<RecipeDef ParentName="Recipe_MakeEngineBase">  <!-- Make_EngineAssemble_Medium --> 
+  <defName>Make_EngineAssemble_TurboJet</defName>
+  <label>assemble turbojet</label>
+  <description>assemble a turbojet, an airbreathing jet engine which is typically used in aircraft and cruise missile, consists of a gas turbine with a propelling nozzle.</description>
+  <workAmount>180000</workAmount>
+  <ingredients>
+    <li>
+      <filter>
+        <thingDefs>
+          <li>ComponentHeavyCasting</li>
+        </thingDefs>
+      </filter>
+      <count>1</count>
+    </li>
+    <li>
+      <filter>
+        <thingDefs>
+          <li>ComponentIndustrial</li>
+        </thingDefs>
+      </filter>
+      <count>15</count>
+    </li>
+  </ingredients>
+  <fixedIngredientFilter>
+    <thingDefs>
+      <li>ComponentHeavyCasting</li>
+      <li>ComponentIndustrial</li>
+    </thingDefs>
+  </fixedIngredientFilter>
+  <products>
+    <EngineJet>1</EngineJet>
+  </products>	
+  <skillRequirements>
+    <Crafting>8</Crafting>
+  </skillRequirements>
+  <researchPrerequisite>EngineAdvanced</researchPrerequisite>
+</RecipeDef>
+
+<!-- 渦輪引擎 -->
+<!-- 組裝一具渦輪引擎。一種由燃燒膨脹驅動渦輪葉片提供強勁動力的引擎，但油耗量相當的高。被用於後工業時代的噴氣飛機與軍用載具 -->
+<RecipeDef ParentName="Recipe_MakeEngineBase">  <!-- Make_EngineAssemble_Medium --> 
+  <defName>Make_EngineAssemble_Turbine</defName>
+  <label>assemble turbine engine</label>
+  <description>assemble a turbine engine, which is powered by gas expansion driving turbine blades, but fuel consumption is quite high. widely used in pre-spacer world jets and military vehicles..</description>
+  <workAmount>180000</workAmount>
+  <ingredients>
+    <li>
+      <filter>
+        <thingDefs>
+          <li>ComponentSpacer</li>
+        </thingDefs>
+      </filter>
+      <count>1</count>
+    </li>
+    <li>
+      <filter>
+        <thingDefs>
+          <li>ComponentHeavyCasting</li>
+        </thingDefs>
+      </filter>
+      <count>3</count>
+    </li>
+    <li>
+      <filter>
+        <thingDefs>
+          <li>ComponentIndustrial</li>
+        </thingDefs>
+      </filter>
+      <count>15</count>
+    </li>
+  </ingredients>
+  <fixedIngredientFilter>
+    <thingDefs>
+      <li>ComponentHeavyCasting</li>
+      <li>ComponentIndustrial</li>
+      <li>ComponentSpacer</li>
+    </thingDefs>
+  </fixedIngredientFilter>
+  <products>
+    <EngineTurbine>1</EngineTurbine>
+  </products>	
+  <skillRequirements>
+    <Crafting>8</Crafting>
+  </skillRequirements>
+  <researchPrerequisite>EngineAdvanced</researchPrerequisite>
+</RecipeDef>
+
+<!-- 引擎拆解(屠宰) -->
+<!-- 將一具引擎分解成零件狀態，雖然有些耗時但通常在過程中並不會有零件受損 -->
+<RecipeDef>
+  <defName>DisassembleEngine</defName>
+  <label>disassemble engine</label>
+  <description>disassemble an engine into components. some part might break during to process so it can not full-recycled.</description>
+  <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
+  <jobString>disassembling.</jobString>
+  <workAmount>2000</workAmount>
+  <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+  <workSkill>Crafting</workSkill>
+  <efficiencyStat>ButcheryFleshEfficiency</efficiencyStat>
+  <effectWorking>Repair</effectWorking>
+  <soundWorking>Recipe_Machining</soundWorking>
+  <interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+  <uiIconThing>EngineLight</uiIconThing>
+  <recipeUsers>
+    <li>RT_AssemblyBench</li>
+  </recipeUsers>
+  <ingredients>
+    <li>
+      <filter>
+        <categories>
+          <li>Engine</li>
+        </categories>
+      </filter>
+      <count>1</count>
+    </li>
+  </ingredients>
+  <specialProducts>
+    <li>Butchery</li>
+  </specialProducts>
+  <fixedIngredientFilter>
+    <categories>
+      <li>Engine</li>
+    </categories>
+  </fixedIngredientFilter>
+  <defaultIngredientFilter>
+    <categories>
+      <li>Engine</li>
+    </categories>
+  </defaultIngredientFilter>
+</RecipeDef>
+
+<!-- 引擎拆解(熔煉) -->
+<!-- 將一具引擎熔煉銷毀並回收可用的金屬 -->
+<RecipeDef>
+  <defName>ExtractMetalFromEngine</defName>
+  <label>extract metal from engine</label>
+  <description>disassemble an engine into components. some part might break during to process so it can not full-recycled.</description>
+  <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
+  <jobString>smelting.</jobString>
+  <workAmount>3000</workAmount>
+  <workSkill>Crafting</workSkill>
+  <workSpeedStat>SmeltingSpeed</workSpeedStat>
+  <effectWorking>Smelt</effectWorking>
+  <soundWorking>Recipe_Smelt</soundWorking>
+  <interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+  <uiIconThing>EngineLight</uiIconThing>
+  <recipeUsers>
+    <li>ElectricSmelter</li>
+  </recipeUsers>
+  <ingredients>
+    <li>
+      <filter>
+        <categories>
+          <li>Engine</li>
+        </categories>
+      </filter>
+      <count>1</count>
+    </li>
+  </ingredients>
+  <specialProducts>
+    <li>Smelted</li>
+  </specialProducts>
+  <fixedIngredientFilter>
+    <categories>
+      <li>Engine</li>
+    </categories>
+  </fixedIngredientFilter>
+</RecipeDef>
+
+<!-- 澆鑄重型鑄件，100鋼鐵-->
+<!-- 在熔煉台上將熔融鋼鐵的倒入鑄模當中，澆鑄的模具需要放置一些時間冷卻。注意在此過程中會產生大量的熱-->
+<RecipeDef>
+  <defName>CastFromMold</defName>
+  <label>make heavy compoment</label>
+  <description>Use melted steel to make heavy compoment.</description>
+  <jobString>Casting metal.</jobString>
+  <workAmount>500</workAmount>
+  <workSpeedStat>SmeltingSpeed</workSpeedStat>
+  <effectWorking>Repair</effectWorking>
+  <soundWorking>Recipe_Smelt</soundWorking>
+  <uiIconThing>ComponentHeavyCasting</uiIconThing>
+  <recipeUsers>
+    <li>ElectricSmelter</li>  <!-- 熔煉台 -->  
+    <li>RT_AssemblyBench</li>  <!-- 組裝台 -->
+  </recipeUsers>
+  <ingredients>
+    <li>
+      <filter>
+        <thingDefs>
+          <li>Steel</li>
+        </thingDefs>
+      </filter>
+      <count>100</count>
+    </li>
+  </ingredients>
+  <fixedIngredientFilter>
+    <thingDefs>
+      <li>Steel</li>
+    </thingDefs>
+  </fixedIngredientFilter>
+  <products>
+    <ChunkSlagSteel>1</ChunkSlagSteel>
+    <ComponentHeavyCasting>1</ComponentHeavyCasting>
+  </products>
+</RecipeDef>
+
+<!-- 鑄件回收 -->
+<!-- 將大型金屬鑄件熔化並重新回收成金屬原料 -->
+<RecipeDef>
+  <defName>ExtractMetalFromCasting</defName>
+  <label>extract metal from heavy compoment</label>
+  <description>Use heat and strong electromagnets to recycle useful metal from heavy compoment.</description>
+  <jobString>Smelting metal from slag.</jobString>
+  <workAmount>600</workAmount>
+  <workSpeedStat>SmeltingSpeed</workSpeedStat>
+  <effectWorking>Smelt</effectWorking>
+  <soundWorking>Recipe_Smelt</soundWorking>
+  <uiIconThing>Steel</uiIconThing>
+  <recipeUsers>
+    <li>ElectricSmelter</li>  <!-- 熔煉台 -->  
+  </recipeUsers>
+  <ingredients>
+    <li>
+      <filter>
+        <thingDefs>
+          <li>ComponentHeavyCasting</li>
+        </thingDefs>
+      </filter>
+      <count>1</count>
+    </li>
+  </ingredients>
+  <fixedIngredientFilter>
+    <thingDefs>
+      <li>ComponentHeavyCasting</li>
+    </thingDefs>
+  </fixedIngredientFilter>
+  <products>
+    <Steel>70</Steel>
+  </products>
+</RecipeDef>
+
+</Defs>	

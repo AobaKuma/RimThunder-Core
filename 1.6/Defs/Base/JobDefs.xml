@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<JobDef>
+		<defName>RTC_LoadToCargo</defName>
+		<driverClass>Motorization.JobDriver_EnterCargoHold</driverClass>
+		<reportString>Entering TargetA.</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>RTC_ConnectToTrailer</defName>
+		<driverClass>Motorization.JobDriver_ConnectToTrailer</driverClass>
+		<reportString>Connecting TargetA.</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>RTC_LoadToSelf</defName>
+		<driverClass>Motorization.JobDriver_LoadToSelf</driverClass>
+		<reportString>Loading TargetA.</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	</JobDef>
+</Defs>

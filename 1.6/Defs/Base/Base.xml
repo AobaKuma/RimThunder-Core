@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<Vehicles.VehicleBuildDef Name="RT_BaseVehicleBuild" ParentName="VehicleBaseBuildable" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+		</graphicData>
+		<designationCategory>VF_Vehicles</designationCategory>
+		<researchPrerequisites>
+			<li>Machining</li>
+		</researchPrerequisites>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleDef Name="RT_BaseVehicle" ParentName="BaseVehiclePawn" Abstract="True">
+		<graphicData>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(155, 155, 155)</color>
+			<colorTwo>(65, 75, 80)</colorTwo>
+			<colorThree>(45, 50, 45)</colorThree>
+		</graphicData>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+		<properties>
+			<empStuns>false</empStuns>
+			<defaultImpassable>
+				<li>Terrain</li>
+				<li>Things</li>
+				<li>Biomes</li>
+				<li>Rivers</li>
+				<li>Hilliness</li>
+				<li>Roads</li>
+			</defaultImpassable>
+			<visibilityWeight>3.5</visibilityWeight>
+		</properties>
+		<soundOneShotsOnEvent Inherit="False">
+			<li>
+				<key>PawnEntered</key>
+				<value>VVE_VehicleEnter</value>
+			</li>
+			<li>
+				<key>PawnExited</key>
+				<value>VVE_VehicleEnter</value>
+			</li>
+			<li>
+				<key>IgnitionOn</key>
+				<value>EI_EngineStart</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>EI_EngineStop</value>
+			</li>
+		</soundOneShotsOnEvent>
+		<soundSustainersOnEvent>
+			<li>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
+				<value>EI_EngineIdle_Car</value>
+			</li>
+		</soundSustainersOnEvent>
+		<statBases>
+			<ArmorRating_Heat>0.8</ArmorRating_Heat>
+		</statBases>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleTurretDef Name="RT_BaseTurret" ParentName="VehicleTurretBase" Abstract="True">
+		<turretType>Rotatable</turretType>
+		<graphicData>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+		</graphicData>
+		<autoSnapTargeting>ture</autoSnapTargeting>	<!-- 自動瞄準 -->
+	</Vehicles.VehicleTurretDef>
+</Defs>
