@@ -35,7 +35,7 @@ namespace Motorization
             yield return Toils_General.Do(delegate
             {
 
-                if (!Loader.AllPawnsAboard.NullOrEmpty()) //crew transport
+                if (Loader.AllPawnsAboard.HasData()) //crew transport
                 {
                     cacheCrews = new List<Pawn>();
                     for (int i = Loader.AllPawnsAboard.Count - 1; i >= 0; i--)

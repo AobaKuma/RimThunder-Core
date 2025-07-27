@@ -70,4 +70,3 @@ D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\_Sources\Motorization\Mo
 D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\_Sources\Motorization\Motorization\obj\Debug\Motorization.pdb
 D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\1.6\Assemblies\Motorization.dll
 D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\1.6\Assemblies\Motorization.pdb
-D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\_Sources\Motorization\Motorization\obj\Debug\Motoriza.01B5A339.Up2Date

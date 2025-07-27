@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using SmashTools;
 using RimWorld;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Motorization
 {
@@ -101,16 +102,14 @@ namespace Motorization
             }
             thing.DeSpawn();
             Vehicle.AddOrTransfer(thing);
+            UpdateRendering();
             return true;
         }
         public float MassCapacity => Vehicle.GetStatValue(VehicleStatDefOf.CargoCapacity);
 
         public bool HasPayload
         {
-            get
-            {
-                return !Cargo.NullOrEmpty() && Cargo.ContainsAny(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn)));
-            }
+            get => Cargo.HasData() && Cargo.ContainsAny(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn)));
             internal set { }
         }
         public VehiclePawn GetPayload => Cargo.Where(v => v is VehiclePawn || v.def.thingClass.IsSubclassOf(typeof(VehiclePawn))).First() as VehiclePawn;
@@ -122,7 +121,7 @@ namespace Motorization
             if (thing.def.Size.z > Props.lengthLimit) return new AcceptanceReport("RTC_SizeOutOfLimit".Translate(Props.lengthLimit));
             return true;//這邊之後判斷需要額外寫重量那些
         }
-        public override void PostDraw()
+        public void UpdateRendering()
         {
             if (Vehicle.Spawned && Props.renderVehicle)
             {
@@ -143,18 +142,19 @@ namespace Motorization
                     float trailerAngle = GetAngle(rot);
 
                     //砲塔
-                    if (p.CompVehicleTurrets != null && !p.CompVehicleTurrets.turrets.NullOrEmpty())
+                    if (p.CompVehicleTurrets != null && p.CompVehicleTurrets.Turrets != null)
                     {
-                        foreach (var item in p.CompVehicleTurrets.turrets)
+                        foreach (var item in p.CompVehicleTurrets.Turrets)
                         {
                             item.TurretRotation = item.defaultAngleRotated + rot.AsAngle;
                         }
                     }
-                    p.DrawAt(Vehicle.DrawPos + (CompDrawPos(Vehicle.FullRotation) * Length(p)) + GetDrawOffset(Vehicle.FullRotation), rot, trailerAngle, compDraw: true);
+                    Vehicle.DrawTracker.DynamicDrawPhaseAt(DrawPhase.Draw, Vehicle.DrawPos + (CompDrawPos(Vehicle.FullRotation) * Length(p)) + GetDrawOffset(Vehicle.FullRotation), rot, trailerAngle);
+                    //p.DrawAt(Vehicle.DrawPos + (CompDrawPos(Vehicle.FullRotation) * Length(p)) + GetDrawOffset(Vehicle.FullRotation), rot, trailerAngle);
                 }
             }
         }
-        public override void PostDrawUnspawned(Vector3 drawLoc, Rot8 rot8, float rotation)
+        public void DrawUnspawned(Vector3 drawLoc, Rot8 rot8, float rotation)
         {
             if (!Props.renderVehicle) return;
             if (DebugSettings.godMode) CarrierUtility.DebugDraw(drawLoc + GetDrawOffset(rot8));
@@ -172,14 +172,15 @@ namespace Motorization
                 Rot8 rot = this.Props.renderOpposite ? rot8.Opposite : rot8;
 
                 //砲塔
-                if (p.CompVehicleTurrets != null && !p.CompVehicleTurrets.turrets.NullOrEmpty())
+                if (p.CompVehicleTurrets != null && p.CompVehicleTurrets.Turrets != null)
                 {
-                    foreach (var item in p.CompVehicleTurrets.turrets)
+                    foreach (var item in p.CompVehicleTurrets.Turrets)
                     {
                         item.TurretRotation = item.defaultAngleRotated + rot.AsAngle;
                     }
                 }
-                p.DrawAt(drawLoc + (CompDrawPos(rot8) * Length(p)) + GetDrawOffset(rot8), rot, GetAngle(rot), compDraw: true);
+                Vehicle.DrawTracker.DynamicDrawPhaseAt(DrawPhase.Draw, drawLoc + (CompDrawPos(rot8) * Length(p)) + GetDrawOffset(rot8), rot, GetAngle(rot8));
+                //p.DrawAt(drawLoc + (CompDrawPos(rot8) * Length(p)) + GetDrawOffset(rot8), rot, GetAngle(rot));
             }
         }
         private Vector3 CompDrawPos(Rot8 rot)

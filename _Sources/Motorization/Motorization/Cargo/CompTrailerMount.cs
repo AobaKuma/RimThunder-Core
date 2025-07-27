@@ -22,7 +22,7 @@ namespace Motorization
         }
         public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
         {
-            if (this.supportedType.NullOrEmpty())
+            if (this.supportedType.HasData())
             {
                 if (this.supportedType == null) supportedType = new List<string>();
                 Log.Error(parentDef.defName + " has empty supportType of trailers. it will make it not able to mount on any trailer or tractors");
@@ -43,7 +43,7 @@ namespace Motorization
         public bool TryGetTrailer(out VehiclePawn_Trailer pawn)
         {
             pawn = null;
-            if (!Cargo.NullOrEmpty() && Cargo.Where(a => a is VehiclePawn_Trailer).First() is VehiclePawn_Trailer trailer)
+            if (Cargo.HasData() && Cargo.Where(a => a is VehiclePawn_Trailer).First() is VehiclePawn_Trailer trailer)
             {
                 pawn = trailer;
                 return true;
@@ -135,20 +135,20 @@ namespace Motorization
                 //母車位置+母車(自身轉向時的)旋轉偏移 +子車(自身轉向時的)旋轉偏移
 
                 //砲塔
-                if (pawn_Trailer.CompVehicleTurrets != null && !pawn_Trailer.CompVehicleTurrets.turrets.NullOrEmpty())
+                if (pawn_Trailer.CompVehicleTurrets != null && pawn_Trailer.CompVehicleTurrets.Turrets !=null)
                 {
-                    foreach (var item in pawn_Trailer.CompVehicleTurrets.turrets)
+                    foreach (var item in pawn_Trailer.CompVehicleTurrets.Turrets)
                     {
                         item.TurretRotation = item.defaultAngleRotated + trailerRot.AsAngle;
                     }
                 }
-                pawn_Trailer.DrawAt(exactPos + tractorMount - trailerMount, trailerRot, trailerAngle, compDraw: true);
+                pawn_Trailer.DrawAt(exactPos + tractorMount - trailerMount, trailerRot, trailerAngle);
             }
         }
         public static bool CanTowVehicle(VehiclePawn_Tractor tractor, VehiclePawn target)
         {
             if (!tractor.TryGetComp<CompTrailerMount>(out var tractorMount) & !target.TryGetComp<CompTrailerMount>(out var trailerMount)) return false;
-            if (tractorMount.Props.supportedType.NullOrEmpty() || trailerMount.Props.supportedType.NullOrEmpty()) return false;
+            if (!tractorMount.Props.supportedType.HasData() || !trailerMount.Props.supportedType.HasData()) return false;
 
             foreach (string item in tractorMount.Props.supportedType)
             {

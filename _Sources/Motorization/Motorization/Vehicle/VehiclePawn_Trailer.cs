@@ -1,4 +1,5 @@
-﻿using SmashTools;
+﻿using RimWorld;
+using SmashTools;
 using System.Collections.Generic;
 using UnityEngine;
 using Vehicles;
@@ -27,7 +28,7 @@ namespace Motorization
                 }
             }
         }
-        public CompTrailerMount TrailerMount 
+        public CompTrailerMount TrailerMount
         {
             get
             {
@@ -43,7 +44,7 @@ namespace Motorization
 
         private CompTrailerMount cacheComp;
 
-        public override void DrawAt(Vector3 drawLoc, Rot8 rot, float extraRotation, bool flip = false, bool compDraw = true)
+        public override void DrawAt(in Vector3 drawLoc, Rot8 rot, float rotation)
         {
             if (!initCheck)
             {
@@ -51,13 +52,11 @@ namespace Motorization
                 this.ResetRenderStatus(); //媽的你不要動他。
                 return;
             }
-            base.DrawAt(drawLoc, rot, extraRotation, flip, compDraw);
-            if (compDraw)
+            base.DrawAt(drawLoc, rot, rotation);
+
+            if (HasCargoComp)
             {
-                if (HasCargoComp)
-                {
-                    CargoComp.PostDrawUnspawned(drawLoc, rot, extraRotation);
-                }
+                CargoComp.DrawUnspawned(drawLoc, rot, rotation);
             }
         }
     }

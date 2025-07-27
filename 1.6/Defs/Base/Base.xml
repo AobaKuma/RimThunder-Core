@@ -23,14 +23,14 @@
 		<vehicleType>Land</vehicleType>
 		<properties>
 			<empStuns>false</empStuns>
-			<defaultImpassable>
+			<!-- <defaultImpassable>
 				<li>Terrain</li>
 				<li>Things</li>
 				<li>Biomes</li>
 				<li>Rivers</li>
 				<li>Hilliness</li>
 				<li>Roads</li>
-			</defaultImpassable>
+			</defaultImpassable> -->
 			<visibilityWeight>3.5</visibilityWeight>
 		</properties>
 		<soundOneShotsOnEvent Inherit="False">

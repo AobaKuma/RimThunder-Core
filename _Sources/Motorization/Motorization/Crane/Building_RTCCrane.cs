@@ -171,15 +171,15 @@ namespace Motorization
 
     internal class ModExtension_CraneTopData : DefModExtension
     {
-        public GraphicData graphicData;
+        public GraphicData graphicData = null;
 
-        public CraneEndpoints EndpointSouth;
+        public CraneEndpoints EndpointSouth = null;
 
-        public CraneEndpoints EndpointNorth;
+        public CraneEndpoints EndpointNorth = null;
 
-        public CraneEndpoints EndpointEast;
+        public CraneEndpoints EndpointEast = null;
 
-        public CraneEndpoints EndpointWest;
+        public CraneEndpoints EndpointWest = null;
 
         public float PctPerSec = 15f;
 
