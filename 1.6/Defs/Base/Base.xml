@@ -69,6 +69,6 @@
 			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
 		</graphicData>
-		<autoSnapTargeting>ture</autoSnapTargeting>	<!-- 自動瞄準 -->
+		<autoSnapTargeting>true</autoSnapTargeting>	<!-- 自動瞄準 -->
 	</Vehicles.VehicleTurretDef>
 </Defs>
