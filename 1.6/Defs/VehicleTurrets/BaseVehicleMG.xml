@@ -22,14 +22,14 @@
 	<Vehicles.VehicleTurretDef Name="RT_BaseVehicleMG_Light" ParentName="RT_BaseVehicleMG" Abstract="True">
 		<label>light machine gun</label>
 		<minRange>2</minRange>
-		<maxRange>32.9</maxRange>
+		<maxRange>30.9</maxRange>
 		<rotationSpeed>1.95</rotationSpeed>
 		<warmUpTimer>1.5</warmUpTimer>
 		<shotSound>GunShotA</shotSound>
 		<projectile>RT_Bullet_LMG</projectile>
 		<reloadTimer>4</reloadTimer>
 		<magazineCapacity>120</magazineCapacity>
-		<chargePerAmmoCount>2</chargePerAmmoCount>
+		<chargePerAmmoCount>0.1</chargePerAmmoCount>
 		<genericAmmo>true</genericAmmo>
 		<ammunition>
 			<thingDefs>
@@ -38,23 +38,35 @@
 		</ammunition>
 		<fireModes>
 			<li>
-				<shotsPerBurst>6</shotsPerBurst>
-				<ticksBetweenShots>6</ticksBetweenShots>
+				<shotsPerBurst>12~15</shotsPerBurst>
+				<ticksBetweenShots>8</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<accuracyTouch>0.6</accuracyTouch>
+				<accuracyShort>0.7</accuracyShort>
+				<accuracyMedium>0.65</accuracyMedium>
+				<accuracyLong>0.25</accuracyLong>
 				<label>Auto</label>
 				<texPath>UI/Gizmos/FireRate_Auto</texPath>
 			</li>
 			<li>
-				<shotsPerBurst>3</shotsPerBurst>
-				<ticksBetweenShots>6</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<shotsPerBurst>6</shotsPerBurst>
+				<ticksBetweenShots>8</ticksBetweenShots>
+				<ticksBetweenBursts>40~60</ticksBetweenBursts>
+				<accuracyTouch>0.65</accuracyTouch>
+				<accuracyShort>0.75</accuracyShort>
+				<accuracyMedium>0.75</accuracyMedium>
+				<accuracyLong>0.3</accuracyLong>
 				<label>Burst</label>
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>
 			<li>
-				<shotsPerBurst>1</shotsPerBurst>
-				<ticksBetweenShots>6</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<shotsPerBurst>3</shotsPerBurst>
+				<ticksBetweenShots>8</ticksBetweenShots>
+				<ticksBetweenBursts>20~60</ticksBetweenBursts>
+				<accuracyTouch>0.65</accuracyTouch>
+				<accuracyShort>0.75</accuracyShort>
+				<accuracyMedium>0.75</accuracyMedium>
+				<accuracyLong>0.35</accuracyLong>
 				<label>Single</label>
 				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
@@ -71,6 +83,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>11</damageAmountBase>
+			<armorPenetrationBase>0.16</armorPenetrationBase>
 			<stoppingPower>1</stoppingPower>
 			<speed>50</speed>
 		</projectile>
@@ -80,15 +93,15 @@
 	<!-- 車載輕機槍 7.62 / 7.92 / 8.58 / 8.6 -->
 	<Vehicles.VehicleTurretDef Name="RT_BaseVehicleMG_Medium" ParentName="RT_BaseVehicleMG" Abstract="True">
 		<label>mounted machine gun</label>
-		<minRange>2</minRange>
-		<maxRange>48.9</maxRange>
+		<minRange>3</minRange>
+		<maxRange>36.9</maxRange>
 		<rotationSpeed>1.5</rotationSpeed>
 		<warmUpTimer>1.75</warmUpTimer>
 		<shotSound>GunShotA</shotSound>
 		<projectile>RT_Bullet_MMG</projectile>
 		<reloadTimer>5</reloadTimer>
 		<magazineCapacity>60</magazineCapacity>
-		<chargePerAmmoCount>1</chargePerAmmoCount>
+		<chargePerAmmoCount>0.2</chargePerAmmoCount>
 		<genericAmmo>true</genericAmmo>
 		<ammunition>
 			<thingDefs>
@@ -97,23 +110,35 @@
 		</ammunition>
 		<fireModes>
 			<li>
-				<shotsPerBurst>6</shotsPerBurst>
+				<shotsPerBurst>8~10</shotsPerBurst>
 				<ticksBetweenShots>8</ticksBetweenShots>
 				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<accuracyTouch>0.55</accuracyTouch>
+				<accuracyShort>0.7</accuracyShort>
+				<accuracyMedium>0.75</accuracyMedium>
+				<accuracyLong>0.3</accuracyLong>
 				<label>Auto</label>
 				<texPath>UI/Gizmos/FireRate_Auto</texPath>
 			</li>
 			<li>
-				<shotsPerBurst>3</shotsPerBurst>
+				<shotsPerBurst>6</shotsPerBurst>
 				<ticksBetweenShots>8</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<ticksBetweenBursts>40~60</ticksBetweenBursts>
+				<accuracyTouch>0.6</accuracyTouch>
+				<accuracyShort>0.75</accuracyShort>
+				<accuracyMedium>0.8</accuracyMedium>
+				<accuracyLong>0.35</accuracyLong>
 				<label>Burst</label>
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>
 			<li>
-				<shotsPerBurst>1</shotsPerBurst>
+				<shotsPerBurst>3</shotsPerBurst>
 				<ticksBetweenShots>8</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<ticksBetweenBursts>20~60</ticksBetweenBursts>
+				<accuracyTouch>0.6</accuracyTouch>
+				<accuracyShort>0.75</accuracyShort>
+				<accuracyMedium>0.8</accuracyMedium>
+				<accuracyLong>0.4</accuracyLong>
 				<label>Single</label>
 				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
@@ -131,6 +156,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBase>0.18</armorPenetrationBase>	
 			<stoppingPower>1</stoppingPower>
 			<speed>60</speed>
 		</projectile>
@@ -140,15 +166,15 @@
 	<!-- 車載輕機槍 12.7 / 14.5 -->
 	<Vehicles.VehicleTurretDef Name="RT_BaseVehicleMG_Heavy" ParentName="RT_BaseVehicleMG" Abstract="True">
 		<label>heavy machine gun</label>
-		<minRange>2</minRange>
-		<maxRange>56.9</maxRange>
+		<minRange>4</minRange>
+		<maxRange>40.9</maxRange>
 		<rotationSpeed>1</rotationSpeed>
 		<warmUpTimer>2.00</warmUpTimer>
 		<shotSound>GunShotA</shotSound>
 		<projectile>RT_Bullet_HMG</projectile>
 		<reloadTimer>8</reloadTimer>
 		<magazineCapacity>30</magazineCapacity>
-		<chargePerAmmoCount>1</chargePerAmmoCount>
+		<chargePerAmmoCount>0.5</chargePerAmmoCount>
 		<genericAmmo>true</genericAmmo>
 		<ammunition>
 			<thingDefs>
@@ -158,22 +184,34 @@
 		<fireModes>
 			<li>
 				<shotsPerBurst>6</shotsPerBurst>
-				<ticksBetweenShots>10</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<ticksBetweenShots>12</ticksBetweenShots>
+				<ticksBetweenBursts>80</ticksBetweenBursts>
+				<accuracyTouch>0.45</accuracyTouch>
+				<accuracyShort>0.7</accuracyShort>
+				<accuracyMedium>0.75</accuracyMedium>
+				<accuracyLong>0.4</accuracyLong>
 				<label>Auto</label>
 				<texPath>UI/Gizmos/FireRate_Auto</texPath>
 			</li>
 			<li>
 				<shotsPerBurst>3</shotsPerBurst>
-				<ticksBetweenShots>10</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<ticksBetweenShots>12</ticksBetweenShots>
+				<ticksBetweenBursts>60~80</ticksBetweenBursts>
+				<accuracyTouch>0.5</accuracyTouch>
+				<accuracyShort>0.7</accuracyShort>
+				<accuracyMedium>0.8</accuracyMedium>
+				<accuracyLong>0.6</accuracyLong>
 				<label>Burst</label>
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>
 			<li>
 				<shotsPerBurst>1</shotsPerBurst>
-				<ticksBetweenShots>10</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<ticksBetweenShots>12</ticksBetweenShots>
+				<ticksBetweenBursts>40~80</ticksBetweenBursts>
+				<accuracyTouch>0.5</accuracyTouch>
+				<accuracyShort>0.7</accuracyShort>
+				<accuracyMedium>0.8</accuracyMedium>
+				<accuracyLong>0.75</accuracyLong>
 				<label>Single</label>
 				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
@@ -190,7 +228,8 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>45</damageAmountBase>
+			<damageAmountBase>25</damageAmountBase>
+			<armorPenetrationBase>0.3</armorPenetrationBase>	
 			<stoppingPower>3</stoppingPower>
 			<speed>80</speed>
 		</projectile>
