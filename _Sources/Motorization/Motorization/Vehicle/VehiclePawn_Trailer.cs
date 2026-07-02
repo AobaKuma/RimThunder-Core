@@ -14,25 +14,13 @@ namespace Motorization
         public CompVehicleCargo CargoComp => GetComp<CompVehicleCargo>();
 
         private bool initCheck = false;
-        public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
-        {
-            foreach (var item in base.GetExtraFloatMenuOptionsFor(sq))
-            {
-                yield return item;
-            }
-            if (this.HasCargoComp)
-            {
-                foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForCarrier(this, sq))
-                {
-                    yield return item;
-                }
-            }
-        }
+        //FloatMenu選項已改由 FloatMenuOptionProvider_Vehicle 體系提供(見 Cargo/FloatMenuOptionProviders.cs)，
+        //GetExtraFloatMenuOptionsFor(IntVec3) 在目前的 FloatMenuMakerMap 已不會被引擎呼叫，故移除。
         public CompTrailerMount TrailerMount
         {
             get
             {
-                if (cacheComp != null)
+                if (cacheComp == null)
                 {
                     cacheComp = this.GetComp<CompTrailerMount>();
                     if (cacheComp == null) Log.Error(string.Format("error, {0} doesn't have CompTrailerMount", this.def.defName));

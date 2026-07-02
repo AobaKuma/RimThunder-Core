@@ -29,33 +29,7 @@ namespace Motorization
                 yield return item;
             }
         }
-        public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
-        {
-            foreach (var item in base.GetExtraFloatMenuOptionsFor(sq))
-            {
-                yield return item;
-            }
-            foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForTractor(this, sq))
-            {
-                yield return item;
-            }
-            if (this.TryGetComp<CompVehicleCargo>(out CompVehicleCargo vehicleCargo))
-            {
-                foreach (var item in FloatMenuUtility.GetExtraFloatMenuOptionsForCarrier(this, sq))
-                {
-                    yield return item;
-                }
-            }
-            if (this.TrailerMount.TryGetTrailer(out var trailer))
-            {
-                if (trailer.TryGetComp<CompVehicleCargo>(out var cargo))
-                {
-                    foreach (var item in FloatMenuUtility.TryMakeFloatMenuForActiveLoad(this, sq))
-                    {
-                        yield return item;
-                    }
-                }
-            }
-        }
+        //FloatMenu選項已改由 FloatMenuOptionProvider_Vehicle 體系提供(見 Cargo/FloatMenuOptionProviders.cs)，
+        //GetExtraFloatMenuOptionsFor(IntVec3) 在目前的 FloatMenuMakerMap 已不會被引擎呼叫，故移除。
     }
 }

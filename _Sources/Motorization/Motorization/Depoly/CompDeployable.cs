@@ -46,11 +46,6 @@ namespace Motorization
                     deployToggle.Disable();
                 }
 
-                if (base.Vehicle.Deploying)
-                {
-                    deployToggle.Disable();
-                }
-
                 if (base.Vehicle.vehiclePather.Moving)
                 {
                     deployToggle.Disable();

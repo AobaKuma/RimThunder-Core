@@ -18,3 +18,4 @@ D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\_Sources\Motorization\Mo
 D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\_Sources\Motorization\MotorizationCE\obj\Debug\MotorizationCE.pdb
 D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\1.6\CombatExtended\Assemblies\MotorizationCE.dll
 D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\1.6\CombatExtended\Assemblies\MotorizationCE.pdb
+D:\Steam\steamapps\common\RimWorld\Mods\RimThunder-Core\_Sources\Motorization\MotorizationCE\obj\Debug\Motoriza.274E16E4.Up2Date

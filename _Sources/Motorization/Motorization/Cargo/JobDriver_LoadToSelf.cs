@@ -77,7 +77,7 @@ namespace Motorization
                     //}
                 }
                 TargetPawn.ignition.Drafted = false;
-                cargo.TryAcceptThing(TargetPawn);
+                cargo.TryAttach(TargetPawn);
 
             });
         }

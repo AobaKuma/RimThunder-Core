@@ -1,19 +1,19 @@
-﻿using Verse;
+using Verse;
 using System.Collections.Generic;
 using Verse.AI;
 using Verse.Sound;
 using RimWorld;
 using Vehicles;
-using UnityEngine;
 using SmashTools;
 
 
 namespace Motorization
 {
+    //由具備CompVehicleCargo的母車主動開過去，把targetVehicle收進自己的貨艙。
     public class JobDriver_EnterCargoHold : JobDriver
     {
-        public VehiclePawn Carrier => job.GetTarget(TargetIndex.A).Pawn as VehiclePawn;
-        public VehiclePawn Loader => this.GetActor() as VehiclePawn;
+        public VehiclePawn TargetVehicle => job.GetTarget(TargetIndex.A).Pawn as VehiclePawn;
+        public VehiclePawn Carrier => this.GetActor() as VehiclePawn;
         public const int EnterDelay = 60;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -25,39 +25,29 @@ namespace Motorization
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOnDowned(TargetIndex.A);
 
-            yield return CarrierUtility.ToNearestCell(Loader, Carrier,true);
+            yield return CarrierUtility.ToNearestCell(Carrier, TargetVehicle);
 
             CompVehicleCargo cargo = Carrier.TryGetComp<CompVehicleCargo>();
-            this.FailOn(() => !cargo.Accepts(pawn));
+            this.FailOn(() => cargo == null || !cargo.Accepts(TargetVehicle));
             Toil t = Toils_General.Wait(EnterDelay);
             t.PlaySoundAtEnd(SoundDefOf.Artillery_ShellLoaded);
             yield return t;
             yield return Toils_General.Do(delegate
             {
+                VehiclePawn target = TargetVehicle;
 
-                if (Loader.AllPawnsAboard.HasData()) //crew transport
+                if (target.AllPawnsAboard.HasData()) //crew transport
                 {
                     cacheCrews = new List<Pawn>();
-                    for (int i = Loader.AllPawnsAboard.Count - 1; i >= 0; i--)
+                    for (int i = target.AllPawnsAboard.Count - 1; i >= 0; i--)
                     {
-                        cacheCrews.Add(Loader.AllPawnsAboard[i]);
-                        Log.Message(Loader.AllPawnsAboard[i].Name);
+                        cacheCrews.Add(target.AllPawnsAboard[i]);
+                        Log.Message(target.AllPawnsAboard[i].Name.ToString());
                     }
-                    Loader.DisembarkAll();
-
-                    //if (!cacheCrews.NullOrEmpty())
-                    //{
-                    //    foreach (var item in cacheCrews)
-                    //    {
-                    //        if (Carrier.SeatsAvailable <= 0) break;
-
-                    //        Carrier.TryAddPawn(item);
-                    //    }
-                    //    cacheCrews = null;
-                    //}
+                    target.DisembarkAll();
                 }
-                Loader.ignition.Drafted = false;
-                cargo.TryAcceptThing(Loader);
+                target.ignition.Drafted = false;
+                cargo.TryAttach(target);
             });
         }
     }
